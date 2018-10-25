@@ -1,2 +1,6 @@
 <h1>Memories#new</h1>
-<p>Find me in app/views/memories/new.html.erb</p>
+<%= simple_form_for [@memory] do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.submit 'Add a memory', class: "btn btn-primary" %>
+<% end %>
