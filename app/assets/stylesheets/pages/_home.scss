@@ -1,1 +1,158 @@
-// Specific CSS for your home-page
+// banner
+.blue {
+  background-color: $bleumarine;
+}
+
+.banner {
+  color: white;
+  text-align: center;
+  height: 50vh;
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+
+.banner p {
+  font-size: 25px;
+  font-weight: lighter;
+  color: rgb(255, 255, 255);
+  opacity: 0.6;
+  margin-bottom: 30px;
+}
+
+// bouton discover
+section {
+  height: 50vh;
+  width: 100%;
+  display: table;
+}
+
+section a {
+  opacity: 1;
+  -webkit-transition: all .5s ease-in 3s;
+  transition: all .5s ease-in 3s;
+}
+
+section a {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  margin-left: -16px;
+  display: block;
+  width: 32px;
+  height: 32px;
+  border: 2px solid black;
+  background-size: 14px auto;
+  border-radius: 50%;
+  z-index: 2;
+  -webkit-animation: bounce 2s infinite 2s;
+  animation: bounce 2s infinite 2s;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+  transform: scale(1)
+}
+
+section a:before {
+  position: absolute;
+  top: calc(50% - 8px);
+  left: calc(50% - 6px);
+  transform: rotate(-45deg);
+  display: block;
+  width: 12px;
+  height: 12px;
+  content: "";
+  border: 2px solid black;
+  border-width: 0px 0 2px 2px;
+}
+
+@keyframes bounce {
+  0%,
+  100%,
+  20%,
+  50%,
+  80% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  60% {
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}
+
+// bandes dans la home
+.large-container {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+.container-box-left{
+  max-width: 25%;
+  color: white;
+  padding: 20px;
+}
+.container-right {
+  max-width: 75%;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.container-box-right {
+  max-width: 25%;
+  color: white;
+  padding: 20px;
+}
+
+.container-left {
+  max-width: 75%;
+  text-align: center;
+  flex-grow: 1;
+}
+
+i {
+  font-size: 50px;
+}
+
+.small-size {
+  max-height: 100px;
+}
+
+.red {
+  background-color: $red2;
+}
+.saumon {
+  background-color: $saumon;
+}
+.grey {
+  background-color: $gris;
+}
+.violet {
+  background-color: $violet;
+}
+
+// sign up
+
+.button-container {
+  text-align: center;
+  height: 20vh;
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
