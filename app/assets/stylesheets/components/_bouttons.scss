@@ -1,0 +1,31 @@
+.boutton-rouge {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  padding: 5px 25px;
+  margin: 15px 10px;
+  border: 1px solid $red2;
+  border-radius: 5px;
+  font-family: Raleway;
+  transition: 0.3s;
+}
+
+.boutton-rouge-inside {
+  background-color: $red2;
+  color: white;
+  &:hover {
+    color: white;
+    transform: scale(1.05);
+  }
+}
+
+.boutton-rouge-border {
+  background-color: white;
+  color: $red2;
+  &:hover {
+    color: $red2;
+    transform: scale(1.05);
+  }
+}
+
+
