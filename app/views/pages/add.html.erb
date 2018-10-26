@@ -1,5 +1,5 @@
-<div class="container">
-  <h1>Here is the best content we have selected for you</h1>
+<div class="container space">
+  <h1 class="center">Here is the best content we have selected for you</h1>
 </div>
 
 
@@ -7,8 +7,8 @@
 <div class="card-container">
   <div class="row">
     <div class="col-xs-12 col-sm-3">
-      <%= link_to new_memory_path do %>
       <div class="card">
+        <%= link_to new_memory_path do %>
         <div class="card-padding">
           <div class="header">
             <h3>Add a memory from another source</h3>
@@ -17,23 +17,24 @@
             <p>Add your <strong>personal content</strong></p>
           </div>
         </div>
+        <% end %>
       </div>
-      <% end %>
+
     </div>
     <div class="col-xs-12 col-sm-3">
       <div class="card">
+        <%= link_to new_memory_path do %>
         <div class="card-padding">
           <div class="card-header">
-            <div class="calendar-left">
-              <p>XX/XX</p>
-            </div>
+              <p class="calendar-left">XX/XX</p>
             <h3>blabla</h3>
             <%= image_tag "Book.svg", id: "box"%>
           </div>
           <div class="card-contain">
-            <p>Add your <strong>personal content</strong></p>
+            <p>Suggested from <strong>Spotify</strong></p>
           </div>
         </div>
+        <% end %>
       </div>
     </div>
     <div class="col-xs-12 col-sm-3">
