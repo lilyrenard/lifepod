@@ -1,20 +1,19 @@
 <div class="navbar-wagon">
-  <div class="navbar-wagon-left">
-    <!-- Logo -->
-    <%= link_to root_path do %>
-      <%= image_tag "logo.svg" %>
-    <% end %>
-    <div class="navbar-searchbar">
-      <%= render 'shared/searchbar' %>
+  <% if user_signed_in? %>
+    <div class="navbar-wagon-left">
+      <!-- Logo -->
+      <%= link_to root_path do %>
+        <%= image_tag "logo.svg" %>
+      <% end %>
+      <div class="navbar-searchbar">
+        <%= render 'shared/searchbar' %>
+      </div>
     </div>
-  </div>
 
-  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
+    <!-- Right Navigation -->
+    <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <% if user_signed_in? %>
-
-      <!-- Links when logged in -->
+        <!-- Links when logged in -->
       <%= link_to "Explore", "#", class: "boutton-rouge boutton-rouge-border" %>
       <%= link_to "Add a memory", "#", class: "boutton-rouge boutton-rouge-inside" %>
 
@@ -31,11 +30,21 @@
           </ul>
         </div>
       </div>
-    <% else %>
-      <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    </div>
+
+
+  <% else %>
+      <!-- Logo -->
+    <%= link_to root_path do %>
+      <%= image_tag "logo.svg" %>
     <% end %>
-  </div>
+
+    <!-- Right Navigation -->
+    <div class="navbar-wagon-right hidden-xs hidden-sm">
+      <!-- Login link (when logged out) -->
+      <%= link_to t(".sign_in", default: "Sign in"), new_user_session_path, class: "boutton-rouge boutton-rouge-inside sign" %>
+    </div>
+  <% end %>
 
   <!-- Dropdown list appearing on mobile only -->
   <div class="navbar-wagon-item hidden-md hidden-lg">
@@ -57,4 +66,10 @@
     </div>
   </div>
 </div>
+
+
+
+
+
+
 
