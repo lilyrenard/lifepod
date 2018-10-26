@@ -1,0 +1,93 @@
+// card-container
+.card-container {
+  padding-top: 2.875rem;
+  padding-bottom: 2.875rem;
+  max-width: 112rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+// cards
+.card {
+  margin: 15px;
+  border-radius: 2px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  height: 290px;
+  margin-bottom: 3%;
+  background: $gris;
+  position: relative;
+}
+
+.card-padding {
+  padding: 15px 15px 70px;
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.card-header img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-size: cover!important;
+}
+
+.card-header {
+  text-shadow: 0 0.5px 1px rgba(0,0,0,0.6);
+  position: relative;
+  background-color: white;
+}
+
+.card-header h3 {
+  margin: 0px;
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+.card-contain {
+  padding: 10px 0px;
+}
+
+// calendrier en haut à gauche
+
+.calendar-left {
+  background-image: url("../images/calendar-page-empty.svg");
+  margin: 0px;
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+img#calendar {
+  margin-right: 0px;
+  color: white;
+  width: 20%;
+  height: 20%;
+}
+
+// card add manually
+
+.header {
+  display: block;
+  background-color: $red2;
+  height: 100%;
+  width: 100%;
+  background-size: cover!important;
+}
+
+.header h3 {
+  padding: 5px;
+  font-size: 24px;
+  font-weight: bold;
+  padding-top: 35%;
+  text-align: center;
+  color: white;
+  margin: 0px;
+}
+
+
+
