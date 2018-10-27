@@ -1,2 +1,44 @@
-<h1>Dataviz</h1>
-<%= @memories.count %>
+<div class="large-container space blue">
+  <h2><%= @memories.count %></h2>
+
+</div>
+
+<div class="card-container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-3">
+      <div class="card">
+        <div class="card-padding">
+          <div class="header">
+            <h3>Add a memory from another source</h3>
+          </div>
+          <div class="card-contain">
+             <p>Add your <strong>personal content</strong></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-xs-12 col-sm-3">
+      <div class="card">
+        <div class="card-padding">
+          <div class="card-header">
+            <p class="calendar-left">XX/XX</p>
+            <h3>blabla</h3>
+            <%= image_tag "photo.svg", id: "photo"%>
+          </div>
+          <div class="card-contain">
+            <p>Suggested from <strong>Spotify</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-3">
+      <div class="card">
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-3">
+      <div class="card">
+      </div>
+    </div>
+  </div>
+</div>
