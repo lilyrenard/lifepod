@@ -1,0 +1,28 @@
+.searchbar {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+}
+
+.searchbar form {
+  background-color: transparent;
+}
+
+.searchbar-search {
+  border: 0px solid rgba(0, 0, 0, 0.1);
+  padding: 8px 20px;
+  width: 270px;
+  background-color: transparent;
+}
+
+.searchbar-submit {
+  border: 0px solid rgba(0, 0, 0, 0.1);
+  padding: 3px 10px;
+  padding-right: 15px;
+  background-color: transparent;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 5px 0px;
+}
+
+.searchbar-submit i {
+  font-size: 18px;
+}

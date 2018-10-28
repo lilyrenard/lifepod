@@ -1,0 +1,12 @@
+<div class="searchbar">
+  <%= form_tag memories_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "searchbar-search",
+      placeholder: "Search for your memories"
+    %>
+    <%= button_tag(type: "submit", class: "searchbar-submit") do %>
+      <i class="fas fa-search"></i>
+    <% end %>
+  <% end %>
+</div>
