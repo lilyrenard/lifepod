@@ -7,4 +7,7 @@ Rails.application.routes.draw do
   resources :memories do
     resources :stamps, only: [:new, :create, :edit, :update, :destroy]
   end
+
+  get 'test', to: 'pages#test'
+
 end
