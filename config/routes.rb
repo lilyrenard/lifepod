@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   end
 
   get 'test', to: 'pages#test'
+  get 'test2', to: 'pages#test2'
 
 end
