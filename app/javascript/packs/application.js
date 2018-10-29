@@ -1,4 +1,4 @@
 import "bootstrap";
 
-import { scrollFunction } from '../components/discover';
-scrollFunction();
+import { changeSize } from '../components/cards';
+changeSize();

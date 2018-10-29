@@ -1,4 +1,4 @@
-//
+// global
 h1 {
   font-size: 36px;
 }
@@ -49,14 +49,14 @@ a:hover {
   right: 0;
   left: 0;
 }
-
+/*
 .card-header img {
   display: block;
   height: 200px;
   width: 100%;
   background-size: cover!important;
 }
-
+*/
 .card-header {
   text-shadow: 0 0.5px 1px rgba(0,0,0,0.6);
   position: relative;
@@ -64,10 +64,18 @@ a:hover {
 }
 
 .card-header h3 {
+  text-align: right;
+  color: white;
+  font-size: 15px;
   margin: 0px;
   position: absolute;
   bottom: 8px;
   right: 16px;
+}
+
+.card-header p {
+  font-size: 13px;
+  color: white;
 }
 
 .card-contain {
@@ -89,7 +97,6 @@ a:hover {
 
 img#calendar {
   margin-right: 0px;
-  color: white;
   width: 20%;
   height: 20%;
 }
