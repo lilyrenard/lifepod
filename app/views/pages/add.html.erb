@@ -6,8 +6,7 @@
 
 <div class="container">
   <div class="card-columns">
-    <div class="card">
-      <%= link_to new_memory_path do %>
+    <div class="card" id="testeticule">
       <div class="image-container">
         <div class="card-img" id="fixed">
           <h3 class="text-center font-weight-bold">Add a memory from another source</h3>
@@ -16,7 +15,41 @@
       <div class="card-body">
         <p class="card-text">Add your <strong>personal content</strong></p>
       </div>
-      <% end %>
     </div>
   </div>
 </div>
+
+<div class="fond-gris invisible" id="myFooter">
+  <div class="display-categories">
+    <div class="from-titre">
+      <p>What kind of memory do you want to add?</p>
+    </div>
+    <div class="conteneur-ajout">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="where-from">
+            <p>From your computer</p>
+            <div class="row">
+              <div class="col-md-3"><%= image_tag 'photo-picto.svg', width: "72", height: "72" %></div>
+              <div class="col-md-3"><%= image_tag 'video-picto.svg', width: "72", height: "72" %></div>
+              <div class="col-md-3"><%= image_tag 'quote-picto.svg', width: "72", height: "72" %></div>
+              <div class="col-md-3"><%= image_tag 'link-picto.svg', width: "72", height: "72" %></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="where-from">
+            <p>From yout favorite apps</p>
+            <div class="row">
+              <div class="col-md-4"><%= image_tag 'youtube-brands.svg', width: "80", height: "80" %></div>
+              <div class="col-md-4"><%= image_tag 'spotify-brands.svg', width: "80", height: "80" %></div>
+              <div class="col-md-4"><%= image_tag 'instagram-brands.svg', width: "80", height: "80" %></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="fermer"> <p>FERMER</p></div>
+  </div>
+</div>
+
