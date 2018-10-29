@@ -1,3 +1,21 @@
 <div class="dashboard-banner">
-
+  <div class="total-memories">
+    <h2>You currently have <%= pluralize @memories.count, "memory" %></h2>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-offset-4 col-xs-1">
+        <p>23 Musiques</p>
+      </div>
+      <div class="col-xs-1">
+        <p>12 Photos</p>
+      </div>
+      <div class="col-xs-1">
+        <p>1 Video</p>
+      </div>
+      <div class="col-xs-1">
+        <p>3 Quotes</p>
+      </div>
+    </div>
+  </div>
 </div>
