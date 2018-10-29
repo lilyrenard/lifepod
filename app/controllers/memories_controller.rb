@@ -18,7 +18,7 @@ class MemoriesController < ApplicationController
     @memory.user_id = current_user.id
 
     if @memory.save
-      redirect_to memories_path
+      redirect_to add_path
     else
       render :new
     end
