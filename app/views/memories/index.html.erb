@@ -1,51 +1,20 @@
 <%= render 'shared/dashboard' %>
 
-<button type="button" class="btn btn-outline-primary">Primary</button>
-
-
-<div class="card-container">
+<div class="container">
   <div class="card-columns">
-  <div class="row">
-    <div class="col-xs-12 col-sm-3">
+    <% @memories.each do |memory|%>
       <div class="card">
-        <div class="card-padding">
-          <div class="card-header">
-            <p class="calendar-left">XX/XX</p>
-            <h3>Dolore illum animi et neque accusantium.</h3>
-          </div>
-          <div class="card-contain">
-             <p>Add your <strong>personal content</strong></p>
-          </div>
+        <div class="image-container">
+          <%= image_tag "Book.svg", id: "box", class: "card-img"%>
+          <p class="calendar-left">memory.created_at</p>
+          <h3><%= memory.title %></h3>
         </div>
-      </div>
-
-    </div>
-    <div class="col-xs-12 col-sm-3">
-      <div class="card">
-        <div class="card-padding">
-          <div class="card-header">
-            <p class="calendar-left">XX/XX</p>
-            <h3>blabla</h3>
-            <%= image_tag "photo.svg", id: "photo"%>
-          </div>
-          <div class="card-contain">
-            <p>Suggested from <strong>Spotify</strong></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-xs-12 col-sm-3">
-      <div class="card">
-        <%= image_tag "photo.svg", id: "photo", class: "card-img-top"%>
         <div class="card-body">
-          <div class="card-title">blabla</div>
+          <% memory.stamps.each do |stamp|%>
+            <p class="card-text">stamp.title</p>
+          <% end%>
         </div>
       </div>
-    </div>
-    <div class="col-xs-12 col-sm-3">
-      <div class="card">
-      </div>
-    </div>
-  </div>
+    <% end%>
   </div>
 </div>
