@@ -47,8 +47,9 @@
     <!-- Right Navigation -->
     <div class="navbar-wagon-right hidden-xs hidden-sm">
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Sign in"), new_user_session_path, class: "btn boutton-rouge boutton-rouge-inside sign" %>
+      <button type="button" class="btn boutton-rouge boutton-rouge-inside sign" data-toggle="modal" data-target=".bs-example-modal-sm">Sign in</button>
     </div>
+    <%= render 'shared/modalsmall' %>
   <% end %>
 </div>
 
