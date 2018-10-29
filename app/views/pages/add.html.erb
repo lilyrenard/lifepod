@@ -4,46 +4,19 @@
 
 
 
-<div class="card-container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-3">
-      <div class="card">
-        <%= link_to new_memory_path do %>
-        <div class="card-padding">
-          <div class="header">
-            <h3>Add a memory from another source</h3>
-          </div>
-          <div class="card-contain">
-            <p>Add your <strong>personal content</strong></p>
-          </div>
+<div class="container">
+  <div class="card-columns">
+    <div class="card">
+      <%= link_to new_memory_path do %>
+      <div class="image-container">
+        <div class="header">
+          <h3>Add a memory from another source</h3>
         </div>
-        <% end %>
-      </div>
-
-    </div>
-    <div class="col-xs-12 col-sm-3">
-      <div class="card">
-        <%= link_to new_memory_path do %>
-        <div class="card-padding">
-          <div class="card-header">
-              <p class="calendar-left">XX/XX</p>
-            <h3>blabla</h3>
-            <%= image_tag "Book.svg", id: "box"%>
-          </div>
-          <div class="card-contain">
-            <p>Suggested from <strong>Spotify</strong></p>
-          </div>
+        <div class="card-body">
+          <p class="card-text">Add your <strong>personal content</strong></p>
         </div>
-        <% end %>
       </div>
-    </div>
-    <div class="col-xs-12 col-sm-3">
-      <div class="card">
-      </div>
-    </div>
-    <div class="col-xs-12 col-sm-3">
-      <div class="card">
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
