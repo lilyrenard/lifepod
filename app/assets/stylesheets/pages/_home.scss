@@ -4,6 +4,7 @@
 }
 
 .banner {
+  position: relative;
   color: white;
   text-align: center;
   height: 50vh;
@@ -13,10 +14,9 @@
   justify-content: center;
 }
 
-.banner h1 {
+h1 {
   font-size: 50px;
   font-weight: bold;
-  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
 }
 
 .banner p {
@@ -25,6 +25,13 @@
   color: rgb(255, 255, 255);
   opacity: 0.6;
   margin-bottom: 30px;
+}
+
+.banner img{
+  position: absolute;
+  right: 10px;
+  top:170px;
+  height: 450px;
 }
 
 // bouton discover
@@ -96,14 +103,23 @@ section a:before {
 
 // bandes dans la home
 .large-container {
-  padding: 20px;
+  padding: 40px;
+  height: 427px;
+}
+
+.wrapper {
+  margin-left: 51px;
+  margin-right: 51px;
   display: flex;
   align-items: center;
+  background: cover!important;
 }
+
 .container-box-left{
+  height: 347px;
   max-width: 25%;
   color: white;
-  padding: 20px;
+  padding: 40px;
 }
 .container-right {
   max-width: 75%;
@@ -112,15 +128,21 @@ section a:before {
 }
 
 .container-box-right {
+  height: 347px;
   max-width: 25%;
   color: white;
-  padding: 20px;
+  padding: 40px;
 }
 
 .container-left {
   max-width: 75%;
   text-align: center;
   flex-grow: 1;
+}
+
+.wrapper p {
+  font-size: 18px;
+  font-weight: lighter;
 }
 
 i {
@@ -143,6 +165,9 @@ i {
 .violet {
   background-color: $violet;
 }
+
+//wrapper
+
 
 // sign up
 
