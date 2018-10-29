@@ -1,3 +1,4 @@
+
 // Variables
 //
 // Variables should follow the `$component-state-property-size` formula for
@@ -7,6 +8,8 @@
 
 $modal-md: 775px;
 $modal-sm: 600px;
+
+//
 
 //
 // Color system
@@ -954,4 +957,3 @@ $pre-scrollable-max-height:         340px !default;
 // Printing
 $print-page-size:                   a3 !default;
 $print-body-min-width:              map-get($grid-breakpoints, "lg") !default;
->>>>>>> master
