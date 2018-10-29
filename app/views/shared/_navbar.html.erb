@@ -13,9 +13,14 @@
     <!-- Right Navigation -->
     <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-        <!-- Links when logged in -->
-      <%= link_to "Explore", "#", class: "boutton-rouge boutton-rouge-border" %>
-      <%= link_to "Add a memory", "#", class: "boutton-rouge boutton-rouge-inside" %>
+      <!-- Links when logged in -->
+      <% if ((params["controller"] == "memboard") || ((params["controller"] == "memories") && ((params["action"] == "index") || (params["action"] == "show")))) %>
+        <%= link_to "Explore", memboard_path, class: "btn boutton-rouge boutton-rouge-border" %>
+        <%= link_to "Add a memory", add_path, class: "btn boutton-rouge boutton-rouge-inside" %>
+      <% else %>
+        <%= link_to "Explore", memboard_path, class: "btn boutton-rouge boutton-rouge-inside" %>
+        <%= link_to "Add a memory", add_path, class: "btn boutton-rouge boutton-rouge-border" %>
+      <% end %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
