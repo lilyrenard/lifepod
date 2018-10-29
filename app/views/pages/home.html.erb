@@ -2,6 +2,7 @@
   <div class="banner-content">
     <h1>Your personal digital space</h1>
     <p>Select the best moments of your life.</p>
+    <%= image_tag "Boxes.svg", id: "boxes"%>
   </div>
 </div>
 
@@ -9,8 +10,8 @@
   <%= link_to "", "#" %>
 </section>
 
-<div class="ok">
-  <div class="large-container grey">
+<div class="large-container grey">
+  <div class="wrapper">
     <div class="container-box-left red">
       <h1>1.</h1>
       <p>Connect all your accounts to your personal storage</p>
@@ -21,7 +22,10 @@
       <i class="fab fa-facebook-square"></i>
     </div>
   </div>
-  <div class="large-container">
+</div>
+
+<div class="large-container">
+  <div class="wrapper">
     <div class="container-left">
       <%= image_tag "stamp-rouge.svg", id: "stamp-rouge" %>
     </div>
@@ -30,7 +34,10 @@
       <p>Stamp your memories to identify them </p>
     </div>
   </div>
-  <div class="large-container grey">
+</div>
+
+<div class="large-container grey">
+  <div class="wrapper">
     <div class="container-box-left saumon">
       <h1>3.</h1>
       <p>Find & Explore your best memories</p>
@@ -42,6 +49,7 @@
     </div>
   </div>
 </div>
+
 
 <div class="button-container">
   <%= link_to "Sign Up", "users/sign_up", class: "btn boutton-rouge boutton-rouge-inside sign" %>
