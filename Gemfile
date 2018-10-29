@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 ruby '2.4.4'
 
 gem "pundit"
+gem 'cloudinary'
+gem 'carrierwave', '~> 1.2'
 
 gem 'bootsnap', require: false
 gem 'devise'
@@ -30,5 +32,5 @@ group :development, :test do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'dotenv-rails', groups: [:development, :test]
+  gem 'dotenv-rails'
 end
