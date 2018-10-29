@@ -1,4 +1,4 @@
-const boutton = document.getElementById("testeticule")
+const boutton = document.getElementById("versCategories")
 const croix = document.getElementById("fermer")
 
 function showFooter() {

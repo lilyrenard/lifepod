@@ -2,9 +2,18 @@
   font-size: 36px;
 }
 
+#versCategories {
+  cursor: pointer;
+}
+
+#box-delimeter {
+  border-right: 1px solid white;
+}
+
 .conteneur-ajout {
-  margin: 10px 200px;
+  margin: 10px 160px;
   color: white;
+  fill: currentColor;
 }
 
 .display-categories {
@@ -31,4 +40,12 @@
 
 .where-from {
   margin: 5px;
+}
+
+.fas {
+  font-size: 60px;
+}
+
+.fab {
+  font-size: 70px;
 }
