@@ -2,7 +2,7 @@ class MemoriesController < ApplicationController
   before_action :find_memory, only: [:show, :edit, :update, :destroy]
 
   def index
-    @memories = Memory.all
+    @memories = policy_scope(Memory)
   end
 
   def show
@@ -50,6 +50,6 @@ class MemoriesController < ApplicationController
   end
 
   def memory_params
-    params.require(:memory).permit(:title, :description)
+    params.require(:memory).permit(:title, :description, :photo)
   end
 end

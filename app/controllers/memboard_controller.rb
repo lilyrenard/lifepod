@@ -1,6 +1,6 @@
 class MemboardController < ApplicationController
   def board
-    @memories = current_user.memories.where(suggested: false)
+    @memories = policy_scope(Memory)
     @stamps = pertinent_stamps
   end
 

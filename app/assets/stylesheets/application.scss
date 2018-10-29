@@ -26,3 +26,12 @@ h1, h2, h3 {
 p {
   font-family: $body-font;
 }
+
+.container {
+  max-width: 1000px;
+  margin: 50px auto;
+}
+
+strong {
+  font-size: 14px;
+}

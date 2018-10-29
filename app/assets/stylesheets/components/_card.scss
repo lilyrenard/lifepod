@@ -1,25 +1,67 @@
-// global
-h1 {
-  font-size: 36px;
+// card-columns
+.card-columns {
+  -webkit-column-count: 4;
+  -webkit-column-gap: 1.25rem;
+  display: inline-block;
 }
 
-.space {
-  margin-top: 20px;
+.card-columns {
+  @include media-breakpoint-only(md) {
+    column-count: 4;
+  }
+  @include media-breakpoint-only(sm) {
+    column-count: 2;
+  }
+  @include media-breakpoint-only(xs) {
+    column-count: 1;
+  }
 }
 
-// card-container
-.card-container {
-  padding-top: 2.875rem;
-  padding-bottom: 2.875rem;
-  max-width: 112rem;
-  margin-right: auto;
-  margin-left: auto;
+// cards
+
+.card {
+  border-radius: 1px;
+  background: $gris;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
-.center {
-  text-align: center;
+.card:hover{
+  transition: all 0.3s ease;
+  opacity: 0.8;
+}
+// cards-top
+
+.card-img {
+  border-radius: 1px;
+  background-color: $red2;
 }
 
+.image-container {
+  padding: 15px;
+  padding-bottom: 0px;
+  position: relative;
+}
+
+.image-container h3 {
+  text-align: right;
+  color: white;
+  font-size: 15px;
+  margin: 0px;
+  position: absolute;
+  bottom: 8px;
+  right: 20px;
+}
+
+.image-container p {
+  font-size: 13px;
+  color: white;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+
+// links
 a {
   color: black;
 }
@@ -27,59 +69,6 @@ a {
 a:hover {
   color: black;
   text-decoration: none;
-}
-
-// cards
-.card {
-  margin: 15px;
-  border-radius: 2px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  height: 290px;
-  margin-bottom: 3%;
-  background: $gris;
-  position: relative;
-}
-
-.card-padding {
-  padding: 15px 15px 70px;
-  display: block;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-}
-/*
-.card-header img {
-  display: block;
-  height: 200px;
-  width: 100%;
-  background-size: cover!important;
-}
-*/
-.card-header {
-  text-shadow: 0 0.5px 1px rgba(0,0,0,0.6);
-  position: relative;
-  background-color: white;
-}
-
-.card-header h3 {
-  text-align: right;
-  color: white;
-  font-size: 15px;
-  margin: 0px;
-  position: absolute;
-  bottom: 8px;
-  right: 16px;
-}
-
-.card-header p {
-  font-size: 13px;
-  color: white;
-}
-
-.card-contain {
-  padding: 10px 0px;
 }
 
 // calendrier en haut à gauche
@@ -103,22 +92,20 @@ img#calendar {
 
 // card add manually
 
-.header {
-  display: block;
-  background-color: $red2;
-  height: 100%;
-  width: 100%;
-  background-size: cover!important;
+#fixed {
+  height: 153px;
 }
 
-.header h3 {
-  padding: 5px;
-  font-size: 24px;
-  font-weight: bold;
-  padding-top: 35%;
-  text-align: center;
+#fixed.card-img {
+  background-color: $red2;
+}
+
+#fixed.card-img h3 {
+  position: relative;
+  top: calc(100px - 58px);
+  left: 0px;
+  font-size: 23px;
   color: white;
-  margin: 0px;
 }
 
 
