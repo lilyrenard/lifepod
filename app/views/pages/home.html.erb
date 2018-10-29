@@ -1,13 +1,15 @@
 <div class="banner blue">
   <div class="banner-content">
     <h1>Your personal digital space</h1>
-    <p>Select the best moments of your life.</p>
+    <p><span id="banner-typed-text"></span></p>
     <%= image_tag "Boxes.svg", id: "boxes"%>
+    <%= image_tag "Pictures.svg", id: "picture"%>
   </div>
 </div>
 
 <section>
-  <%= link_to "", "#" %>
+  <h1 class="font-weight-bold">Discover</h1>
+  <button id="discover"></button>
 </section>
 
 <div class="large-container grey">
@@ -42,10 +44,10 @@
       <h1>3.</h1>
       <p>Find & Explore your best memories</p>
     </div>
-    <div class="container-right">
-      <div class="books">
-        <%= image_tag "Book.svg", id: "box", class: "small-size" %>
-      </div>
+    <div class="container-right flex">
+        <%= image_tag "Book.svg", id: "box", class: "medium-size"%>
+        <%= image_tag "Pictures.svg", id: "box", class: "small-size"%>
+        <%= image_tag "Music.svg", id: "box", class: "big-size"%>
     </div>
   </div>
 </div>
