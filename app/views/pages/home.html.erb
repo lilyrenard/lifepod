@@ -18,7 +18,7 @@
       <h1>1.</h1>
       <p>Connect all your accounts to your personal storage</p>
     </div>
-    <div class="container-right">
+    <div class="container-right flex-around">
       <i class="fab fa-instagram"></i>
       <i class="fab fa-spotify"></i>
       <i class="fab fa-facebook-square"></i>
@@ -44,10 +44,16 @@
       <h1>3.</h1>
       <p>Find & Explore your best memories</p>
     </div>
-    <div class="container-right flex">
-        <%= image_tag "Book.svg", id: "box", class: "medium-size"%>
-        <%= image_tag "Pictures.svg", id: "box", class: "small-size"%>
-        <%= image_tag "Music.svg", id: "box", class: "big-size"%>
+    <div class="container-right flex-between">
+      <div class="top">
+        <%= image_tag "Book.svg", id: "top", class: "medium-size"%>
+      </div>
+      <div class="bottom">
+        <%= image_tag "Pictures.svg", id: "bottom", class: "small-size"%>
+      </div>
+      <div>
+        <%= image_tag "Music.svg", id: "top", class: "big-size"%>
+       </div>
     </div>
   </div>
 </div>

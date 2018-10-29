@@ -137,7 +137,7 @@ button#discover:before {
   padding: 40px;
 }
 .container-right {
-  padding: 0px 35px;
+  padding: 0px 100px;
   max-width: 75%;
   text-align: center;
   flex-grow: 1;
@@ -166,28 +166,42 @@ button#discover:before {
 }
 
 i {
-  font-size: 50px;
+  font-size: 100px;
+}
+
+// logos réseaux
+
+.flex-around {
+  display: flex;
+  justify-content: space-around;
 }
 
 // boxes
 
-.flex {
+.flex-between {
   display: flex;
   justify-content: space-between;
 }
 
 .small-size {
-  max-height: 150px;
+  max-height: 120px;
 }
 
 .medium-size {
-  max-height: 190px;
+  max-height: 160px;
 }
 
 .big-size {
-  max-height: 250px;
+  max-height: 200px;
 }
 
+.bottom {
+  padding-top: 150px;
+}
+
+.top {
+  padding-top: 25px;
+}
 
 
 // couleurs
