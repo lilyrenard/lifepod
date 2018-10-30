@@ -1,3 +1,51 @@
 #title {
   font-size: 36px;
 }
+
+#versCategories {
+  cursor: pointer;
+}
+
+#box-delimeter {
+  border-right: 1px solid white;
+}
+
+.conteneur-ajout {
+  margin: 10px 160px;
+  color: white;
+  fill: currentColor;
+}
+
+.display-categories {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 330px;
+  background-color: $bleumarine;
+}
+
+.fond-gris {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0 ,0 ,0, 0.65);
+}
+
+.from-titre {
+  color: white;
+  font-size: 36px;
+  text-align: center;
+}
+
+.where-from {
+  margin: 5px;
+}
+
+.fas {
+  font-size: 60px;
+}
+
+.fab {
+  font-size: 70px;
+}

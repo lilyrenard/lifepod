@@ -6,8 +6,7 @@
 
 <div class="container">
   <div class="card-columns">
-    <div class="card">
-      <%= link_to new_memory_path do %>
+    <div class="card" id="versCategories">
       <div class="image-container">
         <div class="card-img" id="fixed">
           <h3 class="text-center font-weight-bold">Add a memory from another source</h3>
@@ -16,7 +15,41 @@
       <div class="card-body">
         <p class="card-text">Add your <strong>personal content</strong></p>
       </div>
-      <% end %>
     </div>
   </div>
 </div>
+
+<div class="fond-gris invisible" id="myFooter">
+  <div class="display-categories">
+    <div class="from-titre">
+      <p>What kind of memory do you want to add?</p>
+    </div>
+    <div class="conteneur-ajout">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="where-from">
+            <p>From your computer</p>
+            <div class="row" id="box-delimeter">
+              <div class="col-md-3"><i class="fas fa-image"></i></div>
+              <div class="col-md-3"><i class="fas fa-video"></i></div>
+              <div class="col-md-3"><i class="fas fa-quote-right"></i></div>
+              <div class="col-md-3"><i class="fas fa-link"></i></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="where-from">
+            <p>From yout favorite apps</p>
+            <div class="row">
+              <div class="col-md-4"><i class="fab fa-youtube"></i></div>
+              <div class="col-md-4"><i class="fab fa-spotify"></i></div>
+              <div class="col-md-4"><i class="fab fa-instagram"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="fermer"> <p>FERMER</p></div>
+  </div>
+</div>
+

@@ -1,5 +1,3 @@
-import "bootstrap";
-
 import { changeSize } from '../components/cards';
 changeSize();
 
@@ -8,3 +6,6 @@ loadDynamicBannerText();
 
 import { scrollFunction } from '../components/discover';
 scrollFunction();
+
+import { click } from '../components/footer';
+click();
