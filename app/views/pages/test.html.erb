@@ -11,17 +11,31 @@
         <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
         <!-- <h4 class="modal-title" id="myModalLabel">Memory</h4> -->
       <!-- </div> -->
-      <div class="modal-body m-body">
-        <div class="media">
-          <div class="media-left med-left">
+      <div class="modal-body">
+        <div class="conteneur-grid">
+          <span class="image-grid">
             <%= link_to '#' do %>
-              <%= image_tag "test.jpg", width: "400", height: "500" %>
+            <%= image_tag "safari.jpg", class: "img-fluid"%>
             <% end %>
-          </div>
-          <div class="media-body med-body">
-            <h4 class="media-heading med-heading">Un bel été avec Lily</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque blanditiis, ducimus praesentium aut, vitae quisquam iste reiciendis, nostrum ea soluta vero? Consequatur ipsam veniam ipsum dolores amet velit atque delectus.</p>
-          </div>
+          </span>
+          <span class="title-grid d-flex align-items-center justify-content-center">
+            <h4>Cochon des îles</h4>
+          </span>
+          <span class="paraph-grid d-flex justify-content-start align-items-center">
+            <p>Rare sont ceux qui peuvent l'apercevoir dans son habitat naturel.
+          </p>
+          </span>
+          <span class="tag-grid d-flex align-items-center justify-content-around">
+              <%= image_tag "stamp-rouge.svg", height: "50", width: "50"%>
+              <%= image_tag "stamp-summer.svg", height: "50", width: "50"%>
+              <%= image_tag "stamp-ny.svg", height: "45", width: "45"%>
+              <%= image_tag "stamp-rouge.svg", height: "50", width: "50"%>
+              <%= image_tag "stamp-summer.svg", height: "50", width: "50"%>
+              <%= image_tag "stamp-ny.svg", height: "45", width: "45"%>
+              <%= image_tag "stamp-rouge.svg", height: "50", width: "50"%>
+              <%= image_tag "stamp-summer.svg", height: "50", width: "50"%>
+              <%= image_tag "stamp-ny.svg", height: "45", width: "45"%>
+          </span>
         </div>
       </div>
       <!-- <div class="modal-footer"> -->
@@ -33,8 +47,5 @@
 </div>
 
 
-
-
-
-
-
+<!--
+Le cochon des îles ou "Colchoneros" comme aime à l'appeler les locaux, n'est pas considéré comme un animal domestique. Toutefois, certains humains, à force de patience et d'un système d'effort/récompense, ont su tirer profit des capacités extraordinaires de cet animal aussi inconnu qu'imprévisible -->
