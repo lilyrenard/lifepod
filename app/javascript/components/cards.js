@@ -4,7 +4,6 @@ export function changeSize() {
   console.log(content);
   content.forEach((balise) => {
     const card = document.querySelector(".card-header");
-    console.log(balise)
     const innerbalise = balise.innerHTML
     console.log(innerbalise)
     if (innerbalise.includes("#photo")) {

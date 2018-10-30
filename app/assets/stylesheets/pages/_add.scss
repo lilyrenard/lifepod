@@ -1,3 +1,5 @@
+// FOOTER BLEU
+
 #title {
   font-size: 36px;
 }
@@ -6,14 +8,29 @@
   cursor: pointer;
 }
 
-#box-delimeter {
+#separateur {
   border-right: 1px solid white;
 }
 
-.conteneur-ajout {
-  margin: 10px 160px;
+#fermer {
   color: white;
-  fill: currentColor;
+  display: flex;
+  justify-content: flex-end;
+  padding: 3px 4px;
+  cursor: pointer;
+}
+
+#fermer i {
+  font-size: 16px;
+}
+
+.conteneur-ajout {
+  margin: 30px 160px;
+  color: white;
+}
+
+.conteneur-ajout p {
+  text-align: center;
 }
 
 .display-categories {
@@ -36,10 +53,9 @@
   color: white;
   font-size: 36px;
   text-align: center;
-}
+  margin-bottom: 15px;
+  margin-top: 0px;
 
-.where-from {
-  margin: 5px;
 }
 
 .fas {
@@ -49,3 +65,90 @@
 .fab {
   font-size: 70px;
 }
+
+.item-categories {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-categories i {
+  transition: 0.3s;
+}
+.item-categories i:hover {
+  cursor: pointer;
+  transform: scale(1.05)
+}
+
+// SMALL FOOTER BLEU
+
+.small-conteneur-ajout {
+  margin: 10px 100px;
+  color: white;
+}
+
+.small-display-categories {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 100px;
+  background-color: $bleumarine;
+}
+
+.small-item-categories {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.small-item-categories i {
+  transition: 0.3s;
+}
+.small-item-categories i:hover {
+  cursor: pointer;
+  transform: scale(1.05)
+}
+
+.selected-picto {
+  color: $saumon;
+}
+
+
+// ORDER D'APPARITION
+
+#mySmallFooter {
+  z-index: 2000;
+}
+
+#fermer-modal-ajout {
+  color: black;
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+#fermer-modal-ajout i {
+  font-size: 16px;
+}
+
+// MODAL D'AJOUT
+
+.conteneur-modal-ajout {
+  margin: 0px 10px;
+}
+
+
+
+// Alerte
+
+.alert p {
+  margin: 0px;
+}
+
+.saumon {
+  background-color: $saumon;
+  opacity: 0.9;
+  border-style: none;
+  border-radius: 0px;
