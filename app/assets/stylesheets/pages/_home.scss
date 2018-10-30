@@ -7,7 +7,7 @@
   position: relative;
   color: white;
   text-align: center;
-  height: 50vh;
+  height: 233px;
   background-size: cover !important;
   display: flex;
   align-items: center;
@@ -27,34 +27,44 @@ h1 {
   margin-bottom: 30px;
 }
 
-.banner img{
+img#boxes {
   position: absolute;
   right: 10px;
-  top:170px;
+  top:140px;
   height: 450px;
+}
+
+img#picture {
+  position: absolute;
+  left: 100px;
+  top:370px;
+  height: 180px;
 }
 
 // bouton discover
 section {
-  height: 50vh;
+  position: relative;
+  height: 55vh;
   width: 100%;
-  display: table;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-section a {
+button#discover {
   opacity: 1;
   -webkit-transition: all .5s ease-in 3s;
   transition: all .5s ease-in 3s;
 }
 
-section a {
+button#discover {
   position: absolute;
   bottom: 30px;
   left: 50%;
   margin-left: -16px;
   display: block;
-  width: 32px;
-  height: 32px;
+  width: 65px;
+  height: 65px;
   border: 2px solid black;
   background-size: 14px auto;
   border-radius: 50%;
@@ -66,14 +76,14 @@ section a {
   transform: scale(1)
 }
 
-section a:before {
+button#discover:before {
   position: absolute;
-  top: calc(50% - 8px);
-  left: calc(50% - 6px);
+  top: calc(50% - 20px);
+  left: calc(50% - 15px);
   transform: rotate(-45deg);
   display: block;
-  width: 12px;
-  height: 12px;
+  width: 30px;
+  height: 30px;
   content: "";
   border: 2px solid black;
   border-width: 0px 0 2px 2px;
@@ -104,7 +114,7 @@ section a:before {
 // bandes dans la home
 .large-container {
   padding: 40px;
-  height: 427px;
+  height: 370px;
 }
 
 .wrapper {
@@ -116,19 +126,20 @@ section a:before {
 }
 
 .container-box-left{
-  height: 347px;
+  height: 290px;
   max-width: 25%;
   color: white;
   padding: 40px;
 }
 .container-right {
+  padding: 0px 100px;
   max-width: 75%;
   text-align: center;
   flex-grow: 1;
 }
 
 .container-box-right {
-  height: 347px;
+  height: 290px;
   max-width: 25%;
   color: white;
   padding: 40px;
@@ -140,19 +151,55 @@ section a:before {
   flex-grow: 1;
 }
 
+.wrapper h1 {
+  font-size: 70px;
+}
+
 .wrapper p {
   font-size: 18px;
   font-weight: lighter;
 }
 
 i {
-  font-size: 50px;
+  font-size: 100px;
+}
+
+// logos réseaux
+
+.flex-around {
+  display: flex;
+  justify-content: space-around;
+}
+
+// boxes
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
 }
 
 .small-size {
-  max-height: 100px;
+  max-height: 120px;
 }
 
+.medium-size {
+  max-height: 160px;
+}
+
+.big-size {
+  max-height: 200px;
+}
+
+.bottom {
+  padding-top: 150px;
+}
+
+.top {
+  padding-top: 25px;
+}
+
+
+// couleurs
 .red {
   background-color: $red2;
 }
@@ -165,9 +212,6 @@ i {
 .violet {
   background-color: $violet;
 }
-
-//wrapper
-
 
 // sign up
 

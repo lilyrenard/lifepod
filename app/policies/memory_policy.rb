@@ -4,4 +4,16 @@ class MemoryPolicy < ApplicationPolicy
       scope.where(user: user)
     end
   end
+
+  def create?
+    return true
+  end
+
+  def new?
+    return true
+  end
+
+  def edit?
+    return true
+  end
 end

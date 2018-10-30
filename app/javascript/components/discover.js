@@ -1,8 +1,8 @@
-// function scrollFunction() {
-//  $(function() {
-//     $('.scroll-down').click (function() {
-//       $('html, body').animate({scrollTop: $('div.ok').offset().top }, 'slow');
-//       return false;
-//     });
-//   });
-// }
+function scrollFunction() {
+  const el = document.getElementById('discover');
+  el.addEventListener("click", (event) => {
+  window.scrollBy(0, 740);
+});
+}
+
+export { scrollFunction };
