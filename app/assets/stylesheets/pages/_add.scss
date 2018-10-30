@@ -1,3 +1,5 @@
+// FOOTER BLEU
+
 #title {
   font-size: 36px;
 }
@@ -25,7 +27,6 @@
 .conteneur-ajout {
   margin: 30px 160px;
   color: white;
-  fill: currentColor;
 }
 
 .conteneur-ajout p {
@@ -57,10 +58,6 @@
 
 }
 
-.where-from {
-  margin: 5px;
-}
-
 .fas {
   font-size: 60px;
 }
@@ -76,14 +73,68 @@
   align-items: center;
 }
 
-.picto-ajout {
-    background-color: $bleumarine;
-    color: white;
-    border: 0px solid transparent;
-    transition: 0.3s;
+.item-categories i {
+  transition: 0.3s;
+}
+.item-categories i:hover {
+  cursor: pointer;
+  transform: scale(1.05)
 }
 
-.picto-ajout:hover {
-  transform: scale(1.05);
+// SMALL FOOTER BLEU
+
+.small-conteneur-ajout {
+  margin: 10px 100px;
+  color: white;
+}
+
+.small-display-categories {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 100px;
+  background-color: $bleumarine;
+}
+
+.small-item-categories {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.small-item-categories i {
+  transition: 0.3s;
+}
+.small-item-categories i:hover {
   cursor: pointer;
+  transform: scale(1.05)
+}
+
+.selected-picto {
+  color: $saumon;
+}
+
+
+// ORDER D'APPARITION
+
+#mySmallFooter {
+  z-index: 2000;
+}
+
+#fermer-modal-ajout {
+  color: black;
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+#fermer-modal-ajout i {
+  font-size: 16px;
+}
+
+// MODAL D'AJOUT
+
+.conteneur-modal-ajout {
+  margin: 0px 10px;
 }
