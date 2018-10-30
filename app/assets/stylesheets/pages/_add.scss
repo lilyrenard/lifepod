@@ -6,14 +6,30 @@
   cursor: pointer;
 }
 
-#box-delimeter {
+#separateur {
   border-right: 1px solid white;
 }
 
+#fermer {
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  padding: 3px 4px;
+  cursor: pointer;
+}
+
+#fermer i {
+  font-size: 16px;
+}
+
 .conteneur-ajout {
-  margin: 10px 160px;
+  margin: 30px 160px;
   color: white;
   fill: currentColor;
+}
+
+.conteneur-ajout p {
+  text-align: center;
 }
 
 .display-categories {
@@ -36,6 +52,9 @@
   color: white;
   font-size: 36px;
   text-align: center;
+  margin-bottom: 15px;
+  margin-top: 0px;
+
 }
 
 .where-from {
@@ -48,4 +67,11 @@
 
 .fab {
   font-size: 70px;
+}
+
+.item-categories {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
