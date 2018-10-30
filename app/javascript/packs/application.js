@@ -7,5 +7,5 @@ loadDynamicBannerText();
 import { scrollFunction } from '../components/discover';
 scrollFunction();
 
-import { click } from '../components/footer';
-click();
+// import { click } from '../components/footer';
+// click();
