@@ -1,4 +1,4 @@
-function changeSize() {
+export function changeSize() {
   const content = document.querySelectorAll(".card-header");
 
   console.log(content);
@@ -13,7 +13,4 @@ function changeSize() {
     card.style.height = "153px";
   }
   });
-
 }
-
-export { changeSize };

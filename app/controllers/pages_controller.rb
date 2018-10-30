@@ -8,6 +8,7 @@ class PagesController < ApplicationController
   end
 
   def add
+    @memory_new = Memory.new
   end
 
   def test
