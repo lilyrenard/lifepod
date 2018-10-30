@@ -1,5 +1,4 @@
-const boutton = document.getElementById("versCategories")
-const croix = document.getElementById("fermer")
+
 
 function showFooter() {
   const footer = document.getElementById("myFooter")
@@ -7,6 +6,10 @@ function showFooter() {
 }
 
 export function click() {
+  const boutton = document.getElementById("versCategories")
+  const croix = document.getElementById("fermer")
   boutton.addEventListener('click', showFooter)
   croix.addEventListener('click', showFooter)
 }
+
+click();

@@ -1,13 +1,15 @@
 <div class="banner blue">
   <div class="banner-content">
     <h1>Your personal digital space</h1>
-    <p>Select the best moments of your life.</p>
-    <%= image_tag "Boxes.svg", id: "boxes"%>
+    <p><span id="banner-typed-text"></span></p>
+    <%= image_tag "Boxes.svg", id: "boxes", class: "d-none d-lg-block"%>
+    <%= image_tag "Pictures.svg", id: "picture", class: "d-none d-md-block d-lg-block"%>
   </div>
 </div>
 
 <section>
-  <%= link_to "", "#" %>
+  <h1 class="font-weight-bold">Discover</h1>
+  <button id="discover"></button>
 </section>
 
 <div class="large-container grey">
@@ -16,7 +18,7 @@
       <h1>1.</h1>
       <p>Connect all your accounts to your personal storage</p>
     </div>
-    <div class="container-right">
+    <div class="container-right flex-around">
       <i class="fab fa-instagram"></i>
       <i class="fab fa-spotify"></i>
       <i class="fab fa-facebook-square"></i>
@@ -42,10 +44,16 @@
       <h1>3.</h1>
       <p>Find & Explore your best memories</p>
     </div>
-    <div class="container-right">
-      <div class="books">
-        <%= image_tag "Book.svg", id: "box", class: "small-size" %>
+    <div class="container-right flex-between">
+      <div class="top">
+        <%= image_tag "Book.svg", id: "top", class: "medium-size"%>
       </div>
+      <div class="bottom">
+        <%= image_tag "Pictures.svg", id: "bottom", class: "small-size"%>
+      </div>
+      <div>
+        <%= image_tag "Music.svg", id: "top", class: "big-size"%>
+       </div>
     </div>
   </div>
 </div>
@@ -55,3 +63,5 @@
   <%= link_to "Sign Up", "users/sign_up", class: "btn boutton-rouge boutton-rouge-inside sign" %>
 </div>
 
+    <%= javascript_pack_tag 'banner' %>
+    <%= javascript_pack_tag 'discover' %>
