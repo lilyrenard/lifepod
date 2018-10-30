@@ -1,3 +1,5 @@
+// bandeau bleu
+
 #title {
   font-size: 36px;
 }
@@ -48,4 +50,17 @@
 
 .fab {
   font-size: 70px;
+}
+
+// Alerte
+
+.alert p {
+  margin: 0px;
+}
+
+.saumon {
+  background-color: $saumon;
+  opacity: 0.9;
+  border-style: none;
+  border-radius: 0px;
 }
