@@ -1,3 +1,5 @@
+// bandeau bleu
+
 #title {
   font-size: 36px;
 }
@@ -69,21 +71,22 @@
   font-size: 70px;
 }
 
+
+// Alerte
+
+.alert p {
+  margin: 0px;
+}
+
+.saumon {
+  background-color: $saumon;
+  opacity: 0.9;
+  border-style: none;
+  border-radius: 0px;
+
 .item-categories {
   height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.picto-ajout {
-    background-color: $bleumarine;
-    color: white;
-    border: 0px solid transparent;
-    transition: 0.3s;
-}
-
-.picto-ajout:hover {
-  transform: scale(1.05);
-  cursor: pointer;
 }
