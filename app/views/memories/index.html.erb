@@ -5,7 +5,7 @@
 <div class="container">
   <div class="card-columns">
     <% @memories.each do |memory|%>
-      <div class="card">
+      <div class="card macard">
         <div class="image-container">
           <%= image_tag "Book.svg", id: "box", class: "card-img"%>
           <p class="calendar-left" type="date"><%=memory.created_at.strftime('%Y-%m-%d')%></p>

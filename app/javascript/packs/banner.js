@@ -1,6 +1,8 @@
 import Typed from 'typed.js';
 
-function loadDynamicBannerText() {
+
+
+export function loadDynamicBannerText() {
   new Typed('#banner-typed-text', {
     strings: ["Select the best moments of your life.", "Discover old memories."],
     typeSpeed: 70,
@@ -8,4 +10,4 @@ function loadDynamicBannerText() {
   });
 }
 
-export { loadDynamicBannerText };
+loadDynamicBannerText();
