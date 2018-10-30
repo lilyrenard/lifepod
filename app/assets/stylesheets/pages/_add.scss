@@ -75,3 +75,15 @@
   justify-content: center;
   align-items: center;
 }
+
+.picto-ajout {
+    background-color: $bleumarine;
+    color: white;
+    border: 0px solid transparent;
+    transition: 0.3s;
+}
+
+.picto-ajout:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
