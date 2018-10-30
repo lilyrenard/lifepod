@@ -16,10 +16,10 @@
       <!-- Links when logged in -->
       <% if ((params["controller"] == "memboard") || ((params["controller"] == "memories") && ((params["action"] == "index") || (params["action"] == "show")))) %>
         <%= link_to "Explore", memboard_path, class: "btn boutton-rouge boutton-rouge-border" %>
-        <%= link_to "Add a memory", add_path, class: "btn boutton-rouge boutton-rouge-inside" %>
+        <%= link_to "Add a memory", add_path, class: "btn boutton-rouge boutton-rouge-inside", id: "add" %>
       <% else %>
         <%= link_to "Explore", memboard_path, class: "btn boutton-rouge boutton-rouge-inside" %>
-        <%= link_to "Add a memory", add_path, class: "btn boutton-rouge boutton-rouge-border" %>
+        <%= link_to "Add a memory", add_path, class: "btn boutton-rouge boutton-rouge-border", id: "add" %>
       <% end %>
 
       <!-- Avatar with dropdown menu -->

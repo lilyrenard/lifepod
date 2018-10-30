@@ -18,6 +18,7 @@ class MemoriesController < ApplicationController
     @memory.user_id = current_user.id
 
     if @memory.save
+      flash[:notice] = true
       redirect_to add_path
     else
       render :new
