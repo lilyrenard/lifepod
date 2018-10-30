@@ -8,6 +8,7 @@ class PagesController < ApplicationController
   end
 
   def add
+    flash.now[:alert] = "Click to add a memory!" if URI(request.referer).path == '/memories/board'
     @memory_new = Memory.new
   end
 
