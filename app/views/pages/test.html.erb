@@ -5,12 +5,48 @@
 
 
 <!-- Modal -->
-<%= render 'shared/modallarge' %>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <!-- <div class="modal-header"> -->
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
+        <!-- <h4 class="modal-title" id="myModalLabel">Memory</h4> -->
+      <!-- </div> -->
+      <div class="modal-body">
+        <div class="conteneur-grid">
+          <span class="image-grid">
+            <%= link_to '#' do %>
+            <%= image_tag "safari.jpg", class: "img-fluid"%>
+            <% end %>
+          </span>
+          <span class="title-grid d-flex align-items-center justify-content-center">
+            <h4>Cochon des îles</h4>
+          </span>
+          <span class="paraph-grid d-flex justify-content-start align-items-center">
+            <p>Rare sont ceux qui peuvent l'apercevoir dans son habitat naturel.
+          </p>
+          </span>
+          <span class="tag-grid d-flex align-items-center justify-content-around">
+              <%= image_tag "stamp-rouge.svg", height: "50", width: "50"%>
+              <%= image_tag "stamp-summer.svg", height: "50", width: "50"%>
+              <%= image_tag "stamp-ny.svg", height: "45", width: "45"%>
+              <%= image_tag "stamp-rouge.svg", height: "50", width: "50"%>
+              <%= image_tag "stamp-summer.svg", height: "50", width: "50"%>
+              <%= image_tag "stamp-ny.svg", height: "45", width: "45"%>
+              <%= image_tag "stamp-rouge.svg", height: "50", width: "50"%>
+              <%= image_tag "stamp-summer.svg", height: "50", width: "50"%>
+              <%= image_tag "stamp-ny.svg", height: "45", width: "45"%>
+          </span>
+        </div>
+      </div>
+      <!-- <div class="modal-footer"> -->
+        <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      <!-- </div> -->
+    </div>
+  </div>
+</div>
 
 
-
-
-
-
-
-
+<!--
+Le cochon des îles ou "Colchoneros" comme aime à l'appeler les locaux, n'est pas considéré comme un animal domestique. Toutefois, certains humains, à force de patience et d'un système d'effort/récompense, ont su tirer profit des capacités extraordinaires de cet animal aussi inconnu qu'imprévisible -->
