@@ -4,3 +4,5 @@ export function scrollFunction() {
   window.scrollBy(0, 740);
 });
 }
+
+scrollFunction();

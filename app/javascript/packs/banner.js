@@ -9,3 +9,5 @@ export function loadDynamicBannerText() {
     loop: true
   });
 }
+
+loadDynamicBannerText();
