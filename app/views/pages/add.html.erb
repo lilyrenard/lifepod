@@ -19,37 +19,63 @@
 
 <div class="fond-gris invisible" id="myFooter">
   <div class="display-categories">
+    <div id="fermer"><i class="fas fa-times"></i></div>
     <div class="from-titre">
       <p>What kind of memory do you want to add?</p>
     </div>
     <div class="conteneur-ajout">
       <div class="row">
-        <div class="col-md-6">
-          <div class="where-from">
-            <p>From your computer</p>
-            <div class="row" id="box-delimeter">
-              <div class="col-md-3"><i class="fas fa-image"></i></div>
-              <div class="col-md-3"><i class="fas fa-video"></i></div>
-              <div class="col-md-3"><i class="fas fa-quote-right"></i></div>
-              <div class="col-md-3"><i class="fas fa-link"></i></div>
+        <div class="col-md-6" id="separateur">
+          <p>From your computer</p>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="item-categories">
+                <div data-toggle="modal" data-target=".bd-example-modal-lg">
+                  <i class="fas fa-image"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="item-categories">
+                <i class="fas fa-video"></i>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="item-categories">
+                <i class="fas fa-quote-right"></i>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="item-categories">
+                <i class="fas fa-link"></i>
+              </div>
             </div>
           </div>
         </div>
         <div class="col-md-6">
-          <div class="where-from">
-            <p>From yout favorite apps</p>
-            <div class="row">
-              <div class="col-md-4"><i class="fab fa-youtube"></i></div>
-              <div class="col-md-4"><i class="fab fa-spotify"></i></div>
-              <div class="col-md-4"><i class="fab fa-instagram"></i></div>
+          <p>From yout favorite apps</p>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="item-categories">
+                <i class="fab fa-youtube"></i>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="item-categories">
+                <i class="fab fa-spotify"></i>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="item-categories">
+                <i class="fab fa-instagram"></i>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div id="fermer"> <p>FERMER</p></div>
   </div>
 </div>
-
-
-    <%= javascript_pack_tag 'footer' %>
+<%= render "shared/modallarge" %>
+                 
+<%= javascript_pack_tag 'footer' %>
