@@ -6,6 +6,7 @@ class MemoriesController < ApplicationController
     if params[:stamp] == nil
       @memories = policy_scope(Memory)
     else
+      @stamps = params[:stamp]
       # on récupère tous les paramètres de ?stamp =
       stamps = params[:stamp].split
       stamps_ids = []
