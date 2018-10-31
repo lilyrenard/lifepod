@@ -2,15 +2,19 @@ class MemoriesController < ApplicationController
   before_action :find_memory, only: [:show, :edit, :update, :destroy]
 
   def index
+  # pas de bug si on rentre juste /memories
     if params[:stamp] == nil
       @memories = policy_scope(Memory)
     else
+      # on récupère tous les paramètres de ?stamp =
       stamps = params[:stamp].split
       stamps_ids = []
       stamps.each do |stamp_title|
         stamp_id = Stamp.find_by_title(stamp_title).id
         stamps_ids << stamp_id
       end
+      # on fait une join table et on cherche les souvenirs avec les stamps correspondants
+      # on supprime les memories doublons
       @memories = policy_scope(Memory).joins(:stamps).where(stamps: { id: stamps_ids }).distinct
     end
   end
