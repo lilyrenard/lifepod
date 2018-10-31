@@ -2,7 +2,7 @@ class MemoriesController < ApplicationController
   before_action :find_memory, only: [:show, :edit, :update, :destroy]
 
   def index
-    @memories = policy_scope(Memory)
+    @memories = policy_scope(Stamp.find_by_title(params[:stamp]).memories)
   end
 
   def show
@@ -19,6 +19,8 @@ class MemoriesController < ApplicationController
     @stamp = Stamp.find_or_create_by(title: params[:memory][:stamps][:title])
     @stamp.user_id = current_user.id
     @stamp.save
+
+    @memory.stamps << @stamp
 
     if @memory.save
       flash[:notice] = true

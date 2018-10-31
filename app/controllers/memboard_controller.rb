@@ -1,7 +1,7 @@
 class MemboardController < ApplicationController
   def board
     @memories = policy_scope(Memory)
-    @stamps = pertinent_stamps
+    @stamps = policy_scope(Stamp)
   end
 
   private
