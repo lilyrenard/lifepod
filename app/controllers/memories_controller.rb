@@ -16,11 +16,17 @@ class MemoriesController < ApplicationController
     @memory = Memory.new(memory_params)
     @memory.memory_type = 'Quote'
     @memory.user_id = current_user.id
-    @stamp = Stamp.find_or_create_by(title: params[:memory][:stamps][:title])
-    @stamp.user_id = current_user.id
-    @stamp.save
 
-    @memory.stamps << @stamp
+    # l'utilisateur entre un ou plusieurs stamps
+    stamps = params[:memory][:stamps][:title].split
+    #pour chacun des stamps rentrés par l'utilisateur je cherche s'il existe et je l'ajoute
+    stamps.each do |stamp_title|
+      stamp = Stamp.find_or_create_by(title: stamp_title.downcase)
+      stamp.user_id = current_user.id
+      stamp.save
+      #j'associe le stamp au memory
+      @memory.stamps << stamp
+    end
 
     if @memory.save
       flash[:notice] = true
