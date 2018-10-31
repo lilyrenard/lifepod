@@ -2,7 +2,17 @@ class MemoriesController < ApplicationController
   before_action :find_memory, only: [:show, :edit, :update, :destroy]
 
   def index
-    @memories = policy_scope(Stamp.find_by_title(params[:stamp]).memories)
+    if params[:stamp] == nil
+      @memories = policy_scope(Memory)
+    else
+      stamps = params[:stamp].split
+      stamps_ids = []
+      stamps.each do |stamp_title|
+        stamp_id = Stamp.find_by_title(stamp_title).id
+        stamps_ids << stamp_id
+      end
+      @memories = policy_scope(Memory).joins(:stamps).where(stamps: { id: stamps_ids }).distinct
+    end
   end
 
   def show
