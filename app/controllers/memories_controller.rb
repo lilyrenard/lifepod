@@ -13,9 +13,15 @@ class MemoriesController < ApplicationController
         stamp_id = Stamp.find_by_title(stamp_title).id
         stamps_ids << stamp_id
       end
-      # on fait une join table et on cherche les souvenirs avec les stamps correspondants
-      # on supprime les memories doublons
-      @memories = policy_scope(Memory).joins(:stamps).where(stamps: { id: stamps_ids }).distinct
+      # si on cherche un mot ou plusieurs mots
+      if params[:stamp].split.length > 1
+        # on fait une join table et on cherche les souvenirs avec les stamps correspondants
+        mem = policy_scope(Memory).joins(:stamps).where(stamps: { id: stamps_ids })
+        # on ne trouve que les memories qui correspondent aux stamps
+        @memories = mem.group(:id).having("count(*) > 1")
+      else
+        @memories = policy_scope(Memory).joins(:stamps).where(stamps: { id: stamps_ids })
+      end
     end
   end
 

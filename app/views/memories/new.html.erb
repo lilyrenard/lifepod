@@ -4,13 +4,8 @@
   <%= f.input :description %>
   <%= f.input :photo %>
   <%= f.input :photo_cache, as: :hidden %>
-  <div id="press">
   <%= f.simple_fields_for :stamps do |stamp| %>
     <%= stamp.input :title %>
   <% end %>
-  </div>
   <%= f.submit 'Add a memory', class: "btn btn-primary" %>
 <% end %>
-
-    <%= javascript_pack_tag 'new_stamps' %>
-
