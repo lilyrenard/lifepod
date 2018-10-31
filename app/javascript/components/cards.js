@@ -1,7 +1,6 @@
 export function changeSize() {
   const content = document.querySelectorAll(".card-header");
 
-  console.log(content);
   content.forEach((balise) => {
     const card = document.querySelector(".card-header");
     const innerbalise = balise.innerHTML

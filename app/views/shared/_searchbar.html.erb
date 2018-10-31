@@ -1,7 +1,7 @@
 <div class="searchbar">
-  <%= form_tag memories_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
+  <%= form_tag memories_path, method: :get, enforce_utf8: false do %>
+    <%= text_field_tag :stamp,
+      params[:stamp],
       class: "searchbar-search",
       placeholder: "Search for your memories"
     %>
