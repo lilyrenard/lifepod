@@ -14,7 +14,7 @@ class MemoriesController < ApplicationController
 
   def create
     @memory = Memory.new(memory_params)
-    @memory.memory_type = 'Quote'
+    @memory.memory_type = 'photo'
     @memory.user_id = current_user.id
     @stamp = Stamp.find_or_create_by(title: params[:memory][:stamps][:title])
     @stamp.user_id = current_user.id
