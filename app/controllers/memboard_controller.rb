@@ -18,6 +18,11 @@ class MemboardController < ApplicationController
     # je trouve les stamps associé
     @stamp1 = Stamp.find(id_s1).title
     @stamp2 = Stamp.find(id_s2).title
+
+    #array rangée par ordre croissant
+    mem_s = mem.sort
+    #array rangée par ordre croissant avec les anciens index
+    mem_i = mem.map{|e| mem_s.index(e)}
   end
 
   private

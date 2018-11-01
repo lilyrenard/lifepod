@@ -1,12 +1,12 @@
 <div class="searchbar">
   <%= form_tag memories_path, method: :get, enforce_utf8: false do %>
-    <%= text_field_tag :stamp,
-      params[:stamp],
-      class: "searchbar-search",
-      placeholder: "Search for your memories"
-    %>
-    <%= button_tag(type: "submit", class: "searchbar-submit") do %>
+  <%= select_tag "stamp[]", options_for_select(
+      Stamp.all.
+      map { |stamp| stamp.title }),
+      class: 'searchbar-search select2-2',
+      multiple: "multiple" %>
+  <%= button_tag(type: "submit", class: "searchbar-submit") do %>
       <i class="fas fa-search"></i>
     <% end %>
-  <% end %>
-</div>
+      <% end %>
+ </div>
