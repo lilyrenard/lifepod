@@ -1,11 +1,4 @@
-<!-- Button trigger modal -->
-<div data-toggle="modal" data-target="#myModal">
-  <p>Test modal </p>
-</div>
-
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="myModal_<%= memory.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <!-- <div class="modal-header"> -->
@@ -16,15 +9,14 @@
         <div class="conteneur-grid">
           <span class="image-grid d-flex align-items-start">
             <%= link_to '#' do %>
-            <%= image_tag "stade.jpg", class: "img-fluid"%>
+            <%= cl_image_tag memory.photo, class: "img-fluid", width: 568%>
             <% end %>
           </span>
           <span class="title-grid d-flex align-items-center justify-content-center">
-            <h4>Cochon des îles</h4>
+            <h4><%= memory.title.capitalize %></h4>
           </span>
           <span class="paraph-grid d-flex justify-content-start align-items-center">
-            <p>Rare sont ceux qui peuvent l'apercevoir dans son habitat naturel.Rare sont ceux qui peuvent
-              Rare sont ceux qui peuvent l'apercevoir dans son habitat naturel.Rare sont ceux qui peuventRare sont ceux qui peuvent l'apercevoir dans son habitat naturel.Rare sont ceux qui peuventRare sont ceux qui peuvent l'apercevoir dans son habitat naturel.Rare sont ceux qui peuventRare sont ceux qui peuvent l'apercevoir dans son habitat naturel.Rare sont ceux qui peuventRare sont ceux qui peuvent l'apercevoir dans son habitat naturel.Rare sont ceux qui peuvent
+            <p> <%= memory.description.capitalize %>
           </p>
           </span>
           <span class="tag-grid d-flex align-items-center justify-content-start">
@@ -42,7 +34,3 @@
     </div>
   </div>
 </div>
-
-
-<!--
-Le cochon des îles ou "Colchoneros" comme aime à l'appeler les locaux, n'est pas considéré comme un animal domestique. Toutefois, certains humains, à force de patience et d'un système d'effort/récompense, ont su tirer profit des capacités extraordinaires de cet animal aussi inconnu qu'imprévisible -->
