@@ -6,6 +6,7 @@ class MemoriesController < ApplicationController
     if params[:stamp] == nil
       @memories = policy_scope(Memory)
     else
+      @stamps = params[:stamp]
       # on récupère tous les paramètres de ?stamp =
       stamps = params[:stamp].split
       stamps_ids = []
@@ -18,7 +19,7 @@ class MemoriesController < ApplicationController
         # on fait une join table et on cherche les souvenirs avec les stamps correspondants
         mem = policy_scope(Memory).joins(:stamps).where(stamps: { id: stamps_ids })
         # on ne trouve que les memories qui correspondent aux stamps
-        @memories = mem.group(:id).having("count(*) > 1")
+        @memories = mem.group(:id).having("count(*) > 1").distinct
       else
         @memories = policy_scope(Memory).joins(:stamps).where(stamps: { id: stamps_ids })
       end
