@@ -1,9 +1,12 @@
 <%= render 'shared/dashboard' %>
 
 <div id="sidebar">
-  <% @stamps.split.each do |stamp|%>
-    <%= image_tag "stamp-rouge.svg"%>
-  <% end%>
+  <h4 class="text-right">Stamps</h4>
+  <div class="top-space">
+    <% @stamps.split.each do |stamp|%>
+      <%= image_tag "stamp-rouge.svg"%>
+    <% end%>
+  </div>
 </div>
 
 <div id="page-content">
@@ -17,9 +20,6 @@
             <h3><%= memory.title %></h3>
           </div>
           <div class="card-body">
-            <% memory.stamps.each do |stamp|%>
-              <p class="card-text">stamp.title</p>
-            <% end%>
           </div>
         </div>
       <% end%>
