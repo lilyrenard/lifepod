@@ -3,7 +3,6 @@ class MemboardController < ApplicationController
     @memories = policy_scope(Memory)
     # je selectionne toutes les combinaisons de 2 stamps
     # je trie mon array d'id de stamps en fonction de leur nombre de memories
-
     @stamps = Stamp.all
          .pluck(:id)
          .combination(2)
@@ -12,8 +11,6 @@ class MemboardController < ApplicationController
          .reverse
          .first(3)
          .map { |id| Stamp.find(id) }
-
-
   end
 
   private
