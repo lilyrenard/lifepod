@@ -9,7 +9,7 @@
           <%= image_tag "Book.svg" %>
         </div>
         <div class="lien-to-box">
-          <%= link_to "Explore it", memories_path(stamp: "#{@stamp1} #{@stamp2}"), class: "btn boutton-rouge boutton-rouge-border" %>
+          <%= link_to "Explore it", memories_path(stamp: [@stamp1, @stamp2]), class: "btn boutton-rouge boutton-rouge-border" %>
         </div>
       </div>
       <div class="col-xs-4 affichage-box">
