@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'memories/add', to: 'pages#add', as: :add
   get 'memories/board', to: 'memboard#board', as: :memboard
+  get 'memories/profile', to: 'pages#profile', as: :profile
 
   resources :memories do
     resources :stamps, only: [:new, :create, :edit, :update, :destroy]
