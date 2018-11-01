@@ -34,18 +34,18 @@ class MemoriesController < ApplicationController
   end
 
   def create
+
     @memory = Memory.new(memory_params)
     @memory.memory_type = 'Quote'
     @memory.user_id = current_user.id
 
     # l'utilisateur entre un ou plusieurs stamps
-    stamps = params[:memory][:stamps][:title].split
+    stamps = params[:memory][:stamps]
     #pour chacun des stamps rentrés par l'utilisateur je cherche s'il existe et je l'ajoute
     stamps.each do |stamp_title|
-      stamp = Stamp.find_or_create_by(title: stamp_title.downcase)
+      stamp = Stamp.find_or_create_by(title: stamp_title, user: current_user)
       stamp.user_id = current_user.id
-      stamp.save
-      #j'associe le stamp au memory
+      #j'associe le stamp au memoryP
       @memory.stamps << stamp
     end
 

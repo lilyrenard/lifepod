@@ -6,3 +6,4 @@ bindSweetAlertButtonDemo();
 
 
 import '../components/select2';
+
