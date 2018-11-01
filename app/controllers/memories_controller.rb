@@ -8,14 +8,13 @@ class MemoriesController < ApplicationController
     else
       @stamps = params[:stamp]
       # on récupère tous les paramètres de ?stamp =
-      stamps = params[:stamp].split
       stamps_ids = []
-      stamps.each do |stamp_title|
+      @stamps.each do |stamp_title|
         stamp_id = Stamp.find_by_title(stamp_title).id
         stamps_ids << stamp_id
       end
       # si on cherche un mot ou plusieurs mots
-      if params[:stamp].split.length > 1
+      if params[:stamp].length > 1
         # on fait une join table et on cherche les souvenirs avec les stamps correspondants
         mem = policy_scope(Memory).joins(:stamps).where(stamps: { id: stamps_ids })
         # on ne trouve que les memories qui correspondent aux stamps
@@ -23,6 +22,7 @@ class MemoriesController < ApplicationController
       else
         @memories = policy_scope(Memory).joins(:stamps).where(stamps: { id: stamps_ids })
       end
+
     end
   end
 
