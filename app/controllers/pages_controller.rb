@@ -12,6 +12,9 @@ class PagesController < ApplicationController
     @memory = Memory.new
   end
 
+  def profile
+  end
+
   def test
   end
 

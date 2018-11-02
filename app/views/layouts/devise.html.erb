@@ -8,13 +8,22 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600|Raleway:400,400i,600" rel="stylesheet">
-    <%= stylesheet_pack_tag 'application' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <%= yield %>
+    <div class="devise-wrapper">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xs-10 col-sm-6">
+            <div class="devise-form">
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>

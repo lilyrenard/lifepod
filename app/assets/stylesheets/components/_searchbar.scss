@@ -9,9 +9,8 @@
 
 .searchbar-search {
   border: 0px solid rgba(0, 0, 0, 0.1);
-  padding: 8px 20px;
-  width: 270px;
-  background-color: transparent;
+  width: 270px ;
+
 }
 
 .searchbar-submit {
@@ -25,4 +24,10 @@
 
 .searchbar-submit i {
   font-size: 18px;
+}
+
+.select2-container--default .select2-selection--multiple {
+  border: 0px !important;
+  background-color: transparent !important;
+  padding: 8px 20px !important;
 }

@@ -1,0 +1,32 @@
+// Side bar avec stamps
+
+#sidebar {
+  padding-top: 10px;
+  padding-right: 25px;
+  position: fixed;
+  width: 150px;
+  top : 250px;
+  left: 0;
+  bottom: 0;
+  overflow-y: auto;
+}
+#page-content {
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+#sidebar img {
+  padding-bottom: 15px;
+  width: 50px;
+  display: block;
+  margin: auto;
+  margin-right: 0px;
+}
+
+#sidebar h4 {
+  font-size: 24px;
+}
+
+.top-space {
+  margin-top: 25px;
+}
