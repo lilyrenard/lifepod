@@ -34,7 +34,6 @@ class MemoriesController < ApplicationController
 
   def create
     @memory = Memory.new(memory_params)
-    @memory.memory_type = 'photo'
     @memory.user_id = current_user.id
 
     # l'utilisateur entre un ou plusieurs stamps
@@ -81,6 +80,6 @@ class MemoriesController < ApplicationController
   end
 
   def memory_params
-    params.require(:memory).permit(:title, :description, :photo)
+    params.require(:memory).permit(:title, :description, :photo, :memory_type)
   end
 end
