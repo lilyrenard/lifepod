@@ -22,7 +22,6 @@ class MemoriesController < ApplicationController
       else
         @memories = policy_scope(Memory).joins(:stamps).where(stamps: { id: stamps_ids })
       end
-
     end
   end
 
