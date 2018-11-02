@@ -2,11 +2,12 @@
 
 <div id="sidebar">
   <h4 class="text-right">Stamps</h4>
-  <div class="top-space">
     <% @stamps.each do |stamp|%>
       <%= image_tag Stamp.find_by_title(stamp).stamp_image, class: "stamps" %>
+      <div class="middle">
+        <p class="stamps_title text-center"><strong><%= Stamp.find_by_title(stamp).title.upcase %></strong></p>
+      </div>
     <% end%>
-  </div>
 </div>
 
 <div id="page-content">
@@ -15,7 +16,6 @@
       <% @memories.each do |memory|%>
         <div class="card macard">
           <div class="image-container" data-toggle="modal" data-target="#myModal_<%= memory.id %>">
-            <%= cl_image_tag memory.photo, id: "box", class: "card-img"%>
             <p class="calendar-left" type="date"><%=memory.created_at.strftime('%Y-%m-%d')%></p>
             <h3><%= memory.title.capitalize %></h3>
           </div>
