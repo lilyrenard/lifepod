@@ -29,8 +29,12 @@ document.querySelectorAll('.small-item-categories > i').forEach(picto => picto.a
   event.currentTarget.classList.add('selected-picto')
 }));
 
+document.querySelectorAll('.picto-to-click').forEach(picto => picto.addEventListener('click', (event) => {
+  document.getElementById("special_categorie").setAttribute("value", event.currentTarget.dataset.categorie)
+}));
+
 document.querySelectorAll('.small-item-categories').forEach(picto => picto.addEventListener('click', (event) => {
-  console.dir(event.currentTarget.dataset.categorie)
+  document.getElementById("special_categorie").setAttribute("value", event.currentTarget.dataset.categorie)
 }));
 
 document.getElementById('fermer-modal-ajout').addEventListener('click', showSmallFooter);
