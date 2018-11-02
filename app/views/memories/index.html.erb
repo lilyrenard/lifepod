@@ -3,8 +3,8 @@
 <div id="sidebar">
   <h4 class="text-right">Stamps</h4>
   <div class="top-space">
-    <% @stamps.split.each do |stamp|%>
-      <%= image_tag "stamp-rouge.svg"%>
+    <% @stamps.each do |stamp|%>
+      <%= image_tag Stamp.find_by_title(stamp).stamp_image, class: "stamps" %>
     <% end%>
   </div>
 </div>
