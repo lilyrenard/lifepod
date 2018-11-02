@@ -41,7 +41,7 @@ class MemoriesController < ApplicationController
     stamps = params[:memory][:stamps]
     #pour chacun des stamps rentrés par l'utilisateur je cherche s'il existe et je l'ajoute
     stamps.each do |stamp_title|
-      stamp = Stamp.create_with(stamp_image: view_context.image_path("stamps/#{rand(1...4)}.svg")).find_or_create_by(title: stamp_title, user: current_user)
+      stamp = Stamp.create_with(stamp_image: view_context.image_path("stamps/#{rand(1..8)}.svg")).find_or_create_by(title: stamp_title, user: current_user)
       stamp.user_id = current_user.id
       #j'associe le stamp au memory
       @memory.stamps << stamp

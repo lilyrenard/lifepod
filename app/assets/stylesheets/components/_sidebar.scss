@@ -15,9 +15,10 @@
 }
 
 #sidebar img {
+  margin-bottom: 15px;
   padding-bottom: 15px;
   width: 100px;
-  display: block;
+  display: block !important;
   margin: auto;
   margin-left: 25px;
   margin-right: 0px;
@@ -55,3 +56,4 @@ p.stamps_title {
   font-size: 10px;
   margin-bottom: 0px;
 }
+
