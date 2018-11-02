@@ -6,23 +6,27 @@
           <i class="fas fa-times"></i>
         </div>
         <div class="conteneur-modal-ajout">
-          <div class="row">
-            <div class="col-md-5"></div>
-            <div class="col-md-7">
-              <h1>Memories#new</h1>
-              <%= simple_form_for [@memory] do |f| %>
+          <h1 id='titre-ajout'>Add a memory</h1>
+          <%= simple_form_for [@memory] do |f| %>
+            <div class="row">
+              <div class="col-md-5">
+                <div class="cadre-photo">
+                  <%= f.input :photo %>
+                </div>
+                <%= f.input :photo_cache, as: :hidden %>
+              </div>
+              <div class="col-md-7">
                 <%= f.input :memory_type, disabled: true, input_html: { id: 'special_categorie' }, as: :hidden  %>
                 <%= f.input :title %>
                 <%= f.input :description %>
-                <%= f.input :photo %>
-                <%= f.input :photo_cache, as: :hidden %>
-                <%= f.simple_fields_for :stamps do |stamp| %>
-                  <%= stamp.input :title, label: 'Stamps' %>
-                <% end %>
-                <%= f.submit 'Add a memory', class: "btn btn-primary" %>
-              <% end %>
+                <%= f.label 'Stamps*' %>
+                <%= select_tag 'memory[stamps][]', options_for_select(Stamp.all.pluck(:title)), multiple: 'multiple', class: 'form-control select2'%>
+              </div>
+              <div class="submit-add-button">
+                <%= f.submit 'Add a memory', class: "btn boutton-rouge boutton-rouge-inside" %>
+              </div>
             </div>
-          </div>
+          <% end %>
         </div>
       </div>
     </div>
