@@ -1,0 +1,21 @@
+<%= render 'shared/profile_banner' %>
+
+<div class="conteneur-profile-page">
+  <div class="row">
+    <div class="offset-md-1 col-md-3">
+      <div class="profile-picture">
+        <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: 'profile-picture-big' %>
+        <%= link_to "Change picture", edit_user_registration_path, class: "btn boutton-rouge boutton-rouge-inside" %>
+      </div>
+    </div>
+    <div class="offset-md-1 col-md-6">
+      <div class="profile-informations-personnelles">
+        <h3>Your personal information</h3>
+        <p>Email address: <%= current_user.email %></p>
+        <p>First name: <%= 'Unknown' %></p>
+        <p>Last name: <%= 'Unknown' %></p>
+        <p>Birth date: <%= 'Unknown' %></p>
+      </div>
+    </div>
+  </div>
+</div>
