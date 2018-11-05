@@ -3,9 +3,9 @@
 <div id="sidebar" class="d-none d-lg-block">
   <h4 class="text-right">Stamps</h4>
     <% @stamps.each do |stamp|%>
-      <%= image_tag Stamp.find_by_title(stamp).stamp_image, class: "stamps" %>
+      <%= image_tag stamp.stamp_image, class: "stamps" %>
       <div class="middle">
-        <p class="stamps_title text-center"><strong><%= Stamp.find_by_title(stamp).title.upcase %></strong></p>
+        <p class="stamps_title text-center"><strong><%= stamp.title.upcase %></strong></p>
       </div>
       <br/>
     <% end%>

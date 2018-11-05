@@ -6,12 +6,12 @@ class MemoriesController < ApplicationController
     if params[:stamp] == nil
       @memories = policy_scope(Memory)
     else
-      @stamps = params[:stamp]
+      @stamps = []
       # on récupère tous les paramètres de ?stamp =
       stamps_ids = []
-      @stamps.each do |stamp_title|
-        stamp_id = Stamp.find_by_title(stamp_title).id
-        stamps_ids << stamp_id
+      params["stamp"].each do |stamp_title|
+        @stamps << Stamp.find_by_title(stamp_title)
+        stamps_ids = @stamps.pluck(:id)
       end
       # si on cherche un mot ou plusieurs mots
       if params[:stamp].length > 1
