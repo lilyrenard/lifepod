@@ -35,7 +35,6 @@ class MemoriesController < ApplicationController
   def create
     @memory = Memory.new(memory_params)
     @memory.user_id = current_user.id
-    @memory.memory_type = "Quote"
 
     # l'utilisateur entre un ou plusieurs stamps
     stamps = params[:memory][:stamps]
