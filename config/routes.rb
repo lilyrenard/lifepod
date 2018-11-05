@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations" }
   root to: 'pages#home'
   get 'memories/add', to: 'pages#add', as: :add
   get 'memories/board', to: 'memboard#board', as: :memboard
