@@ -1,5 +1,6 @@
 <div class="navbar-wagon">
   <% if user_signed_in? %>
+
     <div class="navbar-wagon-left">
       <!-- Logo -->
       <%= link_to root_path do %>
@@ -11,7 +12,7 @@
     </div>
 
     <!-- Right Navigation -->
-    <div class="navbar-wagon-right hidden-xs hidden-sm">
+    <div class="navbar-wagon-right">
 
       <!-- Links when logged in -->
       <% if ((params["controller"] == "memboard") || ((params["controller"] == "memories") && ((params["action"] == "index") || (params["action"] == "show")))) %>
@@ -42,6 +43,20 @@
       </div>
     </div>
 
+    <!-- Dropdown appearing on mobile only -->
+  <div class="navbar-wagon-item d-block d-md-none">
+    <div class="dropdown">
+      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <li><%= link_to profile_path do %>
+                <span><i class="fas fa-user"></i> Profile</span>
+              <% end %></li>
+        <li><%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fas fa-sign-out-alt"></i>  <%= t(".sign_out", default: " Log out") %>
+              <% end %></li>
+      </ul>
+    </div>
+  </div>
 
   <% else %>
       <!-- Logo -->
