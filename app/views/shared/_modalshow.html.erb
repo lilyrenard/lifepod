@@ -9,7 +9,7 @@
         <div class="conteneur-grid">
           <span class="image-grid d-flex align-items-start">
             <%= link_to '#' do %>
-            <%= cl_image_tag memory.photo, class: "img-fluid", width: 568%>
+             <%= cl_image_tag memory.photo, class: "img-fluid", width: 568%>
             <% end %>
           </span>
           <span class="title-grid d-flex align-items-center justify-content-center">
@@ -20,10 +20,12 @@
           </p>
           </span>
           <span class="tag-grid d-flex align-items-center justify-content-start">
-              <%= image_tag "stamp-rouge.svg", height: "75", width: "75"%>
-
-              <%= image_tag "stamp-summer.svg", height: "75", width: "75"%>
-
+            <% @stamps.each do |stamp|%>
+            <%= image_tag Stamp.find_by_title(stamp).stamp_image, class: "stamps", height: "75", width: "75" %>
+            <div class="middle-modal">
+              <p class="stamps_title text-center"><strong><%= Stamp.find_by_title(stamp).title.upcase %></strong></p>
+            </div>
+            <% end%>
           </span>
         </div>
       </div>

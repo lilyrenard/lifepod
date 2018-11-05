@@ -1,9 +1,8 @@
 <div class="banner blue">
   <div class="banner-content">
     <h1>Your personal digital space</h1>
-    <p><span id="banner-typed-text"></span></p>
+    <p class="d-none d-lg-block"><span id="banner-typed-text"></span></p>
     <%= image_tag "Boxes.svg", id: "boxes", class: "d-none d-lg-block"%>
-    <%= image_tag "boxes/3.svg", id: "picture", class: "d-none d-md-block d-lg-block"%>
   </div>
 </div>
 
@@ -14,7 +13,8 @@
 
 <div class="large-container grey">
   <div class="wrapper">
-    <div class="container-box-left red">
+    <div class="row">
+          <div class="container-box-left red">
       <h1>1.</h1>
       <p>Connect all your accounts to your personal storage</p>
     </div>
@@ -29,7 +29,7 @@
 <div class="large-container">
   <div class="wrapper">
     <div class="container-left">
-      <%= image_tag "stamp-rouge.svg", id: "stamp-rouge" %>
+      <%= image_tag "stamps/1.svg", id: "stamp-rouge" %>
     </div>
     <div class="container-box-right violet">
       <h1>2.</h1>
@@ -57,7 +57,6 @@
     </div>
   </div>
 </div>
-
 
 <div class="button-container">
   <%= link_to "Sign Up", "users/sign_up", class: "btn boutton-rouge boutton-rouge-inside sign" %>

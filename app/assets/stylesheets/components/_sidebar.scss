@@ -2,7 +2,6 @@
 
 #sidebar {
   padding-top: 10px;
-  padding-right: 25px;
   position: fixed;
   width: 150px;
   top : 250px;
@@ -16,17 +15,45 @@
 }
 
 #sidebar img {
+  margin-bottom: 15px;
   padding-bottom: 15px;
-  width: 50px;
-  display: block;
+  width: 100px;
+  display: block !important;
   margin: auto;
+  margin-left: 25px;
   margin-right: 0px;
 }
 
+.padding {
+  padding-right: 25px;
+}
 #sidebar h4 {
+  padding-right: 25px;
+  padding-bottom: 10px;
   font-size: 24px;
 }
 
-.top-space {
-  margin-top: 25px;
+.stamps {
+  position: absolute;
 }
+
+.middle {
+  position: relative;
+  top: 41px;
+}
+
+.middle-modal {
+  position: relative;
+  top: 4px;
+  left: 20px;
+}
+
+.stamps_title {
+  background-color: transparent;
+}
+
+p.stamps_title {
+  font-size: 10px;
+  margin-bottom: 0px;
+}
+

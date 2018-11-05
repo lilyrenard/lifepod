@@ -7,7 +7,7 @@
   position: relative;
   color: white;
   text-align: center;
-  height: 233px;
+  height: 200px;
   background-size: cover !important;
   display: flex;
   align-items: center;
@@ -30,8 +30,8 @@
 img#boxes {
   position: absolute;
   right: 10px;
-  top:140px;
-  height: 450px;
+  top:120px;
+  height: 350px;
 }
 
 img#picture {
@@ -112,7 +112,7 @@ button#discover:before {
 // bandes dans la home
 .large-container {
   padding: 40px;
-  height: 370px;
+  // height: 370px;
 }
 
 .wrapper {
@@ -151,11 +151,13 @@ button#discover:before {
 
 .wrapper h1 {
   font-size: 70px;
+  color: white;
 }
 
 .wrapper p {
   font-size: 18px;
   font-weight: lighter;
+  color: white;
 }
 
 i {
@@ -167,6 +169,7 @@ i {
 .flex-around {
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 
 // boxes
@@ -223,3 +226,6 @@ i {
 }
 
 
+.padding{
+  padding: 40px;
+}
