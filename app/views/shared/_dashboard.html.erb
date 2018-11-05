@@ -7,7 +7,7 @@
       <div class="col-md-2 offset-md-2">
         <% count1 = [] %>
         <% @memories.each do |memory| %>
-          <% if memory.suggested == true %>
+          <% if memory.memory_type == "spotify" %>
             <% count1 << memory %>
           <% end %>
         <% end %>
@@ -16,7 +16,7 @@
       <div class="col-md-2">
         <% count2 = [] %>
         <% @memories.each do |memory| %>
-          <% if memory.memory_type == "photo" %>
+          <% if memory.memory_type == "photo" || memory.memory_type == "instagram" %>
             <% count2 << memory %>
           <% end %>
         <% end %>

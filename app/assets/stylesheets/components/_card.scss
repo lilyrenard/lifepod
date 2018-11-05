@@ -1,7 +1,7 @@
 // card-columns
 .card-columns {
   -webkit-column-count: 4;
-  -webkit-column-gap: 1.25rem;
+  -webkit-column-gap: 2.7rem;
   display: inline-block;
 }
 
@@ -25,7 +25,7 @@
 .macard {
   border-radius: 1px;
   background: $gris;
-  // box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  box-shadow: 1px 2px 10px rgba(0,0,0,0.3);
 }
 
 .macard:hover{
@@ -37,11 +37,15 @@
 
 .card-img {
   border-radius: 1px;
-  background-color: $red2;
+}
+
+.card-img.fond {
+  background-color: $bleumarine;
+  height: 153px;
 }
 
 .image-container {
-  padding: 15px;
+  padding: 10px;
   padding-bottom: 0px;
   position: relative;
 }
@@ -50,7 +54,8 @@
   text-align: right;
   color: white;
   font-size: 15px;
-  margin: 0px;
+  margin: auto;
+  margin-left: 15px;
   position: absolute;
   bottom: 8px;
   right: 20px;
@@ -63,6 +68,9 @@
   top: 20px;
   left: 20px;
 }
+
+//card bottom
+
 
 
 // links
