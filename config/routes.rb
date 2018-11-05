@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'memories/add', to: 'pages#add', as: :add
   get 'memories/board', to: 'memboard#board', as: :memboard
   get 'memories/profile', to: 'pages#profile', as: :profile
+  get 'memories/spotify_connect', to: 'pages#spotify_connect', as: :spotify_connect
 
   resources :memories do
     resources :stamps, only: [:new, :create, :edit, :update, :destroy]
