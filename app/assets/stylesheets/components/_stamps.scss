@@ -1,0 +1,74 @@
+.stamp1, .stamp2, .stamp3, .stamp4, .stamp4, .stamp5, .stamp6, .stamp7, .stamp8 {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 20px;
+  p {
+    margin-top: 4px;
+    font-size: 17px;
+    margin-bottom: 0px;
+    line-height: 17px;
+    white-space: nowrap;
+    font-weight: bold;
+    background-color: white;
+  }
+}
+
+.stamp1 {
+  -webkit-transform: rotate(25deg);
+  transform: rotate(25deg);
+  background-image: image-url("1.svg");
+  color: #0B132B;
+}
+.stamp2 {
+  -webkit-transform: rotate(5deg);
+  transform: rotate(5deg);
+  background-image: image-url("2.svg");
+  color: #45315D;
+}
+.stamp3 {
+  -webkit-transform: rotate(-8deg);
+  transform: rotate(-8deg);
+  background-image: image-url("3.svg");
+  color: #FF2400;
+}
+.stamp4 {
+  -webkit-transform: rotate(-10deg);
+  transform: rotate(-10deg);
+  background-image: image-url("4.svg");
+  color: #FF9280;
+}
+.stamp5 {
+  -webkit-transform: rotate(-25deg);
+  transform: rotate(-25deg);
+  background-image: image-url("5.svg");
+  color: #45315D;
+}
+.stamp6 {
+  -webkit-transform: rotate(-5deg);
+  transform: rotate(-5deg);
+  background-image: image-url("6.svg");
+  color: #0B132B;
+}
+.stamp7 {
+  -webkit-transform: rotate(8deg);
+  transform: rotate(8deg);
+  background-image: image-url("7.svg");
+  color: #FF2400;
+}
+.stamp8 {
+  -webkit-transform: rotate(10deg);
+  transform: rotate(10deg);
+  background-image: image-url("8.svg");
+  color: #FF9280;
+}
+
+// stamp
+.stamp {
+  height: 150px;
+}

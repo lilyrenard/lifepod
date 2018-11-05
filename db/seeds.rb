@@ -79,24 +79,23 @@ memory12 = Memory.new(
   suggested: false
   )
 memory12.save!
-
 stamp1 = Stamp.new(
   title: "La Baule",
-  stamp_image: "/images/stamps/#{rand(1..8)}.svg",
+  stamp_image: "stamp#{rand(1..8)}",
   user_id: user.id
   )
 stamp1.save!
 
 stamp2 = Stamp.new(
   title: "2018",
-  stamp_image: "/images/stamps/#{rand(1..8)}.svg",
+  stamp_image: "stamp#{rand(1..8)}",
   user_id: user.id
   )
 stamp2.save!
 
 stamp3 = Stamp.new(
   title: "Goûter",
-  stamp_image: "/images/stamps/#{rand(1..8)}.svg",
+  stamp_image: "stamp#{rand(1..8)}",
   user_id: user.id
   )
 stamp3.save!
@@ -179,7 +178,7 @@ memory13.save!
 
 stamp5 = Stamp.new(
   title: "Croatie",
-  stamp_image: "/images/stamps/#{rand(1..8)}.svg",
+  stamp_image: "stamp#{rand(1..8)}",
   user_id: user.id
   )
 stamp5.save!
