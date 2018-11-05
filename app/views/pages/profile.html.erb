@@ -4,7 +4,7 @@
   <div class="row">
     <div class="offset-md-1 col-md-3">
       <div class="profile-picture">
-        <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: 'profile-picture-big' %>
+        <%= cl_image_tag current_user.profile_picture, class: 'profile-picture-big' %>
         <%= link_to "Change picture", edit_user_registration_path, class: "btn boutton-rouge boutton-rouge-inside" %>
       </div>
     </div>

@@ -19,9 +19,10 @@
                 required: true,
                 autofocus: true ,
                 input_html: { autocomplete: "birth_date" }%>
-    <%= f.input :profile_picture, as: :file,
+    <%= f.input :profile_picture,
                 required: true,
                 autofocus: true %>
+    <%= f.input :profile_picture_cache, as: :hidden %>
     <%= f.input :email,
                 required: true,
                 autofocus: true ,
