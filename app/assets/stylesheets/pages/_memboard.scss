@@ -16,3 +16,29 @@
   display: flex;
   justify-content: center;
 }
+
+.box {
+  position: relative;
+}
+
+.stamp-right {
+  position: absolute;
+  bottom: 15px;
+  right: 60px;
+  height: 55px;
+  width: 55px;
+  p {
+    font-size: 15px;
+  }
+}
+
+.stamp-left {
+  position: absolute;
+  bottom: 15px;
+  left: 60px;
+  height: 55px;
+  width: 55px;
+  p {
+    font-size: 15px;
+  }
+}

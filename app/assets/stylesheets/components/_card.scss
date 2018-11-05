@@ -25,7 +25,7 @@
 .macard {
   border-radius: 1px;
   background: $gris;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  box-shadow: 1px 2px 10px rgba(0,0,0,0.3);
 }
 
 .macard:hover{
@@ -45,7 +45,7 @@
 }
 
 .image-container {
-  padding: 12px;
+  padding: 10px;
   padding-bottom: 0px;
   position: relative;
 }

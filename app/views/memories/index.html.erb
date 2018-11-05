@@ -13,7 +13,8 @@
   <div class="container">
     <div class="card-columns">
       <% @memories.each do |memory|%>
-        <div class="card macard">
+        <div class="card">
+          <div class="macard">
           <div class="image-container" data-toggle="modal" data-target="#myModal_<%= memory.id %>">
             <% if memory.memory_type == "photo" %>
              <%= cl_image_tag memory.photo, id: "box", class: "card-img"%>
@@ -26,6 +27,7 @@
             <% end %>
           </div>
           <div class="card-body">
+          </div>
           </div>
         </div>
       <% end%>
