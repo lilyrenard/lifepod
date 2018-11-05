@@ -6,6 +6,21 @@
   width: 80%;
 }
 
+.modal-content {
+  background-color: $gris;
+}
+
 .conteneur-modal-ajout {
   margin: 0px 10px;
+}
+
+.conteneur-modal-ajout h1 {
+  text-align: center;
+}
+
+.cadre-photo {
+  background-color: $gris;
+  height: 300px;
+  margin: 50px 10px 10px 10px;
+  box-shadow: 0px 0px 10px grey;
 }
