@@ -5,16 +5,40 @@
   <div class="conteneur">
     <div class="row">
       <div class="col-md-2 offset-md-2">
-        <p><%= pluralize @memories.count, "memory" %> Musiques</p>
+        <% count1 = [] %>
+        <% @memories.each do |memory| %>
+          <% if memory.suggested == true %>
+            <% count1 << memory %>
+          <% end %>
+        <% end %>
+        <p><%= count1.length %> Musiques</p>
       </div>
       <div class="col-md-2">
-        <p>12 Photos</p>
+        <% count2 = [] %>
+        <% @memories.each do |memory| %>
+          <% if memory.memory_type == "photo" %>
+            <% count2 << memory %>
+          <% end %>
+        <% end %>
+        <p><%= count2.length %> Photos</p>
       </div>
       <div class="col-md-2">
-        <p>1 Video</p>
+        <% count3 = [] %>
+        <% @memories.each do |memory| %>
+          <% if memory.memory_type == "video" %>
+            <% count3 << memory %>
+          <% end %>
+        <% end %>
+        <p><%= count3.length %> Video</p>
       </div>
       <div class="col-md-2">
-        <p>3 Quotes</p>
+        <% count4 = [] %>
+        <% @memories.each do |memory| %>
+          <% if memory.memory_type == "quote" %>
+            <% count4 << memory %>
+          <% end %>
+        <% end %>
+        <p><%= count4.length %> Quotes</p>
       </div>
     </div>
   </div>
