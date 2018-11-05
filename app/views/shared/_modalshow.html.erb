@@ -21,9 +21,9 @@
           </span>
           <span class="tag-grid d-flex align-items-center justify-content-start">
             <% @stamps.each do |stamp|%>
-            <%= image_tag Stamp.find_by_title(stamp).stamp_image, class: "stamps", height: "75", width: "75" %>
+            <%= image_tag stamp.stamp_image, class: "stamps", height: "75", width: "75" %>
             <div class="middle-modal">
-              <p class="stamps_title text-center"><strong><%= Stamp.find_by_title(stamp).title.upcase %></strong></p>
+              <p class="stamps_title text-center"><strong><%= stamp.title.upcase %></strong></p>
             </div>
             <% end%>
           </span>
