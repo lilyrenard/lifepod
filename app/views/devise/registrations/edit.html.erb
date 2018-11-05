@@ -11,37 +11,30 @@
     <% end %>
     <%= f.input :first_name,
                 hint: "leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: "new-first_name" }%>
+                required: false %>
     <%= f.input :last_name,
                 hint: "leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: "new-last_name" }%>
+                required: false %>
     <%= f.input :birth_date,
                 hint: "leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: "new-birth_date" }%>
+                required: false %>
     <%= f.input :birth_date, as: :date,
                 start_year: Date.today.year - 90,
                 end_year: Date.today.year - 3,
                 order: [:day, :month, :year],
                 hint: "leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: "birth_date" }%>
+                required: false %>
     <%= f.input :profile_picture, as: :file,
                 hint: "leave it blank if you don't want to change it",
                 required: false %>
     <%= f.input :password,
                 hint: "leave it blank if you don't want to change it",
-                required: false
-                input_html: { autocomplete: "new-password" } %>
+                required: false %>
     <%= f.input :password_confirmation,
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
+                required: false %>
     <%= f.input :current_password,
                 hint: "we need your current password to confirm your changes",
-                required: true,
-                input_html: { autocomplete: "current-password" } %>
+                required: true %>
   </div>
 
   <div class="form-actions">
