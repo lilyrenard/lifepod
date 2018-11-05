@@ -9,7 +9,11 @@
         <div class="conteneur-grid">
           <span class="image-grid d-flex align-items-start">
             <%= link_to '#' do %>
+            <% if memory.memory_type == "photo" %>
              <%= cl_image_tag memory.photo, class: "img-fluid", width: 568%>
+             <% elsif memory.memory_type == "video" %>
+            <%= cl_video_tag(memory.photo.filename, :controls => true, width: 568, crop: :fill) %>
+            <% end %>
             <% end %>
           </span>
           <span class="title-grid d-flex align-items-center justify-content-center">
