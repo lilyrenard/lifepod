@@ -22,15 +22,20 @@
         <% @spotify_memories.each do |memory|%>
           <div class="card">
             <div class="card-pola">
-              <div class="image-container" data-toggle="modal" data-target="#myModal_<%= memory.id %>">
-                 <%= image_tag memory.url, id: "box", class: "card-img"%>
+              <div class="image-container" data-toggle="modal" data-target="#modal-suggestion-spotify_<%= memory.id %>">
+                <%= image_tag memory.image_associated, id: "box", class: "card-img"%>
                 <h3><%= memory.title.capitalize %></h3>
+                <div class="card-img-overlay">
+                  <i class="fas fa-compact-disc"></i>
+                </div>
               </div>
               <div class="card-body">
+                <p>Suggested from <strong>Spotify</strong></p>
+                <p><strong>Top 50</strong> listenings</p>
               </div>
             </div>
           </div>
-        <% end%>
+        <% end%>mo
       <% end%>
     </div>
   </div>
@@ -48,7 +53,7 @@
 
 <% unless @spotify_memories.nil? %>
   <% @spotify_memories.each do |memory|%>
-    <%= render 'shared/modalshow', memory: memory %>
+    <%= render 'shared/modalsuggespotify', memory: memory %>
   <% end %>
 <% end %>
 

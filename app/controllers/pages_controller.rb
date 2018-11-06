@@ -33,17 +33,18 @@ class PagesController < ApplicationController
       top_tracks = JSON.parse(RestClient.get(url_top_tracks, payload))
 
       @spotify_memories = []
-      top_tracks["items"].each do |chanson|
+      top_tracks["items"].each_with_index do |chanson, i|
         artist = chanson["artists"][0]["name"]
         track = chanson["name"]
         pochette = chanson["album"]["images"][0]["url"]
-        @spotify_memories << Memory.new({
+        @spotify_memories << OpenStruct.new({
                 title: artist,
                 description: track,
                 memory_type: "spotify",
                 user_id: current_user.id,
                 suggested: true,
-                url: pochette
+                image_associated: pochette,
+                id: i
                 })
       end
     end
