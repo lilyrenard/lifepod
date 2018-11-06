@@ -18,9 +18,7 @@
           <p class="card-text">Add your <strong>personal content</strong></p>
         </div>
       </div>
-    </div>
-
-    <% unless @spotify_memories.nil? %>
+        <% unless @spotify_memories.nil? %>
       <% @spotify_memories.each do |memory|%>
         <div class="card">
           <div class="card-pola">
@@ -35,6 +33,10 @@
       <% end%>
     <% end%>
   </div>
+    </div>
+
+
+
 
   <div class="d-none d-md-block col-md-2">
   </div>

@@ -1,4 +1,4 @@
-<div class="modal fade bd-example-modal-lg" id="modal-ajout" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade bd-example-modal-lg" id="photo" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-body">
@@ -36,9 +36,7 @@
 <% content_for(:js) do %>
   <script>
     $(function() {
-      console.log('before ok')
       if($.fn.cloudinary_fileupload !== undefined) {
-        console.log('ok')
         $("input.cloudinary-fileupload[type=file]").cloudinary_fileupload();
       }
     });

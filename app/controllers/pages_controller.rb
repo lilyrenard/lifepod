@@ -2,6 +2,8 @@ require 'open-uri'
 require "base64"
 require 'rest-client'
 require 'ostruct'
+require 'nokogiri'
+require 'open-uri'
 
 class PagesController < ApplicationController
   protect_from_forgery with: :exception
