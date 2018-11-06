@@ -9,7 +9,7 @@ class MemboardController < ApplicationController
          .to_a
          .sort_by { |stamp| Memory.joins(:stamps).where(stamps: { id: [stamp[0], stamp[1]] }).group(:id).having("count(*) > 1").distinct.count.length }
          .reverse
-         .first(3)
+         .first(10)
          .map { |id| Stamp.find(id) }
   end
 
