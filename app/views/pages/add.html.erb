@@ -21,7 +21,7 @@
     </div>
     <% @spotify_memories.each do |memory|%>
       <div class="card">
-        <div class="macard">
+        <div class="card-pola">
           <div class="image-container" data-toggle="modal" data-target="#myModal_<%= memory.id %>">
              <%= image_tag memory.url, id: "box", class: "card-img"%>
             <h3><%= memory.title.capitalize %></h3>
