@@ -139,6 +139,9 @@ button#discover:before {
   width: 400px;
   color: white;
   padding: 40px;
+  .fab {
+  font-size: 130px !important;
+}
 }
 
 .container-left {
@@ -162,9 +165,7 @@ i {
   font-size: 150px;
 }
 
-.fab {
-  font-size: 130px !important;
-}
+
 // logos réseaux
 
 .flex-around {

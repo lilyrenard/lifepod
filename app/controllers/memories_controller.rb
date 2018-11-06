@@ -36,11 +36,17 @@ class MemoriesController < ApplicationController
     @memory = Memory.new(memory_params)
     @memory.user_id = current_user.id
 
+    # preview image
+    if params[:image_id].present?
+      preloaded = Cloudinary::PreloadedFile.new(params[:image_id])
+      raise "Invalid upload signature" if !preloaded.valid?
+      @memory.remote_photo_url = "https://res.cloudinary.com/dt38p7qqh/#{params[:image_id]}"
+    end
     # l'utilisateur entre un ou plusieurs stamps
     stamps = params[:memory][:stamps]
     #pour chacun des stamps rentrés par l'utilisateur je cherche s'il existe et je l'ajoute
     stamps.each do |stamp_title|
-      stamp = Stamp.create_with(stamp_image: view_context.image_path("stamps/#{rand(2..7)}.svg")).find_or_create_by(title: stamp_title, user: current_user)
+      stamp = Stamp.create_with(stamp_image: "stamp#{rand(2..7)}").find_or_create_by(title: stamp_title, user: current_user)
       stamp.user_id = current_user.id
       #j'associe le stamp au memory
       @memory.stamps << stamp

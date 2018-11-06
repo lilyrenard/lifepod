@@ -20,11 +20,17 @@
 
 .cadre-photo {
   background-color: $gris;
-  height: 300px;
+  max-height: 300px;
+  max-width: 568px;
   margin: 50px 10px 10px 10px;
-  box-shadow: 0px 0px 10px grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    box-shadow: 0px 0px 10px grey;
+    max-height: 300px;
+  }
 }
-
 
 .stamps-form {
   background-color: white;

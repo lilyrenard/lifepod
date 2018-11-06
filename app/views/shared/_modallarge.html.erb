@@ -10,10 +10,9 @@
           <%= simple_form_for [@memory] do |f| %>
             <div class="row">
               <div class="col-md-5">
-                <div class="cadre-photo">
-                  <%= f.input :photo %>
+                <div class="cadre-photo img-fluid" alt="Responsive image">
+                  <%= cl_image_upload_tag(:image_id) %>
                 </div>
-                <%= f.input :photo_cache, as: :hidden %>
               </div>
               <div class="col-md-7">
                 <%= f.input :memory_type, input_html: { id: 'special_categorie' }, as: :hidden  %>
@@ -34,4 +33,29 @@
     </div>
   </div>
 </div>
+<% content_for(:js) do %>
+  <script>
+    $(function() {
+      console.log('before ok')
+      if($.fn.cloudinary_fileupload !== undefined) {
+        console.log('ok')
+        $("input.cloudinary-fileupload[type=file]").cloudinary_fileupload();
+      }
+    });
+
+    function cloudinaryPreview() {
+      $('.cloudinary-fileupload').bind('cloudinarydone', function(e, data) {
+        console.log(data)
+        $('.cadre-photo').html(
+          $.cloudinary.image(data.result.public_id,
+            { format: data.result.format, version: data.result.version,
+              class: "img-fluid"})
+        );
+        $('.image_id').val(data.result.public_id);
+        return true;
+      });
+    }
+    cloudinaryPreview()
+  </script>
+<% end %>
 
