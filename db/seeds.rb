@@ -10,7 +10,10 @@ puts 'Creating memories...'
 
 user = User.create!(
   email: "test@gmail.com",
-  password: "123456"
+  password: "123456",
+  birth: "26/01/1993",
+  first_name: "Sébastien",
+  last_name: "Saunier"
 )
 memory1 = Memory.new(
   title: "Week-end à La Baule",
