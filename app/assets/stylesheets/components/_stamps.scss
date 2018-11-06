@@ -19,12 +19,6 @@
   }
 }
 
-.stamp1 {
-  -webkit-transform: rotate(25deg);
-  transform: rotate(25deg);
-  background-image: image-url("1.svg");
-  color: #0B132B;
-}
 .stamp2 {
   -webkit-transform: rotate(5deg);
   transform: rotate(5deg);
@@ -49,22 +43,17 @@
   background-image: image-url("5.svg");
   color: #45315D;
 }
+
 .stamp6 {
-  -webkit-transform: rotate(-5deg);
-  transform: rotate(-5deg);
-  background-image: image-url("6.svg");
-  color: #0B132B;
-}
-.stamp7 {
   -webkit-transform: rotate(8deg);
   transform: rotate(8deg);
-  background-image: image-url("7.svg");
+  background-image: image-url("6.svg");
   color: #FF2400;
 }
-.stamp8 {
+.stamp7 {
   -webkit-transform: rotate(10deg);
   transform: rotate(10deg);
-  background-image: image-url("8.svg");
+  background-image: image-url("7.svg");
   color: #FF9280;
 }
 

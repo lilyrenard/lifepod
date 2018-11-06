@@ -31,7 +31,7 @@ img#boxes {
   position: absolute;
   right: 10px;
   top:120px;
-  height: 350px;
+  height: 450px;
 }
 
 img#picture {
@@ -112,7 +112,6 @@ button#discover:before {
 // bandes dans la home
 .large-container {
   padding: 40px;
-  // height: 370px;
 }
 
 .wrapper {
@@ -125,12 +124,11 @@ button#discover:before {
 
 .container-box-left{
   height: 290px;
-  max-width: 25%;
+  width: 400px;
   color: white;
   padding: 40px;
 }
 .container-right {
-  padding: 0px 100px;
   max-width: 75%;
   text-align: center;
   flex-grow: 1;
@@ -138,9 +136,12 @@ button#discover:before {
 
 .container-box-right {
   height: 290px;
-  max-width: 25%;
+  width: 400px;
   color: white;
   padding: 40px;
+  .fab {
+  font-size: 130px !important;
+}
 }
 
 .container-left {
@@ -161,8 +162,9 @@ button#discover:before {
 }
 
 i {
-  font-size: 100px;
+  font-size: 150px;
 }
+
 
 // logos réseaux
 
@@ -171,34 +173,6 @@ i {
   justify-content: space-around;
   align-items: center;
 }
-
-// boxes
-
-.flex-between {
-  display: flex;
-  justify-content: space-between;
-}
-
-.small-size {
-  max-height: 120px;
-}
-
-.medium-size {
-  max-height: 160px;
-}
-
-.big-size {
-  max-height: 200px;
-}
-
-.bottom {
-  padding-top: 150px;
-}
-
-.top {
-  padding-top: 25px;
-}
-
 
 // couleurs
 .red {
@@ -230,7 +204,8 @@ i {
   padding: 40px;
 }
 
-//stamp
-#stamp {
-  height: 80px;
+.margin {
+  margin-left: 100px;
+  margin-top: 60px;
 }
+
