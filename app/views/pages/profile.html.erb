@@ -12,9 +12,9 @@
       <div class="profile-informations-personnelles">
         <h3>Your personal information</h3>
         <p>Email address: <%= current_user.email %></p>
-        <p>First name: <%= 'Unknown' %></p>
-        <p>Last name: <%= 'Unknown' %></p>
-        <p>Birth date: <%= 'Unknown' %></p>
+        <p>First name: <%= current_user.first_name %></p>
+        <p>Last name: <%= current_user.last_name %></p>
+        <p>Birth date: <%= current_user.birth %></p>
       </div>
     </div>
   </div>
