@@ -6,13 +6,13 @@
       <%= link_to root_path do %>
         <%= image_tag "logo.svg" %>
       <% end %>
-      <div class="navbar-searchbar">
+      <div class="navbar-searchbar d-none d-lg-block d-xl-block">
         <%= render 'shared/searchbar' %>
       </div>
     </div>
 
     <!-- Right Navigation -->
-    <div class="navbar-wagon-right">
+    <div class="navbar-wagon-right d-none d-lg-block d-xl-block">
 
       <!-- Links when logged in -->
       <% if ((params["controller"] == "memboard") || ((params["controller"] == "memories") && ((params["action"] == "index") || (params["action"] == "show")))) %>
