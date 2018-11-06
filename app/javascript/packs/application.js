@@ -7,3 +7,6 @@ bindSweetAlertButtonDemo();
 
 import '../components/select2';
 
+// import { initSmoothScrolling } from '../components/carroussel';
+// initSmoothScrolling();
+
