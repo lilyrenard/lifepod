@@ -66,6 +66,14 @@ class PagesController < ApplicationController
   end
 
   def test
+    url = "https://api.spotify.com/v1/me/player/play"
+    payload = {
+      "uris":["spotify:track:2OxkfL5jW8bvYTCNDLlRSY"]
+    }
+    headers = {
+      Authorization: JSON.parse(current_user.spotify)["access_token"]
+    }
+    RestClient.put(url, payload, headers)
   end
 
   def test2
