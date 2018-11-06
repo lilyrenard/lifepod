@@ -14,12 +14,29 @@
         <p class="card-text">Add your <strong>personal content</strong></p>
       </div>
     </div>
+    <% @spotify_memories.each do |memory|%>
+      <div class="card">
+        <div class="macard">
+          <div class="image-container" data-toggle="modal" data-target="#myModal_<%= memory.id %>">
+             <%= image_tag memory.url, id: "box", class: "card-img"%>
+            <h3><%= memory.title.capitalize %></h3>
+          </div>
+          <div class="card-body">
+          </div>
+        </div>
+      </div>
+    <% end%>
   </div>
 </div>
 
 <%= render 'shared/footerbleu' %>
 
 <%= render 'shared/smallfooterbleu' %>
+
+<% @spotify_memories.each do |memory|%>
+  <%= render 'shared/modalshow', memory: memory %>
+<% end %>
+
 
 
 <%= javascript_pack_tag 'smallFooter' %>
