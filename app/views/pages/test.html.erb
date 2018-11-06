@@ -1,48 +1,25 @@
-<!-- Button trigger modal -->
-<div data-toggle="modal" data-target="#myModal">
-  <p>Test modal </p>
-</div>
-
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <!-- <div class="modal-header"> -->
-        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
-        <!-- <h4 class="modal-title" id="myModalLabel">Memory</h4> -->
-      <!-- </div> -->
-      <div class="modal-body">
-        <div class="conteneur-grid">
-          <span class="image-grid d-flex align-items-start">
-            <%= link_to '#' do %>
-            <%= image_tag "stade.jpg", class: "img-fluid"%>
-            <% end %>
-          </span>
-          <span class="title-grid d-flex align-items-center justify-content-center">
-            <h4>Cochon des îles</h4>
-          </span>
-          <span class="paraph-grid d-flex justify-content-start align-items-center">
-            <p>Rare sont ceux qui peuvent l'apercevoir dans son habitat naturel.Rare sont ceux qui peuvent
-              Rare sont ceux qui peuvent l'apercevoir dans son habitat naturel.Rare sont ceux qui peuventRare sont ceux qui peuvent l'apercevoir dans son habitat naturel.Rare sont ceux qui peuventRare sont ceux qui peuvent l'apercevoir dans son habitat naturel.Rare sont ceux qui peuventRare sont ceux qui peuvent l'apercevoir dans son habitat naturel.Rare sont ceux qui peuventRare sont ceux qui peuvent l'apercevoir dans son habitat naturel.Rare sont ceux qui peuvent
-          </p>
-          </span>
-          <span class="tag-grid d-flex align-items-center justify-content-start">
-              <%= image_tag "stamp-rouge.svg", height: "75", width: "75"%>
-
-              <%= image_tag "stamp-summer.svg", height: "75", width: "75"%>
-
-          </span>
-        </div>
-      </div>
-      <!-- <div class="modal-footer"> -->
-        <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
-        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-      <!-- </div> -->
+<div class="block">
+  <div class="animation">
+    <div class="first">
+      <%= image_tag "boxes/#{rand(1...4)}.svg" %>
     </div>
+    <div>
+      <%= image_tag "boxes/#{rand(1...4)}.svg" %>
+    </div>
+    <div>
+      <%= image_tag "boxes/#{rand(1...4)}.svg" %>
+    </div>
+    <div>
+      <%= image_tag "boxes/#{rand(1...4)}.svg" %>
+    </div>
+    <div>
+      <%= image_tag "boxes/#{rand(1...4)}.svg" %>
+    </div>
+    <div>
+      <%= image_tag "boxes/#{rand(1...4)}.svg" %>
+    </div>
+    <!-- cut -->
   </div>
 </div>
 
-
-<!--
-Le cochon des îles ou "Colchoneros" comme aime à l'appeler les locaux, n'est pas considéré comme un animal domestique. Toutefois, certains humains, à force de patience et d'un système d'effort/récompense, ont su tirer profit des capacités extraordinaires de cet animal aussi inconnu qu'imprévisible -->
+<%= javascript_pack_tag 'carroussel' %>
