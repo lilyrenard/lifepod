@@ -22,16 +22,6 @@ memory1 = Memory.new(
   )
 memory1.save!
 
-memory2 = Memory.new(
-  title: "Goûter avec les copines",
-  description: "On a testé un super endroit avec les copines. C'était super!",
-  url: "https://www.timeout.fr/paris/actualites/un-bar-a-chocolat-geant-avec-terrasse-de-1-500-m2-ouvre-a-paris-102618?fbclid=IwAR1WFaDf7Sa5J2FgGMB3od_hxKs47fi-AEydDtkSGtR7mYMH7n33BnNdtWg",
-  memory_type: "link",
-  user_id: user.id,
-  suggested: false
-  )
-memory2.save!
-
 memory3 = Memory.new(
   title: "Les rêves sont la nourriture des dieux.",
   description: "Caroline a dit ça lors de notre goûter. C'était très drôle parce que ça nous a fait penser à notre dîner la semaine dernière.",
@@ -70,15 +60,6 @@ memory11 = Memory.new(
   )
 memory11.save!
 
-memory12 = Memory.new(
-  title: "Video Koreus inoubliable ",
-  description: "Pigeon vs canon",
-  url: "https://www.koreus.com/video/pigeon-vs-canon.html",
-  memory_type: "link",
-  user_id: user.id,
-  suggested: false
-  )
-memory12.save!
 stamp1 = Stamp.new(
   title: "La Baule",
   stamp_image: "stamp#{rand(2..7)}",
@@ -103,10 +84,6 @@ stamp3.save!
 memory1.stamps << stamp1
 memory1.stamps << stamp2
 
-memory2.stamps << stamp1
-memory2.stamps << stamp2
-memory2.stamps << stamp3
-
 memory3.stamps << stamp1
 memory3.stamps << stamp2
 memory3.stamps << stamp3
@@ -122,9 +99,6 @@ memory10.stamps << stamp3
 memory11.stamps << stamp1
 memory11.stamps << stamp2
 memory11.stamps << stamp3
-
-memory12.stamps << stamp1
-memory12.stamps << stamp2
 
 memory5 = Memory.new(
   title: 'Olé le foot',
@@ -145,16 +119,6 @@ memory6 = Memory.new(
   suggested: false,
   )
 memory6.save!
-
-memory7 = Memory.new(
-  title: 'Le football du futur',
-  description: 'Interview mythique de JHE dans lemonde',
-  url: 'https://www.lemonde.fr/ligue-1/article/2018/11/05/jacques-henri-eyraud-dans-les-faits-la-ligue-fermee-est-deja-a-l-uvre-dans-le-football-europeen_5378884_1616940.html',
-  memory_type: 'link',
-  user_id: user.id,
-  suggested: false,
-  )
-memory7.save!
 
 memory8 = Memory.new(
   title: 'Solumun',
@@ -191,9 +155,6 @@ memory6.stamps << stamp1
 memory6.stamps << stamp2
 memory6.stamps << stamp5
 
-memory7.stamps << stamp2
-memory7.stamps << stamp3
-memory7.stamps << stamp5
 
 memory8.stamps << stamp5
 memory8.stamps << stamp2

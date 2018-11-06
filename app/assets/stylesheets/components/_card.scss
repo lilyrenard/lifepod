@@ -22,13 +22,28 @@
 
 // cards
 
-.macard {
+.card {
+  cursor: pointer;
+}
+
+.card-pola {
   border-radius: 1px;
+  box-shadow: 1px 2px 10px rgba(0,0,0,0.3);
   background: $gris;
+}
+
+.card-pola:hover{
+  transition: all 0.3s ease;
+  opacity: 0.8;
+}
+
+.card-quote {
+  background: $bleumarine;
+  border-radius: 3px;
   box-shadow: 1px 2px 10px rgba(0,0,0,0.3);
 }
 
-.macard:hover{
+.card-quote:hover{
   transition: all 0.3s ease;
   opacity: 0.8;
 }
@@ -71,16 +86,48 @@
 
 //card bottom
 
+.card-body {
+  h3 {
+    color: white;
+    font-size: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+.quote {
+  position: relative;
+  letter-spacing: .03em;
+  margin-bottom: .5rem;
+}
+
+.quote:before {
+  content: "“";
+  font-weight: bold;
+  font-size: 35px;
+  position: absolute;
+  left: -.6em;
+}
+.quote:after {
+  content: "”";
+  font-size: 35px;
+  font-weight: bold;
+  position: absolute;
+  right: -.5em;
+}
 
 
 // links
 a {
   color: black;
+  cursor: pointer;
 }
 
 a:hover {
   color: black;
   text-decoration: none;
+
+
 }
 
 // calendrier en haut à gauche
@@ -93,6 +140,14 @@ a:hover {
   position: absolute;
   top: 8px;
   left: 16px;
+  padding-left: 35px;
+}
+
+.calendar-left-2 {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: image-url("calendar-page-empty.svg");
+  margin: 0px;
   padding-left: 35px;
 }
 
@@ -119,6 +174,4 @@ img#calendar {
   font-size: 23px;
   color: white;
 }
-
-
 
