@@ -39,7 +39,24 @@ document.querySelectorAll('.picto-to-click').forEach(picto => picto.addEventList
 // document.getElementById('fermer-modal-ajout').addEventListener('click', showSmallFooter);
 
 
+const image = document.getElementById('image')
+const doc = document.getElementById('mySmallFooter')
 
-document.getElementById('image').addEventListener('click', (event) => {
-  console.log(event)
+
+
+
+image.addEventListener('click', (event) => {
+  image.dataset.target = "#photo";
+  image.dataset.toggle = "modal";
 });
+
+fetch(`/memories/add`, {
+  method: 'POST'
+})
+  .then(response => response.json())
+  .then((data) => {
+    console.log(data)
+    const render_photo = `<%= render 'shared/modal_photo' %>`
+    doc.insertAdjacentHTML('afterend', render_photo);
+  })
+
