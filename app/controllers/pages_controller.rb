@@ -23,27 +23,29 @@ class PagesController < ApplicationController
     flash.now[:alert] = "Click to add a memory!" if URI(request.referer).path == '/memories/board'
     @memory = Memory.new
 
-    url_top_tracks = "https://api.spotify.com/v1/me/top/tracks?time_range=medium_term&limit=50"
-    payload = {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json',
-      'Authorization': "Bearer #{JSON.parse(current_user.spotify)["access_token"]}"
-    }
-    top_tracks = JSON.parse(RestClient.get(url_top_tracks, payload))
+    unless current_user.spotify.nil?
+      url_top_tracks = "https://api.spotify.com/v1/me/top/tracks?time_range=medium_term&limit=50"
+      payload = {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': "Bearer #{JSON.parse(current_user.spotify)["access_token"]}"
+      }
+      top_tracks = JSON.parse(RestClient.get(url_top_tracks, payload))
 
-    @spotify_memories = []
-    top_tracks["items"].each do |chanson|
-      artist = chanson["artists"][0]["name"]
-      track = chanson["name"]
-      pochette = chanson["album"]["images"][0]["url"]
-      @spotify_memories << Memory.new({
-              title: artist,
-              description: track,
-              memory_type: "spotify",
-              user_id: current_user.id,
-              suggested: true,
-              url: pochette
-              })
+      @spotify_memories = []
+      top_tracks["items"].each do |chanson|
+        artist = chanson["artists"][0]["name"]
+        track = chanson["name"]
+        pochette = chanson["album"]["images"][0]["url"]
+        @spotify_memories << Memory.new({
+                title: artist,
+                description: track,
+                memory_type: "spotify",
+                user_id: current_user.id,
+                suggested: true,
+                url: pochette
+                })
+      end
     end
   end
 
