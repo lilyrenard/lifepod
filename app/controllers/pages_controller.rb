@@ -1,6 +1,7 @@
 require 'open-uri'
 require "base64"
 require 'rest-client'
+require 'json'
 
 class PagesController < ApplicationController
   protect_from_forgery with: :exception
@@ -14,6 +15,28 @@ class PagesController < ApplicationController
   def add
     flash.now[:alert] = "Click to add a memory!" if URI(request.referer).path == '/memories/board'
     @memory = Memory.new
+    url_top_tracks = "https://api.spotify.com/v1/me/top/tracks?time_range=medium_term&limit=50"
+    payload = {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'Authorization': "Bearer #{current_user.spotify}"
+    }
+    top_tracks = JSON.parse(RestClient.get(url_top_tracks, payload))
+
+    @spotify_memories = []
+    top_tracks["items"].each do |chanson|
+      artist = chanson["artists"][0]["name"]
+      track = chanson["name"]
+      pochette = chanson["album"]["images"][0]["url"]
+      @spotify_memories << Memory.create(
+        title: artist,
+        description: track,
+        memory_type: "spotify",
+        user_id: current_user.id,
+        suggested: true,
+        photo: pochette
+        )
+    end
   end
 
   def profile
