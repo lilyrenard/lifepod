@@ -10,8 +10,11 @@ class MemoriesController < ApplicationController
       # on récupère tous les paramètres de ?stamp =
       stamps_ids = []
       params["stamp"].each do |stamp_title|
-        @stamps << Stamp.find_by_title(stamp_title)
-        stamps_ids = @stamps.pluck(:id)
+        if Stamp.find_by_title(stamp_title) == nil
+        else
+          @stamps << Stamp.find_by_title(stamp_title)
+          stamps_ids = @stamps.pluck(:id)
+        end
       end
       # si on cherche un mot ou plusieurs mots
       if params[:stamp].length > 1

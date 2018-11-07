@@ -6,4 +6,9 @@ bindSweetAlertButtonDemo();
 
 
 import { initSelect2 } from '../components/select2';
-initSelect2();
+
+document.addEventListener('DOMContentLoaded', ()=>{
+  initSelect2();
+})
+
+

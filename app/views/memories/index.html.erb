@@ -36,17 +36,15 @@
                   <div class="card-body"></div>
               </div>
             <% elsif memory.memory_type == "spotify" %>
-              <div class="card-pola">
+              <div class="card-spotify">
                 <div class="image-container" data-toggle="modal" data-target="#myModal_<%= memory.id %>">
-                  <%= image_tag memory.image_associated, id: "box", class: "card-img"%>
-                  <h2><%= memory.description %></h2>n
-                  <h3><%= memory.title.capitalize %></h3>
-                  <div class="card-img-overlay">
-                    <i class="fas fa-compact-disc"></i>
+                    <%= image_tag memory.image_associated, id: "box", class: "card-img"%>
+                    <div class="card-img-overlay">
+                      <h2><%= memory.description %></h2>
+                      <h3><%= memory.title.capitalize %></h3>
+                      <i class="fas fa-compact-disc"></i>
+                    </div>
                   </div>
-                </div>
-                <div class="card-body">
-                </div>
               </div>
             <% else %>
               <div class="card-quote">
