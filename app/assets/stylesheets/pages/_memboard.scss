@@ -22,8 +22,8 @@
 
 .stamp-right {
   position: absolute;
-  bottom: -100px;
-  right: 80px;
+  bottom: 15px;
+  right: 60px;
   height: 55px !important;
   width: 55px !important;
   p {
@@ -33,11 +33,16 @@
 
 .stamp-left {
   position: absolute;
-  bottom: -115px;
-  left: 50px;
+  bottom: 15px;
+  left: 60px;
   height: 55px !important;
   width: 55px !important;
   p {
     font-size: 15px;
   }
+}
+
+.ecart-box {
+  margin-left: 40px;
+  margin-right: 40px;
 }
