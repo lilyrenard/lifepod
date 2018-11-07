@@ -6,6 +6,11 @@
   width: 80%;
 }
 
+.modal-md {
+  max-width: 100vw;
+  width: 60%;
+}
+
 .modal-content {
   background-color: $gris;
 }
@@ -53,3 +58,8 @@
   justify-content: center;
   width: 100rem;
 }
+
+.small-item-categories > a {
+  color: white;
+}
+

@@ -30,6 +30,8 @@
 .conteneur-ajout {
   margin: 30px 160px;
   color: white;
+    overflow: auto;
+
 }
 
 .conteneur-ajout p {
@@ -62,11 +64,11 @@
 }
 
 .fas {
-  font-size: 60px;
+  font-size: 80px;
 }
 
 .fab {
-  font-size: 70px;
+  font-size: 90px;
 }
 
 .item-categories {
@@ -150,6 +152,10 @@
   border-radius: 0px;
 }
 
+
+
+.picto-to-click > a {
+  color:white;
 
 // CARD
 
