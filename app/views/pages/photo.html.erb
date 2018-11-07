@@ -104,9 +104,9 @@
                 </div>
               </div>
               <div class="col-xs-12 col-md-7">
-                <%= f.input :memory_type, input_html: { id: 'special_categorie', value: "photo" }, as: :hidden  %>
-                <%= f.input :title, label: 'Your photo name' %>
-                <%= f.input :description, label: 'Tell me more about this photo'  %>
+                <%= f.input :memory_type, input_html: { id: 'special_categorie', value: "photo" }, as: :hidden, require: true  %>
+                <%= f.input :title, label: 'Your photo name', require: true %>
+                <%= f.input :description, label: 'Tell me more about this photo' %>
                 <%= f.label 'Your stamps*', autofocus: true %>
                 <div class="stamps-form">
                   <%= select_tag 'memory[stamps][]', options_for_select(Stamp.all.pluck(:title)), multiple: 'multiple', class: 'form-control select2'%>
