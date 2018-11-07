@@ -35,6 +35,8 @@
                 <%= cl_video_tag(memory.photo.filename, :controls => true, width: 568, crop: :fill) %>
               <% elsif memory.memory_type == "spotify" %>
                 <%= image_tag(memory.image_associated, :controls => true, width: 568, crop: :fill) %>
+              <% elsif memory.memory_type == "instagram" %>
+                <%= image_tag(memory.image_associated, :controls => true, width: 568, crop: :fill) %>
               <% end %>
             <% end %>
           </span>

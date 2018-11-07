@@ -1,0 +1,37 @@
+<div class="modal fade bd-example-modal-lg" id="modal-suggestion-instagram<%= memory.id %>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div id="fermer-modal-ajout" data-toggle="modal" data-target="#modal-suggestion-instagram<%= memory.id %>" data-backdrop="static">
+          <i class="fas fa-times"></i>
+        </div>
+        <div class="conteneur-modal-ajout">
+          <h1 id='titre-ajout'>Add a memory</h1>
+          <%= simple_form_for Memory.new do |f| %>
+            <div class="row">
+              <div class="col-md-5">
+                <div class="cadre-photo img-fluid" alt="Responsive image">
+                  <%= image_tag memory.image_associated %>
+                </div>
+              </div>
+              <div class="col-md-7">
+                <%= f.input :memory_type, input_html: {value: f.object.memory_type || memory.memory_type}, as: :hidden  %>
+                <%= f.input :image_associated, input_html: {value: f.object.image_associated || memory.image_associated}, as: :hidden  %>
+                <%= f.input :url, input_html: {value: f.object.url || memory.likes}, as: :hidden  %>
+                <%= f.input :title, input_html: {value: f.object.title || memory.title}, label: 'Location' %>
+                <%= f.input :description, input_html: {value: f.object.description || memory.description}, label: 'Caption' %>
+                <%= f.label 'Stamps*', autofocus: true %>
+                <div class="stamps-form">
+                  <%= select_tag 'memory[stamps][]', options_for_select(Stamp.all.pluck(:title)), multiple: 'multiple', class: 'form-control select2'%>
+                </div>
+              </div>
+              <div class="submit-add-button">
+                <%= f.submit 'Add a memory', class: "btn boutton-rouge boutton-rouge-inside" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
