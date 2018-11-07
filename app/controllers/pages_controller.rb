@@ -13,12 +13,12 @@ class PagesController < ApplicationController
   end
 
   def add
-    if (current_user.spotify_already == true && response.code == "401")
-      response = SpotifyConnectService.new(params["code"], "/memories/add").call
-      current_user.spotify = response[0]
-      current_user.spotify_already = response[1]
-      current_user.save
-    end
+    # if (current_user.spotify_already == true && response.code == "401")
+    #   response = SpotifyConnectService.new(params["code"], "/memories/add").call
+    #   current_user.spotify = response[0]
+    #   current_user.spotify_already = response[1]
+    #   current_user.save
+    # end
 
     flash.now[:alert] = "Click to add a memory!" if URI(request.referer).path == '/memories/board'
     @memory = Memory.new

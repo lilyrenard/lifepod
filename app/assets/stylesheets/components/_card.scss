@@ -76,6 +76,17 @@
   right: 20px;
 }
 
+.image-container h2 {
+  text-align: right;
+  color: white;
+  font-size: 17px;
+  margin: auto;
+  margin-left: 15px;
+  position: absolute;
+  bottom: 25px;
+  right: 20px;
+}
+
 .image-container p {
   font-size: 13px;
   color: white;
@@ -169,8 +180,8 @@ img#calendar {
 
 #fixed.card-img h3 {
   position: relative;
-  top: calc(100px - 58px);
-  left: 0px;
+  top: calc(100px - 80px);
+  left: -7px;
   font-size: 23px;
   color: white;
 }
