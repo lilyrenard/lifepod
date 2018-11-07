@@ -24,13 +24,11 @@
           </p>
           </span>
           <span class="tag-grid d-flex align-items-center justify-content-start">
-            <% unless @stamps.nil? %>
-              <% @stamps.each do |stamp|%>
+              <% memory.stamps.each do |stamp|%>
               <div class=<%=stamp.stamp_image%> >
                 <p><%= stamp.title.upcase %></p>
               </div>
               <% end%>
-            <% end %>
           </span>
         </div>
       </div>

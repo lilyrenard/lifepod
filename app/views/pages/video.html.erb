@@ -41,20 +41,20 @@
           <% end  %>
         </div>
         <div class="conteneur-modal-ajout">
-          <h1 id='titre-ajout'>Add a memory</h1>
+          <h1 id='titre-ajout'>Add a video memory</h1>
           <%= simple_form_for [@memory] do |f| %>
             <div class="row">
-              <div class="col-md-5">
+              <div class="col-xs-12 col-md-5">
                 <div class="cadre-photo img-fluid" alt="Responsive image">
-                 <%= f.input :photo %>
+                  <%= f.input :photo, label: 'Upload your video' %>
                   <%= f.input :photo_cache, as: :hidden %>
                 </div>
               </div>
-              <div class="col-md-7">
+              <div class="col-xs-12 col-md-7">
                 <%= f.input :memory_type, input_html: { id: 'special_categorie', value: "video" }, as: :hidden  %>
-                <%= f.input :title %>
-                <%= f.input :description %>
-                <%= f.label 'Stamps*', autofocus: true %>
+                <%= f.input :title, label: 'Your video name' %>
+                <%= f.input :description, label: 'Tell me more about this video' %>
+                <%= f.label 'Your stamps*', autofocus: true %>
                 <div class="stamps-form">
                   <%= select_tag 'memory[stamps][]', options_for_select(Stamp.all.pluck(:title)), multiple: 'multiple', class: 'form-control select2'%>
                 </div>

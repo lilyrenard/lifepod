@@ -19,7 +19,7 @@
           </div>
           <div class="col-md-4">
             <div class="small-item-categories" data-categorie="quote">
-              <i class="fas fa-quote-right"></i>
+              <i class="fas fa-quote-right selected-picto"></i>
             </div>
           </div>
         </div>
@@ -32,7 +32,7 @@
 <!-- MODAL QUOTE -->
 
 <div class="modal fade bd-example-modal-lg" id="quote" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
+  <div class="modal-dialog modal-md">
     <div class="modal-content">
       <div class="modal-body">
         <div id="fermer-modal-ajout" data-toggle="modal" data-target=".bd-example-modal-lg" data-backdrop="static">
@@ -41,14 +41,14 @@
           <% end  %>
         </div>
         <div class="conteneur-modal-ajout">
-          <h1 id='titre-ajout'>Add a memory</h1>
+          <h1 id='titre-ajout'>Add a quote memory</h1>
           <%= simple_form_for [@memory] do |f| %>
-            <div class="row">
-              <div class="col-md-12">
+            <div class="row justify-content-center" >
+              <div class="col-xs-12 col-md-6">
                 <%= f.input :memory_type, input_html: { id: 'special_categorie', value: "quote" }, as: :hidden  %>
-                <%= f.input :title %>
-                <%= f.input :description %>
-                <%= f.label 'Stamps*', autofocus: true %>
+                <%= f.input :title, label: 'Your quote' %>
+                <%= f.input :description, label: 'Tell me more about this quote' %>
+                <%= f.label 'Your stamps*', autofocus: true %>
                 <div class="stamps-form">
                   <%= select_tag 'memory[stamps][]', options_for_select(Stamp.all.pluck(:title)), multiple: 'multiple', class: 'form-control select2'%>
                 </div>
