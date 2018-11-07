@@ -19,7 +19,7 @@ class MemoriesController < ApplicationController
       # si on cherche un mot ou plusieurs mots
       if params[:stamp].length > 1
         # on fait une join table et on cherche les souvenirs avec les stamps correspondants
-        mem = policy_scope(Memory).joins(:stamps).where(stamps: { id: stamps_ids }).group(:id).having("count(*) > 1").distinct
+        mem = policy_scope(Memory).joins(:stamps).where(stamps: { id: stamps_ids }).group(:id).having("count(*) > #{params[:stamp].length-1}").distinct
         # on ne trouve que les memories qui correspondent aux stamps
         @memories = mem.pluck(:id).map {|id| Memory.find(id)}
       else

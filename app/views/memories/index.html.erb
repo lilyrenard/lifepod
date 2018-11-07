@@ -36,29 +36,27 @@
                   <div class="card-body"></div>
               </div>
             <% elsif memory.memory_type == "spotify" %>
-              <div class="card-spotify">
-                <div class="image-container" data-toggle="modal" data-target="#myModal_<%= memory.id %>">
-                    <%= image_tag memory.image_associated, id: "box", class: "card-img"%>
-                    <div class="card-img-overlay">
-                      <h2><%= memory.description %></h2>
-                      <h3><%= memory.title.capitalize %></h3>
-                      <i class="fas fa-compact-disc"></i>
-                    </div>
-                  </div>
+              <div class="card-spotify" >
+                <div class="image-container-spotify" data-toggle="modal" data-target="#myModal_<%= memory.id %>">
+                  <%= image_tag memory.image_associated, class: "card-img"%>
+                  <h2><%= memory.description %></h2>
+                  <h3><%= memory.title.capitalize %></h3>
+                  <%= image_tag "disc.svg", class: "center3" %>
+                </div>
               </div>
+
+
             <% elsif memory.memory_type == "instagram" %>
-              <div class="card">
                 <div class="card-pola">
                   <div class="image-container" data-toggle="modal" data-target="#myModal_<%= memory.id %>">
                     <%= image_tag memory.image_associated, id: "box", class: "card-img"%>
                     <p class="calendar-left" type="date"><%=memory.created_at.strftime('%Y-%m-%d')%></p>
                     <h3><%= memory.title.capitalize %></h3>
                   </div>
-                    <div class="card-body">
-                      <p><strong>Liked <%= memory.url %> times</strong></p>
-                    </div>
+                  <div class="card-body">
+                    <p><strong>Liked <%= memory.url %> times</strong></p>
+                  </div>
                 </div>
-              </div>
             <% else %>
               <div class="card-quote">
                 <div class="card-body" data-toggle="modal" data-target="#myModal_<%= memory.id %>">

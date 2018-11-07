@@ -23,38 +23,38 @@
   -webkit-transform: rotate(5deg);
   transform: rotate(5deg);
   background-image: image-url("2.svg");
-  color: #45315D;
+  color: $violet;
 }
 .stamp3 {
   -webkit-transform: rotate(-8deg);
   transform: rotate(-8deg);
   background-image: image-url("3.svg");
-  color: #FF2400;
+  color: $red2;
 }
 .stamp4 {
   -webkit-transform: rotate(-10deg);
   transform: rotate(-10deg);
   background-image: image-url("4.svg");
-  color: #FF9280;
+  color: $saumon;
 }
 .stamp5 {
   -webkit-transform: rotate(-25deg);
   transform: rotate(-25deg);
   background-image: image-url("5.svg");
-  color: #45315D;
+  color: $violet;
 }
 
 .stamp6 {
   -webkit-transform: rotate(8deg);
   transform: rotate(8deg);
   background-image: image-url("6.svg");
-  color: #FF2400;
+  color: $red2;
 }
 .stamp7 {
   -webkit-transform: rotate(10deg);
   transform: rotate(10deg);
   background-image: image-url("7.svg");
-  color: #FF9280;
+  color: $saumon;
 }
 
 // stamp
