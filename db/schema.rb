@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_06_164750) do
+ActiveRecord::Schema.define(version: 2018_11_07_222033) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2018_11_06_164750) do
     t.boolean "suggested", default: true
     t.string "photo"
     t.string "image_associated"
+    t.string "api_id"
     t.index ["user_id"], name: "index_memories_on_user_id"
   end
 
@@ -60,6 +61,7 @@ ActiveRecord::Schema.define(version: 2018_11_06_164750) do
     t.string "facebook"
     t.string "youtube"
     t.boolean "spotify_already", default: false
+    t.string "suggested"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
