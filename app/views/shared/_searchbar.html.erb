@@ -3,8 +3,9 @@
   <%= select_tag "stamp[]", options_for_select(
       Stamp.all.
       map { |stamp| stamp.title }),
-      class: 'searchbar-search select2-2',
-      multiple: "multiple" %>
+      class: 'searchbar-search select2',
+      multiple: "multiple",
+      id: "stamp_#{rand(0..2)}" %>
   <%= button_tag(type: "submit", class: "searchbar-submit") do %>
       <i class="fas fa-search"></i>
     <% end %>

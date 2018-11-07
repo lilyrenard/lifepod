@@ -1,3 +1,57 @@
+
+<div class="conteneur-memories" id="container">
+  <h1 class="text-center font-weight-bold">Here is the best content we have selected for you</h1>
+</div>
+
+<div class="row">
+  <div class="d-none d-md-block col-md-2">
+  </div>
+
+  <div class="col-xs-12 col-sm-10 col-md-8">
+    <div class="card-columns">
+      <div class="card card-pola" id="versCategories">
+        <div class="image-container">
+          <div class="card-img" id="fixed">
+            <h3 class="text-center font-weight-bold">Add a memory from another source</h3>
+          </div>
+        </div>
+        <div class="card-body">
+          <p class="card-text">Add your <strong>personal content</strong></p>
+        </div>
+      </div>
+      <% unless @spotify_memories.nil? %>
+        <% @spotify_memories.each do |memory|%>
+          <div class="card">
+            <div class="card-pola">
+              <div class="image-container" data-toggle="modal" data-target="#modal-suggestion-spotify_<%= memory.id %>">
+                <%= image_tag memory.image_associated, id: "box", class: "card-img"%>
+                <h2><%= memory.description %></h2>
+                <h3><%= memory.title.capitalize %></h3>
+                <div class="card-img-overlay">
+                  <i class="fas fa-compact-disc"></i>
+                </div>
+              </div>
+              <div class="card-body">
+                <p>Suggested from <strong>Spotify</strong></p>
+                <p><strong>Top 50</strong> listenings</p>
+              </div>
+            </div>
+          </div>
+        <% end%>
+      <% end%>
+    </div>
+  </div>
+
+
+
+
+
+
+  <div class="d-none d-md-block col-md-2">
+  </div>
+
+</div>
+
 <div class="small-display-categories" id="mySmallFooter">
   <div class="small-conteneur-ajout">
     <div class="row">
