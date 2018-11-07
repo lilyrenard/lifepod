@@ -37,6 +37,7 @@ class PagesController < ApplicationController
         artist = chanson["artists"][0]["name"]
         track = chanson["name"]
         pochette = chanson["album"]["images"][0]["url"]
+        url = chanson["id"]
         @spotify_memories << OpenStruct.new({
                 title: artist,
                 description: track,
@@ -44,7 +45,8 @@ class PagesController < ApplicationController
                 user_id: current_user.id,
                 suggested: true,
                 image_associated: pochette,
-                id: i
+                id: i,
+                url: url
                 })
       end
     end
@@ -66,14 +68,6 @@ class PagesController < ApplicationController
   end
 
   def test
-    url = "https://api.spotify.com/v1/me/player/play"
-    payload = {
-      "uris":["spotify:track:2OxkfL5jW8bvYTCNDLlRSY"]
-    }
-    headers = {
-      Authorization: JSON.parse(current_user.spotify)["access_token"]
-    }
-    RestClient.put(url, payload, headers)
   end
 
   def test2
