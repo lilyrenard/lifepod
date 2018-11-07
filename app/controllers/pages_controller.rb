@@ -51,6 +51,19 @@ class PagesController < ApplicationController
     end
   end
 
+  def photo
+    @memory = Memory.new
+  end
+
+  def video
+    @memory = Memory.new
+  end
+
+  def quote
+    @memory = Memory.new
+  end
+
+
   def profile
     @url = ''
     if Rails.env == "development"

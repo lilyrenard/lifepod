@@ -5,8 +5,5 @@ import { bindSweetAlertButtonDemo } from '../components/sweet_alert';
 bindSweetAlertButtonDemo();
 
 
-import '../components/select2';
-
-// import { initSmoothScrolling } from '../components/carroussel';
-// initSmoothScrolling();
-
+import { initSelect2 } from '../components/select2';
+initSelect2();
