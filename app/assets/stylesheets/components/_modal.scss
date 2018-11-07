@@ -3,7 +3,7 @@
   margin: 5px;
   display: grid;
   grid-template-columns: 600px 1fr;
-  grid-template-rows: 1fr 3fr 1.5fr;
+  grid-template-rows: 1fr 2.5fr 2fr;
   max-height: 450px;
 }
 
@@ -42,7 +42,7 @@
   overflow-x: auto;
 
   > img {
-  margin: 3px auto;
+  margin: auto 5px;
   }
 }
 
