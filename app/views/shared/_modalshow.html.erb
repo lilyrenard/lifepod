@@ -8,6 +8,26 @@
       <div class="modal-body">
         <div class="conteneur-grid">
           <span class="image-grid d-flex align-items-start">
+            <% if memory.memory_type == 'spotify' %>
+              <div class='player-spotify' id="player-spotify_<%= memory.id %>">
+                <i class="fas fa-play-circle" style="font-size: 120px"></i>
+              </div>
+              <script>
+                document.getElementById("player-spotify_<%= memory.id %>").addEventListener("click", (event) => {
+                  console.log('test1')
+                  fetch("https://api.spotify.com/v1/me/player/play", {
+                    method: "PUT",
+                    headers: {
+                      "Accept": "application/json",
+                      "Content-Type": "application/json",
+                      "Authorization": "Bearer <%= JSON.parse(current_user.spotify)["access_token"] %>"
+                    },
+                    body: JSON.stringify({ "uris":["spotify:track:<%= memory.url %>"] })
+                  })
+                    .then(response => console.log(response))
+                });
+              </script>
+            <% end %>
             <%= link_to '#' do %>
               <% if memory.memory_type == "photo" %>
                 <%= cl_image_tag memory.photo, class: "img-fluid", width: 568%>

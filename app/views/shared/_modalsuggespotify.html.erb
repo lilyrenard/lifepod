@@ -17,6 +17,7 @@
               <div class="col-md-7">
                 <%= f.input :memory_type, input_html: {value: f.object.memory_type || memory.memory_type}, as: :hidden  %>
                 <%= f.input :image_associated, input_html: {value: f.object.image_associated || memory.image_associated}, as: :hidden  %>
+                <%= f.input :url, input_html: {value: f.object.url || memory.url}, as: :hidden  %>
                 <%= f.input :title, input_html: {value: f.object.title || memory.title}, label: 'Artist' %>
                 <%= f.input :description, input_html: {value: f.object.description || memory.description}, label: 'Track' %>
                 <%= f.label 'Stamps*', autofocus: true %>
