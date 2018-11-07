@@ -3,7 +3,6 @@ require "base64"
 require 'rest-client'
 require 'ostruct'
 require 'nokogiri'
-require 'open-uri'
 
 class PagesController < ApplicationController
   protect_from_forgery with: :exception
@@ -42,7 +41,8 @@ class PagesController < ApplicationController
                 suggested: true,
                 image_associated: pochette,
                 id: i,
-                url: url
+                url: url,
+                api_id: url
                 })
       end
     end
@@ -58,6 +58,7 @@ class PagesController < ApplicationController
         description = media["caption"]["text"]
         image_associated = media["images"]["standard_resolution"]["url"]
         likes = media["likes"]["count"]
+        api_id = media["id"]
         @insta_memories << OpenStruct.new({
           title: title,
           description: description,
@@ -66,15 +67,35 @@ class PagesController < ApplicationController
           user_id: current_user.id,
           suggested: true,
           id: i,
-          likes: likes
+          likes: likes,
+          api_id: api_id
         })
       end
     end
 
+    # POUR STOCKER LES ID DES SUGGESTIONS
+    suggested_memories = {}
+    if current_user.suggested
+      suggested_memories = JSON.parse(current_user.suggested)
+    else
+      suggested_memories = {
+        spotify: [],
+        instagram: []
+      }
+    end
+    @insta_memories.reject { |insta| suggested_memories[:instagram].include?(insta.api_id) }.each { |insta| suggested_memories[:instagram] << insta.api_id } unless (@insta_memories.nil? || suggested_memories[:instagram].nil?)
+    @spotify_memories.reject { |music| suggested_memories[:spotify].include?(music.api_id) }.each { |music| suggested_memories[:spotify] << music.api_id } unless (@spotify_memories.nil? || suggested_memories[:spotify].nil?)
+    current_user.suggested = JSON.generate(suggested_memories)
+    current_user.save
+
+    # POUR EVITER DE SUGGERER DES MEMORIES DEJA EXISTANTS
+    spotify_already = Memory.where(memory_type: "spotify").map {|memory| memory.api_id} unless Memory.where(memory_type: "spotify").nil?
+    instagram_already = Memory.where(memory_type: "instagram").map {|memory| memory.api_id} unless Memory.where(memory_type: "instagram").nil?
+
     # ADDING TO A GENERAL MEMORIES
     @memories = []
-    @insta_memories.each { |insta| @memories << insta } unless @insta_memories.nil?
-    @spotify_memories.each { |music| @memories << music } unless @spotify_memories.nil?
+    @insta_memories.reject { |insta| instagram_already.include?(insta.api_id) }.each { |insta| @memories << insta } unless @insta_memories.nil?
+    @spotify_memories.reject { |music| spotify_already.include?(music.api_id) }.each { |music| @memories << music } unless @spotify_memories.nil?
     @memories.shuffle!
   end
 
