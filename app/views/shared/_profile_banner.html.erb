@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-md-3">
         <div class="card-profile-logo">
-          <%= link_to @url do %>
+          <%= link_to @url_spotify do %>
             <% if current_user.spotify.nil? %>
               <%= image_tag 'spotify_logo_nb.png', id: "profile-banner-logo-spotify" %>
             <% else %>
@@ -16,10 +16,12 @@
       </div>
       <div class="col-md-3">
         <div class="card-profile-logo">
-          <% if current_user.instagram.nil? %>
-            <%= image_tag 'instagram_logo_nb.png', id: "profile-banner-logo-insta" %>
-          <% else %>
-            <%= image_tag 'instagram_logo.png', id: "profile-banner-logo-insta" %>
+          <%= link_to @url_instagram do %>
+            <% if current_user.instagram.nil? %>
+              <%= image_tag 'instagram_logo_nb.png', id: "profile-banner-logo-insta" %>
+            <% else %>
+              <%= image_tag 'instagram_logo.png', id: "profile-banner-logo-insta" %>
+            <% end %>
           <% end %>
         </div>
       </div>
