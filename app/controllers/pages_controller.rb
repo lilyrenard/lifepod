@@ -2,6 +2,8 @@ require 'open-uri'
 require "base64"
 require 'rest-client'
 require 'ostruct'
+require 'nokogiri'
+require 'open-uri'
 
 class PagesController < ApplicationController
   protect_from_forgery with: :exception
@@ -51,6 +53,19 @@ class PagesController < ApplicationController
       end
     end
   end
+
+  def photo
+    @memory = Memory.new
+  end
+
+  def video
+    @memory = Memory.new
+  end
+
+  def quote
+    @memory = Memory.new
+  end
+
 
   def profile
     @url = ''
