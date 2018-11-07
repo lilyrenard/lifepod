@@ -32,7 +32,7 @@
 <!-- MODAL VIDEO -->
 
 <div class="modal fade bd-example-modal-lg" id="video" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
+  <div class="modal-dialog modal-md">
     <div class="modal-content">
       <div class="modal-body">
         <div id="fermer-modal-ajout" data-toggle="modal" data-target=".bd-example-modal-lg" data-backdrop="static">
@@ -43,13 +43,7 @@
         <div class="conteneur-modal-ajout">
           <h1 id='titre-ajout'>Add a video memory</h1>
           <%= simple_form_for [@memory] do |f| %>
-            <div class="row">
-              <div class="col-xs-12 col-md-5">
-                <div class="cadre-photo img-fluid" alt="Responsive image">
-                  <%= f.input :photo, label: 'Upload your video' %>
-                  <%= f.input :photo_cache, as: :hidden %>
-                </div>
-              </div>
+            <div class="row justify-content-center">
               <div class="col-xs-12 col-md-7">
                 <%= f.input :memory_type, input_html: { id: 'special_categorie', value: "video" }, as: :hidden  %>
                 <%= f.input :title, label: 'Your video name' %>
@@ -58,6 +52,8 @@
                 <div class="stamps-form">
                   <%= select_tag 'memory[stamps][]', options_for_select(Stamp.all.pluck(:title)), multiple: 'multiple', class: 'form-control select2'%>
                 </div>
+                <%= f.input :photo, label: 'Upload your video' %>
+                <%= f.input :photo_cache, as: :hidden %>
               </div>
               <div class="submit-add-button">
                 <%= f.submit 'Add a memory', class: "btn boutton-rouge boutton-rouge-inside" %>
