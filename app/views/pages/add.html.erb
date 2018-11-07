@@ -18,25 +18,40 @@
           <p class="card-text">Add your <strong>personal content</strong></p>
         </div>
       </div>
-      <% unless @spotify_memories.nil? %>
-        <% @spotify_memories.each do |memory|%>
-          <div class="card">
-            <div class="card-pola">
-              <div class="image-container" data-toggle="modal" data-target="#modal-suggestion-spotify_<%= memory.id %>">
-                <%= image_tag memory.image_associated, id: "box", class: "card-img"%>
-                <h2><%= memory.description %></h2>
-                <h3><%= memory.title.capitalize %></h3>
-                <div class="card-img-overlay">
-                  <i class="fas fa-compact-disc"></i>
+      <% unless @memories.nil? %>
+        <% @memories.each do |memory|%>
+          <% if memory.memory_type == "spotify" %>
+            <div class="card">
+              <div class="card-pola">
+                <div class="image-container" data-toggle="modal" data-target="#modal-suggestion-spotify_<%= memory.id %>">
+                  <%= image_tag memory.image_associated, id: "box", class: "card-img"%>
+                  <h2><%= memory.description %></h2>
+                  <h3><%= memory.title.capitalize %></h3>
+                  <div class="card-img-overlay">
+                    <i class="fas fa-compact-disc"></i>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <p>Suggested from <strong>Spotify</strong></p>
+                  <p><strong>Top 50</strong> listenings</p>
                 </div>
               </div>
-              <div class="card-body">
-                <p>Suggested from <strong>Spotify</strong></p>
-                <p><strong>Top 50</strong> listenings</p>
+            </div>
+          <% elsif memory.memory_type == "instagram" %>
+            <div class="card">
+              <div class="card-pola">
+                <div class="image-container" data-toggle="modal" data-target="#modal-suggestion-instagram<%= memory.id %>">
+                  <%= image_tag memory.image_associated, id: "box", class: "card-img"%>
+                  <h3><%= memory.title.capitalize %></h3>
+                </div>
+                  <div class="card-body">
+                    <p>Suggested from <strong>Instagram</strong></p>
+                    <p><strong>Liked <%= memory.likes %> times</strong></p>
+                  </div>
               </div>
             </div>
-          </div>
-        <% end%>
+          <% end %>
+        <% end %>
       <% end%>
     </div>
   </div>
@@ -55,9 +70,13 @@
 
 <%= render 'shared/smallfooterbleu' %>
 
-<% unless @spotify_memories.nil? %>
-  <% @spotify_memories.each do |memory|%>
-    <%= render 'shared/modalsuggespotify', memory: memory %>
+<% unless @memories.nil? %>
+  <% @memories.each do |memory|%>
+    <% if memory.memory_type == "spotify" %>
+      <%= render 'shared/modalsuggespotify', memory: memory %>
+    <% elsif memory.memory_type == "instagram" %>
+      <%= render 'shared/modalsuggeinstagram', memory: memory %>
+    <% end %>
   <% end %>
 <% end %>
 

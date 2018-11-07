@@ -7,25 +7,29 @@
       <div class="animation">
         <% compteur = 1 %>
         <% @stamps.each do |pair|%>
-        <div <%= 'class="first"' if compteur == 1 %>>
-          <% compteur -= 1 %>
-          <span class="box">
-            <%= image_tag "boxes/#{rand(1...4)}.svg" %>
-            <div class="">
-              <div class="<%=pair[0].stamp_image%> stamp-right" >
-                <p><%= pair[0].title.upcase %></p>
+        <% if compteur == 1 %>
+          <div class="first ecart-box">
+        <% else %>
+          <div class="ecart-box">
+        <% end %>
+            <% compteur -= 1 %>
+            <div class="box">
+              <%= image_tag "boxes/#{rand(1...4)}.svg" %>
+                <div class="<%=pair[0].stamp_image%> stamp-right" >
+                  <div class="stamp-content">
+                    <p><%= pair[0].title.upcase %></p>
+                  </div>
+                </div>
+              <div class="">
+                <div class="<%= pair[1].stamp_image%> stamp-left" >
+                  <p><%= pair[1].title.upcase %></p>
+                </div>
               </div>
             </div>
-            <div class="">
-              <div class="<%= pair[1].stamp_image%> stamp-left" >
-                <p><%= pair[1].title.upcase %></p>
-              </div>
-            </div>
-          </span>
-          <span class="lien-to-box">
-            <%= link_to "Explore it", memories_path(stamp: [pair[0].title, pair[1].title]), class: "btn boutton-rouge boutton-rouge-border" %>
-          </span>
-        </div>
+            <span class="lien-to-box">
+              <%= link_to "Explore it", memories_path(stamp: [pair[0].title, pair[1].title]), class: "btn boutton-rouge boutton-rouge-border" %>
+            </span>
+          </div>
         <% end %>
       </div>
     </div>
