@@ -22,7 +22,7 @@
                 <%= f.input :description, input_html: {value: f.object.description || memory.description}, label: 'Caption' %>
                 <%= f.label 'Stamps*', autofocus: true %>
                 <div class="stamps-form">
-                  <%= select_tag 'memory[stamps][]', options_for_select(Stamp.all.pluck(:title)), multiple: 'multiple', class: 'form-control select2'%>
+                  <%= select_tag 'memory[stamps][]', options_for_select(Stamp.all.pluck(:title)), multiple: 'multiple', class: 'form-control select2', id: "memory_stamps_#{memory.id}"%>
                 </div>
               </div>
               <div class="submit-add-button">

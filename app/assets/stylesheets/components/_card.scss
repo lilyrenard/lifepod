@@ -189,5 +189,54 @@ img#calendar {
 // card spotify
 
 .card-spotify {
-  padding: 0px;
+  box-shadow: 1px 2px 10px rgba(0,0,0,0.3);
 }
+
+.image-container-spotify {
+  position: relative;
+  h2 {
+    text-align: right;
+    color: white;
+    font-size: 17px;
+    margin: auto;
+    margin-left: 15px;
+    position: absolute;
+    bottom: 25px;
+    right: 20px;
+  }
+  h3 {
+    text-align: right;
+    color: white;
+    font-size: 15px;
+    margin: auto;
+    margin-left: 15px;
+    position: absolute;
+    bottom: 8px;
+    right: 20px;
+  }
+}
+
+.center3 {
+  width: 90px;
+  position: absolute;
+  top: 30px;
+  left: 49.3px;
+}
+
+// card add spotify
+
+.center {
+  width: 90px;
+  position: absolute;
+  top: 30px;
+  left: 56.5px;
+}
+
+.center2 {
+  width: 120px;
+  position: absolute;
+  top: 15px;
+  left: 39px;
+}
+
+
