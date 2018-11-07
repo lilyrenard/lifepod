@@ -15,14 +15,6 @@ class PagesController < ApplicationController
   end
 
   def add
-    # if (current_user.spotify_already == true && response.code == "401")
-    #   response = SpotifyConnectService.new(params["code"], "/memories/add").call
-    #   current_user.spotify = response[0]
-    #   current_user.spotify_already = response[1]
-    #   current_user.save
-    # end
-
-    flash.now[:alert] = "Click to add a memory!" if URI(request.referer).path == '/memories/board'
     @memory = Memory.new
 
     # SPOTIFY MEMORIES
@@ -79,9 +71,10 @@ class PagesController < ApplicationController
       end
     end
 
+    # ADDING TO A GENERAL MEMORIES
     @memories = []
-    @insta_memories.each { |insta| @memories << insta }
-    @spotify_memories.each { |music| @memories << music }
+    @insta_memories.each { |insta| @memories << insta } unless @insta_memories.nil?
+    @spotify_memories.each { |music| @memories << music } unless @spotify_memories.nil?
     @memories.shuffle!
   end
 
@@ -117,8 +110,7 @@ class PagesController < ApplicationController
       current_user.save
     elsif params["code"]
       response = SpotifyConnectService.new(params["code"], "/memories/profile").call
-      current_user.spotify = response[0]
-      current_user.spotify_already = response[1]
+      current_user.spotify = response
       current_user.save
     end
   end

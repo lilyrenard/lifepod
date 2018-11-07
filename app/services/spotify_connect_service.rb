@@ -21,10 +21,6 @@ class SpotifyConnectService
       client_id: @client_id,
       client_secret: @client_secret
     }
-    response = [RestClient.post(@url, payload, content_type: 'application/x-www-form-urlencoded'), false]
-    if response[0].code == 200
-      response[1] = true
-    end
-    return response
+    RestClient.post(@url, payload, content_type: 'application/x-www-form-urlencoded')
   end
 end
