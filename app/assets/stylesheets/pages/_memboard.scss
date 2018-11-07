@@ -5,7 +5,6 @@
 .wrapper-box {
   display: flex;
   justify-content: center;
-  margin: 50px 0px;
 }
 
 .affichage-box {
@@ -23,10 +22,10 @@
 
 .stamp-right {
   position: absolute;
-  bottom: 15px;
-  right: 60px;
-  height: 55px;
-  width: 55px;
+  bottom: -100px;
+  right: 80px;
+  height: 55px !important;
+  width: 55px !important;
   p {
     font-size: 15px;
   }
@@ -34,10 +33,10 @@
 
 .stamp-left {
   position: absolute;
-  bottom: 15px;
-  left: 60px;
-  height: 55px;
-  width: 55px;
+  bottom: -115px;
+  left: 50px;
+  height: 55px !important;
+  width: 55px !important;
   p {
     font-size: 15px;
   }

@@ -37,7 +37,7 @@ function initSmoothScrolling(container,animation){
 
   // count slides to determine animation speed
   var slidesNumber = $('>div>div', container).length;
-  var speed = slidesNumber*10;
+  var speed = slidesNumber*100;
 
   console.dir(slidesNumber);
   console.dir(speed);

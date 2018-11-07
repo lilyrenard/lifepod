@@ -46,3 +46,23 @@
   }
 }
 
+
+// SPOTIFY TRICKS
+
+.player-spotify {
+  z-index: 100;
+  position: absolute;
+  color: white;
+  font-weight: bold;
+  left: 245px;
+  bottom: 186px;
+}
+
+.player-spotify i {
+  transition: 0.3s;
+}
+
+.player-spotify i:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
