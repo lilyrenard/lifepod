@@ -156,7 +156,13 @@ class PagesController < ApplicationController
       end
     end
 
-    @tot_box = ((music.length / 400) + (photo.length / 6400) + (video.length / 400) + (quote.length / 1600))
+    tot_box_1 = (music.length.fdiv(400) + photo.length.fdiv(6400) + video.length.fdiv(400) + quote.length.fdiv(1600)).to_i
+
+    if tot_box_1 == 0
+      @tot_box = 1
+    else
+      @tot_box = tot_box_1
+    end
 
     @stamps = policy_scope(Stamp).pluck(:id)
 
