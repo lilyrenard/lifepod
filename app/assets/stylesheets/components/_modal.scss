@@ -45,7 +45,7 @@
   max-height: 300px;
   overflow-y: auto;
   > p {
-    margin: auto  3px;
+    margin: auto 3px;
   }
 
 }
@@ -76,6 +76,12 @@
   }
 }
 
+.stamp-position-bar {
+  margin-right: 10px;
+  margin-left: 10px;
+
+
+}
 .fond-quote > p:before {
   content: "“";
   font-weight: bold;
