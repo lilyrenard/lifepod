@@ -1,237 +1,116 @@
-<html>
-  <head>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
+<div class="conteneur-memories" id="container">
+  <h1 class="text-center font-weight-bold d-none d-md-block">Your dashboard</h1>
+</div>
 
-      // Load Charts and the corechart package.
-      google.charts.load('current', {'packages':['corechart']});
+<!--Podium-->
 
-      // Draw the pie chart for Sarah's pizza when Charts is loaded.
-      google.charts.setOnLoadCallback(drawManuPieChart);
-
-      // Draw the pie chart for the Anthony's pizza when Charts is loaded.
-      google.charts.setOnLoadCallback(drawSuggestedPieChart);
-
-      google.charts.setOnLoadCallback(drawManuSuggestedPieChart);
-
-      google.charts.setOnLoadCallback(drawNumberSuggestedChart);
-
-      google.charts.setOnLoadCallback(drawChart);
-
-
-      // Callback that draws the pie chart for Sarah's pizza.
-      function drawManuPieChart() {
-
-        // Create the data table for Sarah's pizza.
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Nature');
-        data.addColumn('number', 'Memories');
-        data.addRows([
-          ['Photos', <%= Memory.where(memory_type: 'photo').count %>],
-          ['Videos', <%= Memory.where(memory_type: 'video').count %>],
-          ['Quotes', <%= Memory.where(memory_type: 'quote').count %>]
-        ]);
-
-        // Set options for Sarah's pie chart.
-        var options = {title:'Your manually-added memories repartition',
-                       width:400,
-                       height:300,
-                       colors: ['#45315d', '#ff2400', '#ff9280']};
-
-        // Instantiate and draw the chart for Sarah's pizza.
-        var chart = new google.visualization.PieChart(document.getElementById('Manu_Pie_chart_div'));
-        chart.draw(data, options);
-      }
-
-      // Callback that draws the pie chart for Anthony's pizza.
-      function drawSuggestedPieChart() {
-
-        // Create the data table for Anthony's pizza.
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Nature');
-        data.addColumn('number', 'Memories');
-        data.addRows([
-          ['Spotify', <%= Memory.where(memory_type: 'spotify').count %>],
-          ['Instagram', <%= Memory.where(memory_type: 'instagram').count %>]
-        ]);
-
-        // Set options for Anthony's pie chart.
-        var options = {title:'Your suggested memories repartition',
-                       width:400,
-                       height:300,
-                       colors: ['#45315d', '#ff2400']};
-
-        // Instantiate and draw the chart for Anthony's pizza.
-        var chart = new google.visualization.PieChart(document.getElementById('Suggested_Pie_chart_div'));
-        chart.draw(data, options);
-      }
-
-      function drawManuSuggestedPieChart() {
-
-        // Create the data table for Sarah's pizza.
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Nature');
-        data.addColumn('number', 'Memories');
-        data.addRows([
-          ['Manual', <%= Memory.where(memory_type: 'photo').count + Memory.where(memory_type: 'video').count + Memory.where(memory_type: 'quote').count %>],
-          ['Suggested', <%= Memory.where(memory_type: 'spotify').count + Memory.where(memory_type: 'instagram').count %>]
-        ]);
-
-        // Set options for Sarah's pie chart.
-        var options = {title:'Your manually/suggested repartition',
-                       width:400,
-                       height:300,
-                       colors: ['#45315d', '#ff2400']};
-
-        // Instantiate and draw the chart for Sarah's pizza.
-        var chart = new google.visualization.PieChart(document.getElementById('Manu_Suggested_Pie_chart_div'));
-        chart.draw(data, options);
-      }
-
-      function drawNumberSuggestedChart() {
-
-
-        var data = google.visualization.arrayToDataTable([
-                  ['Year', 'Sales'],
-                  ['2013',  1000],
-                  ['2014',  1170],
-                  ['2015',  660],
-                  ['2016',  1030],
-                  ['2013',  1000],
-                  ['2014',  1170],
-                  ['2015',  660],
-                  ['2016',  1030]
-                ]);
-
-
-        var options = {
-          title: 'Number of memories added',
-          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
-          vAxis: {minValue: 0},
-          colors: ['#0b132b']
-        };
-
-        var chart = new google.visualization.AreaChart(document.getElementById('Number_Suggested_Chart_div'));
-        chart.draw(data, options);
-      }
-
-      function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-              ["Element", "Density", { role: "style" } ],
-              ["Instagram", <%= (Memory.where(memory_type: 'instagram').count.fdiv(JSON.parse(current_user.suggested)["instagram"].count)) * 100 %>, "#b87333"],
-              ["Spotify", <%= (Memory.where(memory_type: 'spotify').count.fdiv(JSON.parse(current_user.suggested)["spotify"].count)) * 100 %>, "silver"],
-            ]);
-
-            var view = new google.visualization.DataView(data);
-            view.setColumns([0, 1,
-                             { calc: "stringify",
-                               sourceColumn: 1,
-                               type: "string",
-                               role: "annotation" },
-                             2]);
-
-            var options = {
-              title: "Density of Precious Metals, in g/cm^3",
-              width: 600,
-              height: 400,
-              bar: {groupWidth: "60%"},
-              legend: { position: "none" },
-            };
-            var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
-            chart.draw(view, options);
-        }
-    </script>
-  </head>
-  <body>
-
-  <div class="conteneur-memories" id="container">
-    <h1 class="text-center font-weight-bold d-none d-md-block">Your dashboard</h1>
+<div class="large-container grey">
+  <div class="row">
+    <div class="col-lg">
+      <h2 class="text-center espace">Your most used stamps</h2>
+    </div>
   </div>
-
-
-    <!--Number of boxes-->
-
-    <div class="large-container grey">
-      <div class="num-box">
-        <%= image_tag "boxes/1.svg", class: "padding"%>
-        <div class="wrap text-center">
-          <h3>You would need <%= pluralize @tot_box, "box" %> to move all your content out !</h3>
+  <div class="row">
+    <div class="col-lg-2 offset-lg-3"">
+      <div class="box-viz">
+        <div class="icon">
+          <div class=<%=@stamp_1.stamp_image%> >
+            <p><%= @stamp_1.title.upcase %></p>
+          </div>
+        </div>
+        <div class="count">
+          <p><strong><%=@stamp_1_mem%></strong></p>
+          <p><%=  "Memory".pluralize(@stamp_1_mem) %></p>
         </div>
       </div>
     </div>
-    <!--Podium-->
-
-    <div class="large-container">
-      <div class="row">
-        <div class="col-lg">
-          <h2 class="text-center espace">Your most used stamps</h2>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-2 offset-lg-3"">
-          <div class="box-viz">
-            <div class="icon">
-              <div class=<%=@stamp_1.stamp_image%> >
-                <p><%= @stamp_1.title.upcase %></p>
-              </div>
-            </div>
-            <div class="count">
-              <p><strong><%=@stamp_1_mem%></strong></p>
-              <p><%=  "Memory".pluralize(@stamp_1_mem) %></p>
-            </div>
+    <div class="col-lg-2">
+      <div class="box-viz">
+        <div class="icon">
+          <div class=<%=@stamp_2.stamp_image%> >
+            <p><%= @stamp_2.title.upcase %></p>
           </div>
         </div>
-        <div class="col-lg-2">
-          <div class="box-viz">
-            <div class="icon">
-              <div class=<%=@stamp_2.stamp_image%> >
-                <p><%= @stamp_2.title.upcase %></p>
-              </div>
-            </div>
-            <div class="count">
-              <p><strong><%=@stamp_2_mem%></strong></p>
-              <p><%=  "Memory".pluralize(@stamp_2_mem) %></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-2">
-          <div class="box-viz">
-            <div class="icon">
-              <div class=<%=@stamp_3.stamp_image%> >
-                <p><%= @stamp_3.title.upcase %></p>
-              </div>
-            </div>
-            <div class="count">
-              <p><strong><%=@stamp_3_mem%></strong></p>
-              <p><%=  "Memory".pluralize(@stamp_2_mem) %></p>
-            </div>
-          </div>
+        <div class="count">
+          <p><strong><%=@stamp_2_mem%></strong></p>
+          <p><%=  "Memory".pluralize(@stamp_2_mem) %></p>
         </div>
       </div>
     </div>
+    <div class="col-lg-2">
+      <div class="box-viz">
+        <div class="icon">
+          <div class=<%=@stamp_3.stamp_image%> >
+            <p><%= @stamp_3.title.upcase %></p>
+          </div>
+        </div>
+        <div class="count">
+          <p><strong><%=@stamp_3_mem%></strong></p>
+          <p><%=  "Memory".pluralize(@stamp_2_mem) %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
+<!--Pertinence des sukG-->
+
+<div class="large-container">
+  <div class="row"></div>
+    <div class="col-lg-2 offset-lg-3"">
+      <div class="conteneur-graph">
+        <canvas id="SpotInstaBarChart" data-tab="<%= (Memory.where(memory_type: 'instagram').count.fdiv(JSON.parse(current_user.suggested)["instagram"].count)) * 100 %>-<%= (Memory.where(memory_type: 'spotify').count.fdiv(JSON.parse(current_user.suggested)["spotify"].count)) * 100 %>"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
 
 
+<!--Piecharts-->
+
+<div class="large-container grey">
+  <div class="row">
+    <div class="col-lg-2">
+      <div class="conteneur-graph-pie">
+        <canvas id="ManuPieChart" data-tab="<%= Memory.where(memory_type: 'photo').count %>-<%= Memory.where(memory_type: 'video').count %>-<%= Memory.where(memory_type: 'quote').count %>"></canvas>
+      </div>
+    </div>
+    <div class="col-lg-2 offset-lg-1">
+      <div class="conteneur-graph-pie">
+        <canvas id="SuggePieChart" data-tab="<%= Memory.where(memory_type: 'spotify').count %>-<%= Memory.where(memory_type: 'instagram').count %>"></canvas>
+      </div>
+    </div>
+    <div class="col-lg-2 offset-lg-1">
+      <div class="conteneur-graph-pie">
+        <canvas id="ManuSuggePieChart" data-tab="<%= Memory.where(memory_type: 'spotify').count + Memory.where(memory_type: 'instagram').count %>-<%= Memory.where(memory_type: 'photo').count + Memory.where(memory_type: 'video').count + Memory.where(memory_type: 'quote').count %>"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
 
 
+<!--Date d'ajout-->
+<div class="large-container">
+  <div class="row"></div>
+    <div class="col-lg-2 offset-lg-3"">
+      <div class="conteneur-graph">
+        <canvas id="line-chart" data-tab="12-21-3-21-32-33-22-12-40"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
 
 
-    <!--Table and divs that hold the pie charts-->
-    <table class="columns">
-      <tr>
-        <td><div id="Manu_Pie_chart_div" style="border: 1px solid #ccc"></div></td>
-        <td><div id="Suggested_Pie_chart_div" style="border: 1px solid #ccc"></div></td>
-        <td><div id="Manu_Suggested_Pie_chart_div" style="border: 1px solid #ccc"></div></td>
-      </tr>
-      <tr>
-        <div id="Number_Suggested_Chart_div" style="width: 100%; height: 500px;"></div>
-      </tr>
-      <tr>
-        <div id="barchart_values" style="width: 900px; height: 300px;"></div>
-      </tr>
-    </table>
+<!--Number of boxes-->
+
+<div class="large-container grey">
+  <div class="num-box">
+    <%= image_tag "boxes/1.svg", class: "padding"%>
+    <div class="wrap text-center">
+      <h3>You would need <%= pluralize @tot_box, "box" %> to move all your content out !</h3>
+    </div>
+  </div>
+</div>
 
 
-  </body>
-</html>

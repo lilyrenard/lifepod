@@ -4,10 +4,8 @@
   <div class="modal-dialog modal-md">
     <div class="modal-content">
       <div class="modal-body">
-        <div id="fermer-modal-ajout" data-toggle="modal" data-target=".bd-example-modal-lg" data-backdrop="static">
-          <%= link_to add_path do%>
+        <div id="fermer-modal-ajout" data-toggle="modal" data-target="#video-edit_<%= memory.id %>" data-backdrop="static">
             <i class="fas fa-times"></i>
-          <% end  %>
         </div>
         <div class="conteneur-modal-ajout">
           <h1 id='titre-ajout'>Edit a video memory</h1>
