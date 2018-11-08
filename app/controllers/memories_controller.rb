@@ -47,19 +47,24 @@ class MemoriesController < ApplicationController
     end
     # l'utilisateur entre un ou plusieurs stamps
     stamps = params[:memory][:stamps]
+
     #pour chacun des stamps rentrés par l'utilisateur je cherche s'il existe et je l'ajoute
-    stamps.each do |stamp_title|
-      stamp = Stamp.create_with(stamp_image: "stamp#{rand(2..7)}").find_or_create_by(title: stamp_title, user: current_user)
-      stamp.user_id = current_user.id
-      #j'associe le stamp au memory
-      @memory.stamps << stamp
+    #j'associe le stamp au memory
+
+    if stamps != nil
+      stamps.each do |stamp_title|
+        stamp = Stamp.create_with(stamp_image: "stamp#{rand(2..7)}").find_or_create_by(title: stamp_title, user: current_user)
+        stamp.user_id = current_user.id
+        @memory.stamps << stamp
+      end
     end
 
     if @memory.save
       flash[:notice] = true
       redirect_to add_path
     else
-      render :new
+      flash[:alert] = 'Error! Memory invalid.'
+      redirect_to add_path
     end
   end
 

@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get 'memories/add/quote', to: 'pages#quote', as: :modal_quote
 
 
-  resources :memories do
+  resources :memories, only: [:index, :create, :edit, :update, :destroy] do
     resources :stamps, only: [:new, :create, :edit, :update, :destroy]
   end
 
