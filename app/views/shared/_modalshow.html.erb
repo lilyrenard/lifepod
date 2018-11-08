@@ -83,8 +83,10 @@
           </span>
           <span class="tag-grid d-flex align-items-center justify-content-start">
               <% memory.stamps.each do |stamp|%>
-              <div class=<%=stamp.stamp_image%> >
-                <p><%= stamp.title.upcase %></p>
+              <div class="stamp-position-bar">
+                <div class=<%=stamp.stamp_image%> >
+                  <p><%= stamp.title.upcase %></p>
+                </div>
               </div>
               <% end%>
           </span>
