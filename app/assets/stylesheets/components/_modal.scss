@@ -61,6 +61,37 @@
   }
 }
 
+.fond-quote {
+  width: 568px;
+  height: 426px;
+  background-color: $bleumarine;
+  position: relative;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+
+  > p {
+    color: white;
+    font-size: 24px;
+  }
+}
+
+.fond-quote > p:before {
+  content: "“";
+  font-weight: bold;
+  font-size: 35px;
+  position: absolute;
+  left: 10px;
+  color: white;
+}
+.fond-quote > p:after {
+  content: "”";
+  font-size: 35px;
+  font-weight: bold;
+  position: absolute;
+  right: 10px;
+  color: white;
+}
 
 // SPOTIFY TRICKS
 
