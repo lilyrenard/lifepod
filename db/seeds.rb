@@ -117,7 +117,7 @@ stamp13.save!
 
 memory1 = Memory.new(
   title: "My sister is born",
-  description: "My beautiful sister is a lucky girl, because she will be on the receiving end of all your kindness and wisdom",
+  description: "My beautiful sister is a lucky girl, because she will be on the receiving end of all your kindness and wisdom.",
   memory_type: "photo",
   user_id: user.id,
   remote_photo_url: "https://res.cloudinary.com/dt38p7qqh/image/upload/v1541689961/birth.jpg",
