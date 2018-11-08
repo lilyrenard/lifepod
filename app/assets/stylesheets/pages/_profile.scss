@@ -3,7 +3,13 @@
 .profile-banner {
   width: 100vw;
   height: 250px;
-  background-color: $bleumarine;
+  background-color: $red2;
+  h2 {
+    color: white;
+  }
+  h3 {
+    color: white;
+  }
 }
 
 @media (max-width:768px) {
@@ -102,7 +108,7 @@
 
 .profile-informations-personnelles {
   height: 100%;
-  border: 1px solid black;
+  border-radius: 3px;
   background-color: #F2F4FB;
   padding: 20px 40px;
 }
