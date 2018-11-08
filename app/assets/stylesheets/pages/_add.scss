@@ -46,6 +46,15 @@
   background-color: $bleumarine;
 }
 
+@media (max-width:375px) {
+  .display-categories{
+    height: 100vh;
+  }
+  .conteneur-ajout {
+    margin: 0px;
+  }
+}
+
 .fond-gris {
   position: fixed;
   bottom: 0;
