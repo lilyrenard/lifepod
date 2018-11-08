@@ -54,7 +54,7 @@
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>
             <%= link_to memboard_path do %>
-            <span><i class="fas fa-search"></i></i>Explore</span>
+            <span><i class="fas fa-search"></i>Explore</span>
             <% end %>
           </li>
           <li>
@@ -84,10 +84,24 @@
     <% end %>
 
     <!-- Right Navigation -->
-    <div class="navbar-wagon-right d-none d-lg-block d-xl-block">
+    <div class="navbar-wagon-right d-none d-md-flex">
       <!-- Login link (when logged out) -->
       <div class="button-container">
         <%= link_to "Sign In", "users/sign_in", class: "btn boutton-rouge boutton-rouge-inside sign" %>
+      </div>
+    </div>
+
+    <!-- Dropdown appearing on mobile only -->
+    <div class="navbar-wagon-item d-block d-md-none">
+      <div class="dropdown">
+        <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li>
+            <%= link_to "users/sign_in" do %>
+            <span><i class="fas fa-sign-in-alt"></i> Sign In</span>
+            <% end %>
+          </li>
+        </ul>
       </div>
     </div>
 
