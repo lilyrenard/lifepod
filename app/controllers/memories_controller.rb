@@ -29,6 +29,7 @@ class MemoriesController < ApplicationController
   end
 
   def show
+    authorize(@memory)
   end
 
   def new
@@ -67,8 +68,20 @@ class MemoriesController < ApplicationController
   end
 
   def update
+    @memory.stamps = []
+    stamps = params[:memory][:stamps]
+    #pour chacun des stamps rentrés par l'utilisateur je cherche s'il existe et je l'ajoute
+    stamps.each do |stamp_title|
+      stamp = Stamp.create_with(stamp_image: "stamp#{rand(2..7)}").find_or_create_by(title: stamp_title, user: current_user)
+      stamp.user_id = current_user.id
+      #j'associe le stamp au memory
+      # fail
+      @memory.stamps << stamp
+    end
+
     if @memory.update(memory_params)
-      redirect_to memory_path(@memory)
+      authorize(@memory)
+      redirect_to memories_path
     else
       render :edit
     end
@@ -90,6 +103,6 @@ class MemoriesController < ApplicationController
   end
 
   def memory_params
-    params.require(:memory).permit(:title, :description, :photo, :memory_type, :image_associated, :url, :api_id)
+    params.require(:memory).permit(:title, :description, :photo, :memory_type, :image_associated, :url, :api_id, :stamps)
   end
 end

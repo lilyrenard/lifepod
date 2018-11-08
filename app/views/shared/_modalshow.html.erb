@@ -41,12 +41,30 @@
             <% end %>
           </span>
           <span class="edit-delete-grid d-flex align-items-center justify-content-end">
-             <%= link_to do %>
-              <i class="fas fa-edit"></i>
-             <% end %>
-             <%= link_to memory_path(memory), method: :delete do %>
+            <% if memory.memory_type == "spotify" %>
+              <div data-toggle="modal" data-target="#modal-suggestion-spotify-edit_<%= memory.id %>">
+                <i class="fas fa-edit"></i>
+              </div>
+            <% elsif memory.memory_type == "instagram" %>
+              <div data-toggle="modal" data-target="#modal-suggestion-instagram-edit<%= memory.id %>">
+                <i class="fas fa-edit"></i>
+              </div>
+            <% elsif memory.memory_type == "photo" %>
+              <div data-toggle="modal" data-target="#photo-edit_<%= memory.id %>">
+                <i class="fas fa-edit"></i>
+              </div>
+              <% elsif memory.memory_type == "video" %>
+                <div data-toggle="modal" data-target="#video-edit_<%= memory.id %>">
+                  <i class="fas fa-edit"></i>
+                </div>
+              <% elsif memory.memory_type == "quote" %>
+                <div data-toggle="modal" data-target="#quote-edit_<%= memory.id %>">
+                  <i class="fas fa-edit"></i>
+                </div>
+            <% end %>
+            <%= link_to memory_path(memory), method: :delete do %>
               <i class="far fa-trash-alt"></i>
-             <% end %>
+            <% end %>
           </span>
           <span class="title-grid d-flex align-items-center justify-content-center">
             <h4><%= memory.title.capitalize %></h4>
@@ -71,3 +89,16 @@
     </div>
   </div>
 </div>
+
+
+<% if memory.memory_type == "spotify" %>
+  <%= render 'shared/modalsuggespotifyedit', memory: memory %>
+<% elsif memory.memory_type == "instagram" %>
+  <%= render 'shared/modalsuggeinstagramedit', memory: memory %>
+<% elsif memory.memory_type == "photo" %>
+  <%= render 'shared/modalphotoedit', memory: memory %>
+<% elsif memory.memory_type == "video" %>
+  <%= render 'shared/modalvideoedit', memory: memory %>
+<% elsif memory.memory_type == "quote" %>
+  <%= render 'shared/modalquoteedit', memory: memory %>
+<% end %>
