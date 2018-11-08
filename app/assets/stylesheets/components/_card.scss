@@ -30,21 +30,24 @@
   border-radius: 1px;
   box-shadow: 1px 2px 10px rgba(0,0,0,0.3);
   background: $gris;
+  -webkit-transition: all 0.3s ease-in-out;
 }
 
 .card-pola:hover{
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
   opacity: 0.8;
+
 }
 
 .card-quote {
   background: $bleumarine;
   border-radius: 3px;
   box-shadow: 1px 2px 10px rgba(0,0,0,0.3);
+  -webkit-transition: all 0.3s ease-in-out;
 }
 
 .card-quote:hover{
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
   opacity: 0.8;
 }
 
@@ -190,6 +193,12 @@ img#calendar {
 
 .card-spotify {
   box-shadow: 1px 2px 10px rgba(0,0,0,0.3);
+  -webkit-transition: all 0.3s ease-in-out;
+}
+
+.card-spotify:hover {
+  transition: all 0.3s ease-in-out;
+  opacity: 0.8;
 }
 
 .image-container-spotify {
