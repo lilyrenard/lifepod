@@ -1,15 +1,73 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The page you were looking for doesn't exist (404)</title>
+  <title>The page cannot be found (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600|Raleway:400,400i,600" rel="stylesheet">
+
   <style>
+
+  .btn {
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  }
+
+  a {
+    text-decoration: none
+  }
+
+
+  .boutton-rouge {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  padding: 5px 25px;
+  margin: 15px 10px;
+  border: 1px solid #FF2400;
+  border-radius: 5px;
+  font-family: Raleway;
+  transition: 0.3s;
+}
+
+  .boutton-rouge-inside {
+    background-color: #FF2400;
+    color: white;
+
+  }
+
+  .boutton-rouge-inside:hover {
+    color: white;
+    transform: scale(1.05);
+  }
+  @media (max-width:768px) {
+    .rails-default-error-page{
+      flex-direction: column;
+    }
+  }
+
   .rails-default-error-page {
-    background-color: #F2F4FB;
+    background-color: #0B132B;
     color: #FF2400;
     text-align: center;
     font-family: "Montserrat", "Helvetica", "sans-serif";
     margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100vh;
+    margin: auto;
   }
 
   .rails-default-error-page div.dialog {
@@ -27,9 +85,10 @@
   }
 
   .rails-default-error-page h1 {
+    font-size: 50px;
+    font-style: light;
     font-family: "Montserrat", "Helvetica", "sans-serif";
-    font-size: 100%;
-    color: #FF2400;
+    color: white;
     line-height: 1.5em;
     margin-bottom: 30px;
   }
@@ -56,11 +115,13 @@
 
 <body class="rails-default-error-page">
   <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>Oups! The page you were looking for doesn't exist.</h1>
-      <img src="1.svg" alt="">
-    </div>
-  </div>
+      <div class="image">
+        <img src="1.svg" alt="">
+      </div>
+      <div class="text">
+        <h1>Oups! The page you were looking for doesn't exist.</h1>
+        <a class="btn boutton-rouge boutton-rouge-inside" id="add" href="/memories">Go back</a>
+      </div>
+
 </body>
 </html>

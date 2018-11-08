@@ -1,9 +1,9 @@
 <div class="profile-banner">
   <div class="conteneur-profile-banner">
     <h2>Connect your @ccounts <%= @test %></h2>
-    <h3>Click on one of the icon to connect your account to your Life Pod</h3>
+    <h3 class="d-none d-lg-block">Click on one of the icon to connect your account to your Life Pod</h3>
     <div class="row">
-      <div class="col-md-3">
+      <div class="offset-md-2 col-md-2 col-xs-6">
         <div class="card-profile-logo">
           <%= link_to @url_spotify do %>
             <% if current_user.spotify.nil? %>
@@ -14,7 +14,7 @@
           <% end %>
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-2 col-xs-6">
         <div class="card-profile-logo">
           <%= link_to @url_instagram do %>
             <% if current_user.instagram.nil? %>
@@ -25,7 +25,7 @@
           <% end %>
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-2 col-xs-6">
         <div class="card-profile-logo">
           <% if current_user.facebook.nil? %>
             <%= image_tag 'facebook_logo_nb.png', id: "profile-banner-logo-fb" %>
@@ -34,7 +34,7 @@
           <% end %>
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-2 col-xs-6">
         <div class="card-profile-logo">
           <% if current_user.youtube.nil? %>
             <%= image_tag 'youtube_logo_nb.png', id: "profile-banner-logo-youtube" %>

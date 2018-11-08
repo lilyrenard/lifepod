@@ -2,56 +2,60 @@
   <h1 class="text-center font-weight-bold d-none d-md-block">Your dashboard</h1>
 </div>
 
-<!--Podium-->
 
-<div class="large-container grey">
-  <div class="row">
-    <div class="col-lg">
-      <h2 class="text-center espace">Your most used stamps</h2>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-2 offset-lg-3"">
-      <div class="box-viz">
-        <div class="icon">
-          <div class=<%=@stamp_1.stamp_image%> >
-            <p><%= @stamp_1.title.upcase %></p>
-          </div>
-        </div>
-        <div class="count">
-          <p><strong><%=@stamp_1_mem%></strong></p>
-          <p><%=  "Memory".pluralize(@stamp_1_mem) %></p>
+      <!--Podium-->
+
+    <div class="large-container">
+      <div class="row">
+        <div class="col-lg">
+          <h2 class="text-center espace">Your most used stamps</h2>
         </div>
       </div>
-    </div>
-    <div class="col-lg-2">
-      <div class="box-viz">
-        <div class="icon">
-          <div class=<%=@stamp_2.stamp_image%> >
-            <p><%= @stamp_2.title.upcase %></p>
+      <div class="row">
+        <div class="col-xs-12 col-md-6 col-lg-2 offset-lg-3">
+          <div class="box-viz">
+            <div class="icon">
+              <div class=<%=@stamp_1.stamp_image%> >
+                <p><%= @stamp_1.title.upcase %></p>
+              </div>
+            </div>
+            <div class="count">
+              <p><strong><%=@stamp_1_mem%></strong></p>
+              <p><%=  "Memory".pluralize(@stamp_1_mem) %></p>
+            </div>
           </div>
         </div>
-        <div class="count">
-          <p><strong><%=@stamp_2_mem%></strong></p>
-          <p><%=  "Memory".pluralize(@stamp_2_mem) %></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-2">
-      <div class="box-viz">
-        <div class="icon">
-          <div class=<%=@stamp_3.stamp_image%> >
-            <p><%= @stamp_3.title.upcase %></p>
+        <div class="col-xs-12 col-md-6 col-lg-2">
+          <div class="box-viz">
+            <div class="icon">
+              <div class=<%=@stamp_2.stamp_image%> >
+                <p><%= @stamp_2.title.upcase %></p>
+              </div>
+            </div>
+            <div class="count">
+              <p><strong><%=@stamp_2_mem%></strong></p>
+              <p><%=  "Memory".pluralize(@stamp_2_mem) %></p>
+            </div>
           </div>
         </div>
-        <div class="count">
-          <p><strong><%=@stamp_3_mem%></strong></p>
-          <p><%=  "Memory".pluralize(@stamp_2_mem) %></p>
+        <div class="col-xs-12 col-md-6 col-lg-2 ">
+          <div class="box-viz">
+            <div class="icon">
+              <div class=<%=@stamp_3.stamp_image%> >
+                <p><%= @stamp_3.title.upcase %></p>
+              </div>
+            </div>
+            <div class="count">
+              <p><strong><%=@stamp_3_mem%></strong></p>
+              <p><%=  "Memory".pluralize(@stamp_2_mem) %></p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
 
 
 <!--Pertinence des sukG-->

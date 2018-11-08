@@ -4,6 +4,13 @@
   background-color: $bleumarine;
 }
 
+@media (max-width:375px) {
+  .dashboard-banner{
+    height: 100%;
+  }
+}
+
+
 .dashboard-banner h2 {
   font-size: 24px;
   text-align: center;
@@ -13,7 +20,8 @@
 }
 
 .total-memories {
-  padding-top: 15px;
+  padding: 15px;
+  overflow-wrap: break-word;
 }
 
 .dashboard-banner p {

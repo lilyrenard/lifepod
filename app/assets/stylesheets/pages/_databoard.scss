@@ -28,4 +28,10 @@
   overflow-wrap: break-word;
 }
 
+@media (max-width:768px){
+  .num-box{
+    flex-direction: column;
+  }
+}
+
 
