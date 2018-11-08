@@ -201,7 +201,6 @@ class PagesController < ApplicationController
         @sukg_spotify = Memory.where(memory_type: 'spotify').count.fdiv(JSON.parse(current_user.suggested)["spotify"].count) * 100
       end
     end
-
   end
 
   private
