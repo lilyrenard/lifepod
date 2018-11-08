@@ -9,6 +9,15 @@
   bottom: 0;
   overflow-y: auto;
 }
+
+@media (max-width:375px) {
+    #sidebar{
+      position: unset;
+      display: flex;
+      width: 100%;
+    }
+  }
+
 #page-content {
   margin-left: 150px;
   margin-right: 150px;
