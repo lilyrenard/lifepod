@@ -37,6 +37,10 @@
                 <%= image_tag(memory.image_associated, :controls => true, width: 568, crop: :fill) %>
               <% elsif memory.memory_type == "instagram" %>
                 <%= image_tag(memory.image_associated, :controls => true, width: 568, crop: :fill) %>
+              <% else %>
+                <div class="fond-quote">
+                  <p> <%= memory.title.capitalize %> </p>
+                </div>
               <% end %>
             <% end %>
           </span>
@@ -48,9 +52,11 @@
               <i class="far fa-trash-alt"></i>
              <% end %>
           </span>
-          <span class="title-grid d-flex align-items-center justify-content-center">
-            <h4><%= memory.title.capitalize %></h4>
-          </span>
+            <% unless memory.memory_type == "quote" %>
+              <span class="title-grid d-flex align-items-center justify-content-center">
+                <h4><%= memory.title.capitalize %></h4>
+              </span>
+            <% end %>
           <span class="paraph-grid d-flex justify-content-start align-items-center">
             <p> <%= memory.description.capitalize %>
           </p>
