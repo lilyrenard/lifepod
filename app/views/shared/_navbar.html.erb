@@ -29,13 +29,13 @@
           <%= cl_image_tag current_user.profile_picture, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
-              <%= link_to dashboard_path do %>
-                <span><i class="fas fa-chart-line"></i> Dashboard</span>
+              <%= link_to profile_path do %>
+                <span><i class="fas fa-user"></i> Profile</span>
               <% end %>
             </li>
             <li>
-              <%= link_to profile_path do %>
-                <span><i class="fas fa-user"></i> Profile</span>
+              <%= link_to databoard_path do %>
+                <span><i class="fas fa-chart-line"></i> Databoard</span>
               <% end %>
             </li>
             <li>
@@ -63,14 +63,14 @@
             <span><i class="fas fa-plus-circle"></i>Add a memory</span>
             <% end %>
           </li>
-          <li>
-              <%= link_to dashboard_path do %>
-                <span><i class="fas fa-chart-line"></i> Dashboard</span>
-              <% end %>
-            </li>
           <li><%= link_to profile_path do %>
                   <span><i class="fas fa-user"></i> Profile</span>
                 <% end %></li>
+          <li>
+            <%= link_to databoard_path do %>
+              <span><i class="fas fa-chart-line"></i> Databoard</span>
+            <% end %>
+          </li>
           <li><%= link_to destroy_user_session_path, method: :delete do %>
                   <i class="fas fa-sign-out-alt"></i>  <%= t(".sign_out", default: " Log out") %>
                 <% end %></li>

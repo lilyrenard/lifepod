@@ -79,12 +79,20 @@ class PagesController < ApplicationController
       suggested_memories = JSON.parse(current_user.suggested)
     else
       suggested_memories = {
-        spotify: [],
-        instagram: []
+        "spotify" => [],
+        "instagram" => []
       }
     end
-    @insta_memories.reject { |insta| suggested_memories[:instagram].include?(insta.api_id) }.each { |insta| suggested_memories[:instagram] << insta.api_id } unless (@insta_memories.nil? || suggested_memories[:instagram].nil?)
-    @spotify_memories.reject { |music| suggested_memories[:spotify].include?(music.api_id) }.each { |music| suggested_memories[:spotify] << music.api_id } unless (@spotify_memories.nil? || suggested_memories[:spotify].nil?)
+    if suggested_memories["instagram"].nil?
+      @insta_memories.each { |insta| suggested_memories["instagram"] << insta.api_id } unless @insta_memories.nil?
+    else
+      @insta_memories.reject { |insta| suggested_memories["instagram"].include?(insta.api_id) }.each { |insta| suggested_memories["instagram"] << insta.api_id } unless @insta_memories.nil?
+    end
+    if suggested_memories["spotify"].nil?
+      @spotify_memories.each { |music| suggested_memories["spotify"] << music.api_id } unless @spotify_memories.nil?
+    else
+      @spotify_memories.reject { |music| suggested_memories["spotify"].include?(music.api_id) }.each { |music| suggested_memories["spotify"] << music.api_id } unless @spotify_memories.nil?
+    end
     current_user.suggested = JSON.generate(suggested_memories)
     current_user.save
 
@@ -136,7 +144,7 @@ class PagesController < ApplicationController
     end
   end
 
-  def dashboard
+  def databoard
   end
 
   def test
