@@ -45,27 +45,29 @@
             <% end %>
           </span>
           <span class="edit-delete-grid d-flex align-items-center justify-content-end">
-            <% if memory.memory_type == "spotify" %>
-              <div data-toggle="modal" data-target="#modal-suggestion-spotify-edit_<%= memory.id %>">
-                <i class="fas fa-edit"></i>
-              </div>
-            <% elsif memory.memory_type == "instagram" %>
-              <div data-toggle="modal" data-target="#modal-suggestion-instagram-edit<%= memory.id %>">
-                <i class="fas fa-edit"></i>
-              </div>
-            <% elsif memory.memory_type == "photo" %>
-              <div data-toggle="modal" data-target="#photo-edit_<%= memory.id %>">
-                <i class="fas fa-edit"></i>
-              </div>
-              <% elsif memory.memory_type == "video" %>
-                <div data-toggle="modal" data-target="#video-edit_<%= memory.id %>">
+            <div data-toggle="modal" data-target="#myModal_<%= memory.id %>">
+              <% if memory.memory_type == "spotify" %>
+                <div data-toggle="modal" data-target="#modal-suggestion-spotify-edit_<%= memory.id %>">
                   <i class="fas fa-edit"></i>
                 </div>
-              <% elsif memory.memory_type == "quote" %>
-                <div data-toggle="modal" data-target="#quote-edit_<%= memory.id %>">
+              <% elsif memory.memory_type == "instagram" %>
+                <div data-toggle="modal" data-target="#modal-suggestion-instagram-edit<%= memory.id %>">
                   <i class="fas fa-edit"></i>
                 </div>
-            <% end %>
+              <% elsif memory.memory_type == "photo" %>
+                <div data-toggle="modal" data-target="#photo-edit_<%= memory.id %>">
+                  <i class="fas fa-edit"></i>
+                </div>
+                <% elsif memory.memory_type == "video" %>
+                  <div data-toggle="modal" data-target="#video-edit_<%= memory.id %>">
+                    <i class="fas fa-edit"></i>
+                  </div>
+                <% elsif memory.memory_type == "quote" %>
+                  <div data-toggle="modal" data-target="#quote-edit_<%= memory.id %>">
+                    <i class="fas fa-edit"></i>
+                  </div>
+              <% end %>
+            </div>
             <%= link_to memory_path(memory), method: :delete do %>
               <i class="far fa-trash-alt"></i>
             <% end %>
