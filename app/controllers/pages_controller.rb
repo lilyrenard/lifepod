@@ -67,7 +67,7 @@ class PagesController < ApplicationController
           user_id: current_user.id,
           suggested: true,
           id: i,
-          likes: likes,
+          url: likes,
           api_id: api_id
         })
       end

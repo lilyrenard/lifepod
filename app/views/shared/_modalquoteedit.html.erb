@@ -1,0 +1,44 @@
+<!-- MODAL QUOTE -->
+
+<div class="modal fade bd-example-modal-lg" id="quote-edit_<%= memory.id %>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div id="fermer-modal-ajout" data-toggle="modal" data-target=".bd-example-modal-lg" data-backdrop="static">
+          <%= link_to add_path do%>
+            <i class="fas fa-times"></i>
+          <% end  %>
+        </div>
+        <div class="conteneur-modal-ajout">
+          <h1 id='titre-ajout'>Edit a quote memory</h1>
+          <%= simple_form_for Memory.find(memory.id) do |f| %>
+            <div class="row justify-content-center" >
+              <div class="col-xs-12 col-md-7">
+                <%= f.input :memory_type, input_html: { id: 'special_categorie', value: "quote" }, as: :hidden  %>
+                <%= f.input :title, label: 'Your quote' %>
+                <%= f.input :description, label: 'Tell me more about this quote' %>
+                <%= f.label 'Your stamps*', autofocus: true %>
+                <div class="stamps-form">
+                  <select multiple="multiple" name="memory[stamps][]" id="memory_stamps_<%= memory.id %>" class="form-control select2">
+                    <% memory.stamps.each do |stamp| %>
+                      <option selected value="<%= stamp.title %>"><%= stamp.title %></option>
+                    <% end %>
+                  </select>
+                </div>
+              </div>
+              <div class="submit-add-button">
+                <%= f.submit 'Edit a memory', class: "btn boutton-rouge boutton-rouge-inside" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% content_for(:js) do %>
+  <script>
+    $('#quote').modal('show');
+  </script>
+<% end %>
