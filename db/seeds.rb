@@ -16,46 +16,128 @@ user = User.create!(
   last_name: "Saunier"
 )
 
+#  stamps
+
 
 stamp1 = Stamp.new(
-  title: "La Baule",
+  title: "Travel",
   stamp_image: "stamp#{rand(2..7)}",
   user_id: user.id
   )
 stamp1.save!
 
 stamp2 = Stamp.new(
-  title: "2018",
+  title: "Love",
   stamp_image: "stamp#{rand(2..7)}",
   user_id: user.id
   )
 stamp2.save!
 
 stamp3 = Stamp.new(
-  title: "Goûter",
+  title: "Friends",
   stamp_image: "stamp#{rand(2..7)}",
   user_id: user.id
   )
 stamp3.save!
 
+stamp4 = Stamp.new(
+  title: "Food",
+  stamp_image: "stamp#{rand(2..7)}",
+  user_id: user.id
+  )
+stamp4.save!
+
 stamp5 = Stamp.new(
-  title: "Croatie",
+  title: "Restaurant",
   stamp_image: "stamp#{rand(2..7)}",
   user_id: user.id
   )
 stamp5.save!
 
+stamp6 = Stamp.new(
+  title: "Party",
+  stamp_image: "stamp#{rand(2..7)}",
+  user_id: user.id
+  )
+stamp6.save!
+
+stamp7 = Stamp.new(
+  title: "Birthday",
+  stamp_image: "stamp#{rand(2..7)}",
+  user_id: user.id
+  )
+stamp7.save!
+
+stamp8 = Stamp.new(
+  title: "Highschool",
+  stamp_image: "stamp#{rand(2..7)}",
+  user_id: user.id
+  )
+stamp8.save!
+
+stamp9 = Stamp.new(
+  title: "College",
+  stamp_image: "stamp#{rand(2..7)}",
+  user_id: user.id
+  )
+stamp9.save!
+
+stamp10 = Stamp.new(
+  title: "Soccer",
+  stamp_image: "stamp#{rand(2..7)}",
+  user_id: user.id
+  )
+stamp10.save!
+
+stamp11 = Stamp.new(
+  title: "Family",
+  stamp_image: "stamp#{rand(2..7)}",
+  user_id: user.id
+  )
+stamp11.save!
+
+stamp12 = Stamp.new(
+  title: "Birth",
+  stamp_image: "stamp#{rand(2..7)}",
+  user_id: user.id
+  )
+stamp12.save!
+
+
+stamp13 = Stamp.new(
+  title: "2004",
+  stamp_image: "stamp#{rand(2..7)}",
+  user_id: user.id
+  )
+stamp13.save!
+
+# Memories
+
+# Birth of my sister
 
 memory1 = Memory.new(
-  title: "Week-end à La Baule",
-  description: "On est parties avec les copines à un week-end à La Baule à l'occasion du week-end du 1er novembre.",
+  title: "My sister is born",
+  description: "My beautiful sister is a lucky girl, because she will be on the receiving end of all your kindness and wisdom",
   memory_type: "photo",
   user_id: user.id,
-  remote_photo_url: "https://res.cloudinary.com/dt38p7qqh/image/upload/v1541407621/amis.jpeg.jpg",
+  remote_photo_url: "https://res.cloudinary.com/dt38p7qqh/image/upload/v1541689961/birth.jpg",
   suggested: false,
-  stamps: [stamp1, stamp2]
+  stamps: [stamp2, stamp12, stamp11, stamp13]
   )
 memory1.save!
+
+memory2 = Memory.new(
+  title: "She looks just like Aunt Clara!",
+  description: "Grandma immediatly said that when she saw my new little sister. I knew I had to save this moment, to see if it turned out to be true in the coming years.",
+  memory_type: "quote",
+  user_id: user.id,
+  suggested: false,
+  stamps: [stamp2, stamp12, stamp11, stamp13]
+  )
+memory2.save!
+
+
+#
 
 memory3 = Memory.new(
   title: "Les rêves sont la nourriture des dieux.",

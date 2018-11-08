@@ -4,5 +4,11 @@ span.select2-selection.select2-selection--multiple {
 }
 
 .form-control {
-  width: 300px;
+  width: 100%;
+}
+
+.stamps-form {
+  .select2 {
+    width: 500px;
+  }
 }

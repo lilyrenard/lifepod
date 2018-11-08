@@ -1,11 +1,11 @@
 <%= render 'shared/dashboard' %>
 
 <div class="row">
-  <div class="d-none d-md-block col-md-2">
+  <div class="col-xs-12 col-sm-12 col-md-2">
     <div id="sidebar">
       <% if params[:stamp] == nil %>
       <% else %>
-        <h4 class="text-right">Stamps</h4>
+        <h4 class="text-right d-none d-md-block">Stamps</h4>
         <% @stamps.each do |stamp|%>
           <div class=<%=stamp.stamp_image%> >
             <p><%= stamp.title.upcase %></p>
@@ -15,7 +15,7 @@
     </div>
   </div>
 
-  <div class="col-xs-12 col-sm-10 col-md-8">
+  <div class="col-xs-12 col-sm-12 col-md-10">
     <div class="container">
       <div class="card-columns">
         <% @memories.each do |memory|%>
@@ -25,15 +25,15 @@
                 <div class="image-container" data-toggle="modal" data-target="#myModal_<%= memory.id %>">
                   <% if memory.memory_type == "photo" %>
                     <%= cl_image_tag memory.photo, id: "box", class: "card-img"%>
-                    <p class="calendar-left" type="date"><%=memory.created_at.strftime('%Y-%m-%d')%></p>
                     <h3><%= memory.title.capitalize %></h3>
                   <% elsif memory.memory_type == "video" %>
                     <%= cl_video_tag(memory.photo.filename, id: "box", class: "card-img") %>
-                    <p class="calendar-left" type="date"><%=memory.created_at.strftime('%Y-%m-%d')%></p>
-                    <h3><%= memory.title.capitalize %></h3>
+                    <h3><%= memory.title.capitalize%></h3>
                   <% end %>
                 </div>
-                  <div class="card-body"></div>
+                  <div class="card-body text-center">
+                    <p type="date"><%=memory.created_at.strftime('%Y-%m-%d')%></p>
+                  </div>
               </div>
             <% elsif memory.memory_type == "spotify" %>
               <div class="card-spotify" >
@@ -50,11 +50,11 @@
                 <div class="card-pola">
                   <div class="image-container" data-toggle="modal" data-target="#myModal_<%= memory.id %>">
                     <%= image_tag memory.image_associated, id: "box", class: "card-img"%>
-                    <p class="calendar-left" type="date"><%=memory.created_at.strftime('%Y-%m-%d')%></p>
+                    <p class="calendar-left" type="date"><strong>Liked <%= memory.url %> times</strong></p>
                     <h3><%= memory.title.capitalize %></h3>
                   </div>
-                  <div class="card-body">
-                    <p><strong>Liked <%= memory.url %> times</strong></p>
+                  <div class="card-body text-center">
+                    <p type="date"><%=memory.created_at.strftime('%Y-%m-%d')%></p>
                   </div>
                 </div>
             <% else %>
@@ -70,7 +70,7 @@
     </div>
   </div>
 
-  <div class="d-none d-md-block col-md-2">
+  <div class="d-none d-sm-block">
   </div>
 
 </div>
