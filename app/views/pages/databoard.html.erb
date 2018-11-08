@@ -64,7 +64,7 @@
   <div class="row"></div>
     <div class="col-lg-2 offset-lg-3"">
       <div class="conteneur-graph">
-        <canvas id="SpotInstaBarChart" data-tab="<%= (Memory.where(memory_type: 'instagram').count.fdiv(JSON.parse(current_user.suggested)["instagram"].count)) * 100 %>-<%= (Memory.where(memory_type: 'spotify').count.fdiv(JSON.parse(current_user.suggested)["spotify"].count)) * 100 %>"></canvas>
+        <canvas id="SpotInstaBarChart" data-tab="@sukg_instagram-@sukg_spotify"></canvas>
       </div>
     </div>
   </div>
