@@ -137,7 +137,19 @@ memory2 = Memory.new(
 memory2.save!
 
 
-#
+# Grandpa's birthday
+
+memory3 = Memory.new(
+  title: "Grandpa's birthday",
+  description: "What a birthday! We ",
+  memory_type: "photo",
+  user_id: user.id,
+  remote_photo_url: "https://res.cloudinary.com/dt38p7qqh/image/upload/v1541697209/grandpa-birth.jpg",
+  suggested: false,
+  stamps: [stamp2, stamp12, stamp11, stamp13]
+  )
+memory3.save!
+
 
 memory3 = Memory.new(
   title: "Les rêves sont la nourriture des dieux.",

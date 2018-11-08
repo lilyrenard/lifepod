@@ -149,17 +149,7 @@
   </div>
 
 
-    <!--Number of boxes-->
-
-    <div class="large-container grey">
-      <div class="num-box">
-        <%= image_tag "boxes/1.svg", class: "padding"%>
-        <div class="wrap text-center">
-          <h3>You would need <%= pluralize @tot_box, "box" %> to move all your content out !</h3>
-        </div>
-      </div>
-    </div>
-    <!--Podium-->
+      <!--Podium-->
 
     <div class="large-container">
       <div class="row">
@@ -168,7 +158,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-2 offset-lg-3"">
+        <div class="col-xs-12 col-md-6 col-lg-2 offset-lg-3">
           <div class="box-viz">
             <div class="icon">
               <div class=<%=@stamp_1.stamp_image%> >
@@ -181,7 +171,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-2">
+        <div class="col-xs-12 col-md-6 col-lg-2">
           <div class="box-viz">
             <div class="icon">
               <div class=<%=@stamp_2.stamp_image%> >
@@ -194,7 +184,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-2">
+        <div class="col-xs-12 col-md-6 col-lg-2 ">
           <div class="box-viz">
             <div class="icon">
               <div class=<%=@stamp_3.stamp_image%> >
@@ -209,6 +199,19 @@
         </div>
       </div>
     </div>
+
+
+    <!--Number of boxes-->
+
+    <div class="large-container grey">
+      <div class="num-box">
+        <%= image_tag "boxes/1.svg", class: "padding"%>
+        <div class="wrap text-center">
+          <h3>You would need <%= pluralize @tot_box, "box" %> to move all your content out !</h3>
+        </div>
+      </div>
+    </div>
+
 
 
 
