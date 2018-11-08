@@ -76,6 +76,7 @@ class MemoriesController < ApplicationController
 
   def destroy
     @memory.destroy
+    authorize(@memory)
     redirect_to memories_path
   end
 

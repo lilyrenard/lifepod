@@ -40,6 +40,14 @@
               <% end %>
             <% end %>
           </span>
+          <span class="edit-delete-grid d-flex align-items-center justify-content-end">
+             <%= link_to do %>
+              <i class="fas fa-edit"></i>
+             <% end %>
+             <%= link_to memory_path(memory), method: :delete do %>
+              <i class="far fa-trash-alt"></i>
+             <% end %>
+          </span>
           <span class="title-grid d-flex align-items-center justify-content-center">
             <h4><%= memory.title.capitalize %></h4>
           </span>
@@ -49,10 +57,8 @@
           </span>
           <span class="tag-grid d-flex align-items-center justify-content-start">
               <% memory.stamps.each do |stamp|%>
-              <div class="padding-stamps">
-                <div class=<%=stamp.stamp_image%> >
-                  <p><%= stamp.title.upcase %></p>
-                </div>
+              <div class=<%=stamp.stamp_image%> >
+                <p><%= stamp.title.upcase %></p>
               </div>
               <% end%>
           </span>

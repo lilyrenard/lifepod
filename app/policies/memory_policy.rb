@@ -16,4 +16,8 @@ class MemoryPolicy < ApplicationPolicy
   def edit?
     return true
   end
+
+  def destroy?
+    record.user == user
+  end
 end
