@@ -19,11 +19,6 @@
 .dashboard-banner p {
   color: white;
 }
-
-.conteneur {
-  margin: 20px 150px;
-}
-
 // icones
 
 .taille-petite {
@@ -34,4 +29,22 @@
 .marg {
   margin-bottom: 1px;
 
+}
+
+// viz
+
+.box-viz {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  padding: 15px;
+}
+
+.count {
+  margin-bottom: 15px;
+  p {
+    margin-bottom: 0px;
+  }
 }

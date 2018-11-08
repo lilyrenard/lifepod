@@ -2,7 +2,7 @@
   <div class="total-memories">
     <h2>You currently have <%= pluralize @memories.count, "memory" %></h2>
   </div>
-  <div class="conteneur d-none d-md-block d-lg-block">
+  <div class="d-none d-md-block d-lg-block">
     <div class="row">
       <div class="col-md-2 offset-md-2">
         <% count1 = [] %>
@@ -11,8 +11,15 @@
             <% count1 << memory %>
           <% end %>
         <% end %>
-        <p><%= count1.length %> <%= image_tag "music-icon.svg", class: "taille-petite" %></p>
-
+        <div class="box-viz">
+          <div class="icon">
+            <p><%= image_tag "music-icon.svg", class: "taille-petite" %></p>
+          </div>
+          <div class="count">
+            <p><%= count1.length %></p>
+            <p><%=  "Music".pluralize(count1.length) %></p>
+          </div>
+        </div>
       </div>
       <div class="col-md-2">
         <% count2 = [] %>
@@ -21,7 +28,15 @@
             <% count2 << memory %>
           <% end %>
         <% end %>
-        <p><%= count2.length %> <%= image_tag "image-icon.svg", class: "taille-petite" %></p>
+        <div class="box-viz">
+          <div class="icon">
+            <p><%= image_tag "image-icon.svg", class: "taille-petite" %></p>
+          </div>
+          <div class="count">
+            <p><%= count2.length %></p>
+            <p><%=  "Image".pluralize(count2.length) %></p>
+          </div>
+        </div>
       </div>
       <div class="col-md-2">
         <% count3 = [] %>
@@ -30,7 +45,15 @@
             <% count3 << memory %>
           <% end %>
         <% end %>
-        <p><%= count3.length %> <%= image_tag "video-icon.svg", class: "taille-petite" %></p>
+        <div class="box-viz">
+          <div class="icon">
+            <p><%= image_tag "video-icon.svg", class: "taille-petite" %></p>
+          </div>
+          <div class="count">
+            <p><%= count3.length %></p>
+            <p><%=  "Video".pluralize(count3.length) %></p>
+          </div>
+        </div>
       </div>
       <div class="col-md-2">
         <% count4 = [] %>
@@ -39,7 +62,15 @@
             <% count4 << memory %>
           <% end %>
         <% end %>
-        <p><%= count4.length %> <%= image_tag "citation-icon.svg", class: "taille-petite" %></p>
+        <div class="box-viz">
+          <div class="icon">
+            <p><%= image_tag "citation-icon.svg", class: "taille-petite" %></p>
+          </div>
+          <div class="count">
+            <p><%= count4.length %></p>
+            <p><%=  "Quote".pluralize(count4.length) %></p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
