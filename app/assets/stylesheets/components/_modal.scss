@@ -3,12 +3,12 @@
   margin: 5px;
   display: grid;
   grid-template-columns: 600px 1fr;
-  grid-template-rows: 1fr 2.5fr 2fr;
+  grid-template-rows: 0.2fr 1fr 2.3fr 2fr;
   max-height: 450px;
 }
 
 .image-grid {
-  grid-row: 1 / span 3;
+  grid-row: 1 / span 4;
   grid-column: 1 / span 1;
   max-height: 450px;
   overflow: auto;
@@ -18,14 +18,29 @@
   }
 }
 
-.title-grid {
+.edit-delete-grid  {
   grid-row: 1 / span 1;
+  grid-column: 2 / span 1;
+  margin: 3px
+
+
+}
+.edit-delete-grid i {
+  font-size: 20px;
+  margin: 0px 7px;
+}
+.edit-delete-grid i:hover {
+  cursor: pointer;
+}
+
+.title-grid {
+  grid-row: 2 / span 1;
   grid-column: 2 / span 1;
   margin: 3px
 }
 
 .paraph-grid {
-  grid-row: 2 / span 1;
+  grid-row: 3 / span 1;
   grid-column: 2 / span 1;
   max-height: 300px;
   overflow-y: auto;
@@ -36,7 +51,7 @@
 }
 
 .tag-grid {
-  grid-row: 3 / span1;
+  grid-row: 4 / span1;
   grid-column: 2 / span 1;
   max-width: 350px;
   overflow-x: auto;
