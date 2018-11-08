@@ -1,120 +1,103 @@
-<div class="conteneur-memories" id="container">
-  <h1 class="text-center font-weight-bold d-none d-md-block">Your dashboard</h1>
-</div>
+<h1 class="text-center font-weight-bold d-none d-md-block">Your dashboard</h1>
 
 
-      <!--Podium-->
 
-    <div class="large-container">
-      <div class="row">
-        <div class="col-lg">
-          <h2 class="text-center espace">Your most used stamps</h2>
-        </div>
+<div class="conteneur-grid-data">
+
+  <!--Piecharts-->
+  <span class= "piechart-grid d-flex align-items-center">
+    <div class="conteneur-graph-pie">
+      <canvas id="ManuPieChart" data-tab="<%= Memory.where(memory_type: 'photo').count %>-<%= Memory.where(memory_type: 'video').count %>-<%= Memory.where(memory_type: 'quote').count %>"></canvas>
+    </div>
+    <div class="conteneur-graph-pie">
+      <canvas id="SuggePieChart" data-tab="<%= Memory.where(memory_type: 'spotify').count %>-<%= Memory.where(memory_type: 'instagram').count %>"></canvas>
+    </div>
+    <div class="conteneur-graph-pie">
+      <canvas id="ManuSuggePieChart" data-tab="<%= Memory.where(memory_type: 'spotify').count + Memory.where(memory_type: 'instagram').count %>-<%= Memory.where(memory_type: 'photo').count + Memory.where(memory_type: 'video').count + Memory.where(memory_type: 'quote').count %>"></canvas>
+    </div>
+  </span>
+
+  <!--Date d'ajout-->
+  <span class="line-chart-grid">
+    <div class="conteneur-graph">
+      <canvas id="line-chart" data-tab="12-21-3-21-32-33-22-12-40"></canvas>
+    </div>
+  </span>
+
+
+
+  <!--Pertinence des sukG-->
+
+  <span class="bar-chart-grid">
+    <div class="conteneur-graph">
+      <canvas id="SpotInstaBarChart" data-tab="<%= @sukg_instagram %>-<%= @sukg_spotify %>"></canvas>
+    </div>
+  </span>
+
+
+  <!--Podium-->
+
+  <span class="podium-grid">
+    <div class="row">
+      <div class="col-lg">
+        <h2 class="text-center espace">Your most used stamps</h2>
       </div>
-      <div class="row">
-        <div class="col-xs-12 col-md-6 col-lg-2 offset-lg-3">
-          <div class="box-viz">
-            <div class="icon">
-              <div class=<%=@stamp_1.stamp_image%> >
-                <p><%= @stamp_1.title.upcase %></p>
-              </div>
-            </div>
-            <div class="count">
-              <p><strong><%=@stamp_1_mem%></strong></p>
-              <p><%=  "Memory".pluralize(@stamp_1_mem) %></p>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-lg-2 offset-lg-3">
+        <div class="box-viz">
+          <div class="icon">
+            <div class=<%=@stamp_1.stamp_image%> >
+              <p><%= @stamp_1.title.upcase %></p>
             </div>
           </div>
-        </div>
-        <div class="col-xs-12 col-md-6 col-lg-2">
-          <div class="box-viz">
-            <div class="icon">
-              <div class=<%=@stamp_2.stamp_image%> >
-                <p><%= @stamp_2.title.upcase %></p>
-              </div>
-            </div>
-            <div class="count">
-              <p><strong><%=@stamp_2_mem%></strong></p>
-              <p><%=  "Memory".pluralize(@stamp_2_mem) %></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-12 col-md-6 col-lg-2 ">
-          <div class="box-viz">
-            <div class="icon">
-              <div class=<%=@stamp_3.stamp_image%> >
-                <p><%= @stamp_3.title.upcase %></p>
-              </div>
-            </div>
-            <div class="count">
-              <p><strong><%=@stamp_3_mem%></strong></p>
-              <p><%=  "Memory".pluralize(@stamp_2_mem) %></p>
-            </div>
+          <div class="count">
+            <p><strong><%=@stamp_1_mem%></strong></p>
+            <p><%=  "Memory".pluralize(@stamp_1_mem) %></p>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-
-
-
-<!--Pertinence des sukG-->
-
-<div class="large-container">
-  <div class="row"></div>
-    <div class="col-lg-2 offset-lg-3"">
-      <div class="conteneur-graph">
-        <canvas id="SpotInstaBarChart" data-tab="<%= @sukg_instagram %>-<%= @sukg_spotify %>"></canvas>
+      <div class="col-xs-12 col-md-6 col-lg-2">
+        <div class="box-viz">
+          <div class="icon">
+            <div class=<%=@stamp_2.stamp_image%> >
+              <p><%= @stamp_2.title.upcase %></p>
+            </div>
+          </div>
+          <div class="count">
+            <p><strong><%=@stamp_2_mem%></strong></p>
+            <p><%=  "Memory".pluralize(@stamp_2_mem) %></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6 col-lg-2 ">
+        <div class="box-viz">
+          <div class="icon">
+            <div class=<%=@stamp_3.stamp_image%> >
+              <p><%= @stamp_3.title.upcase %></p>
+            </div>
+          </div>
+          <div class="count">
+            <p><strong><%=@stamp_3_mem%></strong></p>
+            <p><%=  "Memory".pluralize(@stamp_2_mem) %></p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+  </span>
 
 
-<!--Piecharts-->
 
-<div class="large-container grey">
-  <div class="row">
-    <div class="col-lg-2">
-      <div class="conteneur-graph-pie">
-        <canvas id="ManuPieChart" data-tab="<%= Memory.where(memory_type: 'photo').count %>-<%= Memory.where(memory_type: 'video').count %>-<%= Memory.where(memory_type: 'quote').count %>"></canvas>
+  <!--Number of boxes-->
+
+  <span class="box-fun-grid">
+    <div class="num-box">
+      <%= image_tag "boxes/1.svg", class: "padding"%>
+      <div class="wrap text-center">
+        <h3>You would need <%= pluralize @tot_box, "box" %> to move all your content out !</h3>
       </div>
     </div>
-    <div class="col-lg-2 offset-lg-1">
-      <div class="conteneur-graph-pie">
-        <canvas id="SuggePieChart" data-tab="<%= Memory.where(memory_type: 'spotify').count %>-<%= Memory.where(memory_type: 'instagram').count %>"></canvas>
-      </div>
-    </div>
-    <div class="col-lg-2 offset-lg-1">
-      <div class="conteneur-graph-pie">
-        <canvas id="ManuSuggePieChart" data-tab="<%= Memory.where(memory_type: 'spotify').count + Memory.where(memory_type: 'instagram').count %>-<%= Memory.where(memory_type: 'photo').count + Memory.where(memory_type: 'video').count + Memory.where(memory_type: 'quote').count %>"></canvas>
-      </div>
-    </div>
-  </div>
+  </span>
+
 </div>
-
-
-<!--Date d'ajout-->
-<div class="large-container">
-  <div class="row"></div>
-    <div class="col-lg-2 offset-lg-3"">
-      <div class="conteneur-graph">
-        <canvas id="line-chart" data-tab="12-21-3-21-32-33-22-12-40"></canvas>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!--Number of boxes-->
-
-<div class="large-container grey">
-  <div class="num-box">
-    <%= image_tag "boxes/1.svg", class: "padding"%>
-    <div class="wrap text-center">
-      <h3>You would need <%= pluralize @tot_box, "box" %> to move all your content out !</h3>
-    </div>
-  </div>
-</div>
-
 
