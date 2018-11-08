@@ -137,6 +137,42 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @memories = policy_scope(Memory)
+
+    # nombre total de boîtes
+    photo = []
+    video = []
+    quote = []
+    music = []
+    @memories.each do |memory|
+      if memory.memory_type == "photo"
+        photo << memory
+      elsif memory.memory_type == "video"
+        video << memory
+      elsif memory.memory_type == "spotify"
+        music << memory
+      elsif memory.memory_type == "quote"
+        quote << memory
+      end
+    end
+
+    @tot_box = ((music.length / 400) + (photo.length / 6400) + (video.length / 400) + (quote.length / 1600))
+
+    @stamps = policy_scope(Stamp).pluck(:id)
+
+    top_3 = []
+    @stamps.each {|stamp| top_3 << Stamp.find(stamp).memories.length}
+    arr_s = top_3.sort.reverse
+    arr_i = top_3.map{|e| arr_s.index(e)}
+
+    @stamp_1 = Stamp.find(@stamps[arr_i[0]])
+    @stamp_2 = Stamp.find(@stamps[arr_i[1]])
+    @stamp_3 = Stamp.find(@stamps[arr_i[2]])
+
+    @stamp_1_mem = arr_s[0]
+    @stamp_2_mem = arr_s[1]
+    @stamp_3_mem = arr_s[2]
+
   end
 
   def test
