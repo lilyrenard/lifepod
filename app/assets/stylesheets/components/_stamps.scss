@@ -1,4 +1,4 @@
-.stamp1, .stamp2, .stamp3, .stamp4, .stamp4, .stamp5, .stamp6, .stamp7, .stamp8 {
+.stamp2, .stamp3, .stamp4, .stamp5, .stamp6, .stamp7, .stamp8, .stamp9, .stamp10, .stamp11, .stamp12, .stamp13 {
   background-size: cover;
   background-repeat: no-repeat;
   height: 100px;
@@ -23,37 +23,75 @@
   -webkit-transform: rotate(5deg);
   transform: rotate(5deg);
   background-image: image-url("2.svg");
-  color: $violet;
+  color: $bleumarine;
 }
 .stamp3 {
   -webkit-transform: rotate(-8deg);
   transform: rotate(-8deg);
   background-image: image-url("3.svg");
-  color: $red2;
+  color: $violet;
 }
 .stamp4 {
   -webkit-transform: rotate(-10deg);
   transform: rotate(-10deg);
   background-image: image-url("4.svg");
-  color: $saumon;
+  color: $red2;
 }
 .stamp5 {
   -webkit-transform: rotate(-25deg);
   transform: rotate(-25deg);
   background-image: image-url("5.svg");
-  color: $violet;
+  color: $bleumarine;
 }
 
 .stamp6 {
   -webkit-transform: rotate(8deg);
   transform: rotate(8deg);
   background-image: image-url("6.svg");
-  color: $red2;
+  color: $violet;
 }
 .stamp7 {
   -webkit-transform: rotate(10deg);
   transform: rotate(10deg);
   background-image: image-url("7.svg");
+  color: $red2;
+}
+
+.stamp8 {
+  -webkit-transform: rotate(5deg);
+  transform: rotate(5deg);
+  background-image: image-url("8.svg");
+  color: $saumon;
+}
+.stamp9 {
+  -webkit-transform: rotate(-8deg);
+  transform: rotate(-8deg);
+  background-image: image-url("9.svg");
+  color: $saumon;
+}
+.stamp10 {
+  -webkit-transform: rotate(-10deg);
+  transform: rotate(-10deg);
+  background-image: image-url("10.svg");
+  color: $bleumarine;
+}
+.stamp11 {
+  -webkit-transform: rotate(-25deg);
+  transform: rotate(-25deg);
+  background-image: image-url("11.svg");
+  color: $violet;
+}
+
+.stamp12 {
+  -webkit-transform: rotate(8deg);
+  transform: rotate(8deg);
+  background-image: image-url("12.svg");
+  color: $red2;
+}
+.stamp13 {
+  -webkit-transform: rotate(10deg);
+  transform: rotate(10deg);
+  background-image: image-url("13.svg");
   color: $saumon;
 }
 

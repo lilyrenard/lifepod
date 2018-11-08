@@ -54,7 +54,7 @@ class MemoriesController < ApplicationController
 
     if stamps != nil
       stamps.each do |stamp_title|
-        stamp = Stamp.create_with(stamp_image: "stamp#{rand(2..7)}").find_or_create_by(title: stamp_title, user: current_user)
+        stamp = Stamp.create_with(stamp_image: "stamp#{rand(2..13)}").find_or_create_by(title: stamp_title, user: current_user)
         stamp.user_id = current_user.id
         @memory.stamps << stamp
       end

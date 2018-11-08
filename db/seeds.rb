@@ -21,84 +21,84 @@ user = User.create!(
 
 stamp1 = Stamp.new(
   title: "Travel",
-  stamp_image: "stamp#{rand(2..7)}",
+  stamp_image: "stamp#{rand(2..13)}",
   user_id: user.id
   )
 stamp1.save!
 
 stamp2 = Stamp.new(
   title: "Love",
-  stamp_image: "stamp#{rand(2..7)}",
+  stamp_image: "stamp#{rand(2..13)}",
   user_id: user.id
   )
 stamp2.save!
 
 stamp3 = Stamp.new(
   title: "Friends",
-  stamp_image: "stamp#{rand(2..7)}",
+  stamp_image: "stamp#{rand(2..13)}",
   user_id: user.id
   )
 stamp3.save!
 
 stamp4 = Stamp.new(
   title: "Food",
-  stamp_image: "stamp#{rand(2..7)}",
+  stamp_image: "stamp#{rand(2..13)}",
   user_id: user.id
   )
 stamp4.save!
 
 stamp5 = Stamp.new(
   title: "Restaurant",
-  stamp_image: "stamp#{rand(2..7)}",
+  stamp_image: "stamp#{rand(2..13)}",
   user_id: user.id
   )
 stamp5.save!
 
 stamp6 = Stamp.new(
   title: "Party",
-  stamp_image: "stamp#{rand(2..7)}",
+  stamp_image: "stamp#{rand(2..13)}",
   user_id: user.id
   )
 stamp6.save!
 
 stamp7 = Stamp.new(
   title: "Birthday",
-  stamp_image: "stamp#{rand(2..7)}",
+  stamp_image: "stamp#{rand(2..13)}",
   user_id: user.id
   )
 stamp7.save!
 
 stamp8 = Stamp.new(
   title: "Highschool",
-  stamp_image: "stamp#{rand(2..7)}",
+  stamp_image: "stamp#{rand(2..13)}",
   user_id: user.id
   )
 stamp8.save!
 
 stamp9 = Stamp.new(
   title: "College",
-  stamp_image: "stamp#{rand(2..7)}",
+  stamp_image: "stamp#{rand(2..13)}",
   user_id: user.id
   )
 stamp9.save!
 
 stamp10 = Stamp.new(
   title: "Soccer",
-  stamp_image: "stamp#{rand(2..7)}",
+  stamp_image: "stamp#{rand(2..13)}",
   user_id: user.id
   )
 stamp10.save!
 
 stamp11 = Stamp.new(
   title: "Family",
-  stamp_image: "stamp#{rand(2..7)}",
+  stamp_image: "stamp#{rand(2..13)}",
   user_id: user.id
   )
 stamp11.save!
 
 stamp12 = Stamp.new(
   title: "Birth",
-  stamp_image: "stamp#{rand(2..7)}",
+  stamp_image: "stamp#{rand(2..13)}",
   user_id: user.id
   )
 stamp12.save!
@@ -106,7 +106,7 @@ stamp12.save!
 
 stamp13 = Stamp.new(
   title: "2004",
-  stamp_image: "stamp#{rand(2..7)}",
+  stamp_image: "stamp#{rand(2..13)}",
   user_id: user.id
   )
 stamp13.save!

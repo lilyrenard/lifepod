@@ -4,14 +4,14 @@
   text-align: center;
   padding: 5px 25px;
   margin: 15px 10px;
-  border: 1px solid $red2;
+  border: 1px solid $bleumarine;
   border-radius: 5px;
   font-family: Raleway;
   transition: 0.3s;
 }
 
 .boutton-rouge-inside {
-  background-color: $red2;
+  background-color: $bleumarine;
   color: white;
   &:hover {
     color: white;
@@ -21,9 +21,9 @@
 
 .boutton-rouge-border {
   background-color: white;
-  color: $red2;
+  color: $bleumarine;
   &:hover {
-    color: $red2;
+    color: $bleumarine;
     transform: scale(1.05);
   }
 }
