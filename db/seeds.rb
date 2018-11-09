@@ -19,7 +19,7 @@ user = User.create!(
   birth_date: "26/01/1993",
   first_name: "Ruben",
   last_name: "Gueunoun",
-  profile_picture: "https://res.cloudinary.com/dt38p7qqh/image/upload/v1541758484/Photo_d_identite%CC%81.jpg"
+  profile_picture: "Photo_d_identité.jpg"
 )
 
 #  stamps
