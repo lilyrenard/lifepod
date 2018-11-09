@@ -1,3 +1,8 @@
+ActiveRecord::Base.connection.tables.each do |table|
+  next if table.match(/\Aschema_migrations\Z/)
+  ActiveRecord::Base.connection.execute("TRUNCATE #{table} CASCADE")
+end
+
 puts 'delete all'
 
 Memory.destroy_all
@@ -13,81 +18,82 @@ user = User.create!(
   password: "123456",
   birth_date: "26/01/1993",
   first_name: "Sébastien",
-  last_name: "Saunier"
+  last_name: "Saunier",
+  profile_picture: "https://res.cloudinary.com/dt38p7qqh/image/upload/v1541615831/profile.jpg"
 )
 
 #  stamps
 
 
-stamp1 = Stamp.new(
-  title: "Travel",
-  stamp_image: "stamp#{rand(2..13)}",
-  user_id: user.id
-  )
-stamp1.save!
+# stamp1 = Stamp.new(
+#   title: "Travel",
+#   stamp_image: "stamp#{rand(2..13)}",
+#   user_id: user.id
+#   )
+# stamp1.save!
 
-stamp2 = Stamp.new(
+stamp14 = Stamp.new(
   title: "Love",
   stamp_image: "stamp#{rand(2..13)}",
   user_id: user.id
   )
-stamp2.save!
+stamp14.save!
 
-stamp3 = Stamp.new(
-  title: "Friends",
-  stamp_image: "stamp#{rand(2..13)}",
-  user_id: user.id
-  )
-stamp3.save!
+# stamp3 = Stamp.new(
+#   title: "Friends",
+#   stamp_image: "stamp#{rand(2..13)}",
+#   user_id: user.id
+#   )
+# stamp3.save!
 
-stamp4 = Stamp.new(
-  title: "Food",
-  stamp_image: "stamp#{rand(2..13)}",
-  user_id: user.id
-  )
-stamp4.save!
+# stamp4 = Stamp.new(
+#   title: "Food",
+#   stamp_image: "stamp#{rand(2..13)}",
+#   user_id: user.id
+#   )
+# stamp4.save!
 
-stamp5 = Stamp.new(
-  title: "Restaurant",
-  stamp_image: "stamp#{rand(2..13)}",
-  user_id: user.id
-  )
-stamp5.save!
+# stamp5 = Stamp.new(
+#   title: "Restaurant",
+#   stamp_image: "stamp#{rand(2..13)}",
+#   user_id: user.id
+#   )
+# stamp5.save!
 
-stamp6 = Stamp.new(
-  title: "Party",
-  stamp_image: "stamp#{rand(2..13)}",
-  user_id: user.id
-  )
-stamp6.save!
+# stamp6 = Stamp.new(
+#   title: "Party",
+#   stamp_image: "stamp#{rand(2..13)}",
+#   user_id: user.id
+#   )
+# stamp6.save!
 
-stamp7 = Stamp.new(
-  title: "Birthday",
-  stamp_image: "stamp#{rand(2..13)}",
-  user_id: user.id
-  )
-stamp7.save!
+# stamp7 = Stamp.new(
+#   title: "Birthday",
+#   stamp_image: "stamp#{rand(2..13)}",
+#   user_id: user.id
+#   )
+# stamp7.save!
 
-stamp8 = Stamp.new(
-  title: "Highschool",
-  stamp_image: "stamp#{rand(2..13)}",
-  user_id: user.id
-  )
-stamp8.save!
+# stamp8 = Stamp.new(
+#   title: "Highschool",
+#   stamp_image: "stamp#{rand(2..13)}",
+#   user_id: user.id
+#   )
+# stamp8.save!
 
-stamp9 = Stamp.new(
-  title: "College",
-  stamp_image: "stamp#{rand(2..13)}",
-  user_id: user.id
-  )
-stamp9.save!
+# stamp9 = Stamp.new(
+#   title: "College",
+#   stamp_image: "stamp#{rand(2..13)}",
+#   user_id: user.id
+#   )
+# stamp9.save!
 
-stamp10 = Stamp.new(
-  title: "Soccer",
-  stamp_image: "stamp#{rand(2..13)}",
-  user_id: user.id
-  )
-stamp10.save!
+# stamp10 = Stamp.new(
+#   title: "Soccer",
+#   stamp_image: "stamp#{rand(2..13)}",
+#   user_id: user.id
+#   )
+# stamp10.save!
 
 stamp11 = Stamp.new(
   title: "Family",
@@ -111,6 +117,35 @@ stamp13 = Stamp.new(
   )
 stamp13.save!
 
+stamp1 = Stamp.new(
+  title: "La Baule",
+  stamp_image: "stamp#{rand(2..13)}",
+  user_id: user.id
+  )
+stamp1.save!
+
+stamp2 = Stamp.new(
+  title: "2018",
+  stamp_image: "stamp#{rand(2..13)}",
+  user_id: user.id
+  )
+stamp2.save!
+
+stamp3 = Stamp.new(
+  title: "Lunch",
+  stamp_image: "stamp#{rand(2..13)}",
+  user_id: user.id
+  )
+stamp3.save!
+
+stamp5 = Stamp.new(
+  title: "Croatie",
+  stamp_image: "stamp#{rand(2..13)}",
+  user_id: user.id
+  )
+stamp5.save!
+
+
 # Memories
 
 # Birth of my sister
@@ -122,7 +157,7 @@ memory1 = Memory.new(
   user_id: user.id,
   remote_photo_url: "https://res.cloudinary.com/dt38p7qqh/image/upload/v1541689961/birth.jpg",
   suggested: false,
-  stamps: [stamp2, stamp12, stamp11, stamp13]
+  stamps: [stamp14, stamp12, stamp11, stamp13]
   )
 memory1.save!
 
@@ -132,7 +167,7 @@ memory2 = Memory.new(
   memory_type: "quote",
   user_id: user.id,
   suggested: false,
-  stamps: [stamp2, stamp12, stamp11, stamp13]
+  stamps: [stamp14, stamp12, stamp11, stamp13]
   )
 memory2.save!
 
@@ -151,9 +186,22 @@ memory3 = Memory.new(
 memory3.save!
 
 
+
+
+memory1 = Memory.new(
+  title: "Week-end at La Baule",
+  description: "We went on a trip with the girls at La Baule.",
+  memory_type: "photo",
+  user_id: user.id,
+  remote_photo_url: "https://res.cloudinary.com/dt38p7qqh/image/upload/v1541407621/amis.jpeg.jpg",
+  suggested: false,
+  stamps: [stamp1, stamp2]
+  )
+memory1.save!
+
 memory3 = Memory.new(
-  title: "Les rêves sont la nourriture des dieux.",
-  description: "Caroline a dit ça lors de notre goûter. C'était très drôle parce que ça nous a fait penser à notre dîner la semaine dernière.",
+  title: "Nothing is better than going home to family and eating good food and relaxing.",
+  description: "Caroline said that during lunch. It was very funny because it made us thought of last dinner we had together.",
   memory_type: "quote",
   user_id: user.id,
   suggested: false,
@@ -163,7 +211,7 @@ memory3.save!
 
 memory9 = Memory.new(
   title: "Bahamas",
-  description: "Magnifique plage vierge",
+  description: "Beautiful beach",
   memory_type: "photo",
   user_id: user.id,
   remote_photo_url: "https://res.cloudinary.com/dt38p7qqh/image/upload/v1541407645/Bahamas.jpg",
@@ -174,7 +222,7 @@ memory9.save!
 
 memory10 = Memory.new(
   title: "Moto cross",
-  description: "Finale de la compétition",
+  description: "Last day of competition",
   memory_type: "photo",
   user_id: user.id ,
   remote_photo_url: "https://res.cloudinary.com/dt38p7qqh/image/upload/v1541407602/Motocross_MX_green_1.jpg",
@@ -183,19 +231,10 @@ memory10 = Memory.new(
   )
 memory10.save!
 
-memory11 = Memory.new(
-  title: "La fesse gauche s\’adresse à la fesse droite et lui dit : Hey, tu trouves pas que ça pue dans le couloir ?",
-  description: "Excellente blague de Guillaume lors d’une partition à 4 fesses",
-  memory_type: "quote",
-  user_id: user.id,
-  suggested: false,
-  stamps: [stamp1, stamp2, stamp3]
-  )
-memory11.save!
 
 memory5 = Memory.new(
-  title: 'Olé le foot',
-  description: 'Une affiche de football memorable qui restera dans les mémoires de tous!',
+  title: 'Go soccer!!',
+  description: 'Beautiful soccer poster that we will all remember',
   memory_type: 'photo',
   user_id: user.id,
   suggested: false,
@@ -206,8 +245,8 @@ memory5.save!
 
 
 memory6 = Memory.new(
-  title: 'J\'aime bien manger épicé, mais pas les deux en même temps',
-  description: 'Meilleure blague MDRRRR',
+  title: 'Q: When do you serve tofu turkey? A: Pranksgiving.',
+  description: 'Best joke MDRRRR',
   memory_type: 'quote',
   user_id: user.id,
   suggested: false,
@@ -217,7 +256,7 @@ memory6.save!
 
 memory8 = Memory.new(
   title: 'Solumun',
-  description: 'Trop louuuurd! Novaljaaaaaa',
+  description: 'Huuuuuge! Novaljaaaaaa',
   memory_type: 'video',
   user_id: user.id,
   suggested: false,
@@ -228,7 +267,7 @@ memory8.save!
 
 memory13 = Memory.new(
   title: 'Sunset in Novalja',
-  description: 'Devant l\'appart, cette vue de dingue!',
+  description: 'In front of the appartment !',
   memory_type: 'photo',
   user_id: user.id,
   suggested: false,
