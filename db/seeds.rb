@@ -13,7 +13,8 @@ user = User.create!(
   password: "123456",
   birth_date: "26/01/1993",
   first_name: "Sébastien",
-  last_name: "Saunier"
+  last_name: "Saunier",
+  profile_picture: "https://res.cloudinary.com/dt38p7qqh/image/upload/v1541615831/profile.jpg"
 )
 
 #  stamps
@@ -111,47 +112,6 @@ stamp13 = Stamp.new(
   )
 stamp13.save!
 
-
-# Memories
-
-# Birth of my sister
-
-memory1 = Memory.new(
-  title: "My sister is born",
-  description: "My beautiful sister is a lucky girl, because she will be on the receiving end of all your kindness and wisdom.",
-  memory_type: "photo",
-  user_id: user.id,
-  remote_photo_url: "https://res.cloudinary.com/dt38p7qqh/image/upload/v1541689961/birth.jpg",
-  suggested: false,
-  stamps: [stamp2, stamp12, stamp11, stamp13]
-  )
-memory1.save!
-
-memory2 = Memory.new(
-  title: "She looks just like Aunt Clara!",
-  description: "Grandma immediatly said that when she saw my new little sister. I knew I had to save this moment, to see if it turned out to be true in the coming years.",
-  memory_type: "quote",
-  user_id: user.id,
-  suggested: false,
-  stamps: [stamp2, stamp12, stamp11, stamp13]
-  )
-memory2.save!
-
-
-# Grandpa's birthday
-
-memory3 = Memory.new(
-  title: "Grandpa's birthday",
-  description: "What a birthday! We ",
-  memory_type: "photo",
-  user_id: user.id,
-  remote_photo_url: "https://res.cloudinary.com/dt38p7qqh/image/upload/v1541697209/grandpa-birth.jpg",
-  suggested: false,
-  stamps: [stamp2, stamp12, stamp11, stamp13]
-  )
-memory3.save!
-
-
 stamp1 = Stamp.new(
   title: "La Baule",
   stamp_image: "stamp#{rand(2..13)}",
@@ -179,6 +139,48 @@ stamp5 = Stamp.new(
   user_id: user.id
   )
 stamp5.save!
+
+
+# Memories
+
+# Birth of my sister
+
+memory1 = Memory.new(
+  title: "My sister is born",
+  description: "My beautiful sister is a lucky girl, because she will be on the receiving end of all your kindness and wisdom.",
+  memory_type: "photo",
+  user_id: user.id,
+  remote_photo_url: "https://res.cloudinary.com/dt38p7qqh/image/upload/v1541689961/birth.jpg",
+  suggested: false,
+  stamps: [stamp14, stamp12, stamp11, stamp13]
+  )
+memory1.save!
+
+memory2 = Memory.new(
+  title: "She looks just like Aunt Clara!",
+  description: "Grandma immediatly said that when she saw my new little sister. I knew I had to save this moment, to see if it turned out to be true in the coming years.",
+  memory_type: "quote",
+  user_id: user.id,
+  suggested: false,
+  stamps: [stamp14, stamp12, stamp11, stamp13]
+  )
+memory2.save!
+
+
+# Grandpa's birthday
+
+memory3 = Memory.new(
+  title: "Grandpa's birthday",
+  description: "What a birthday! We ",
+  memory_type: "photo",
+  user_id: user.id,
+  remote_photo_url: "https://res.cloudinary.com/dt38p7qqh/image/upload/v1541697209/grandpa-birth.jpg",
+  suggested: false,
+  stamps: [stamp2, stamp12, stamp11, stamp13]
+  )
+memory3.save!
+
+
 
 
 memory1 = Memory.new(
