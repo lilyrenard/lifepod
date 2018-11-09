@@ -106,7 +106,10 @@
     <div class="num-box">
       <%= image_tag "boxes/1.svg", class: "padding"%>
       <div class="wrap text-center">
-        <h3>You would need <%= pluralize @tot_box, "box" %> to move all your content out !</h3>
+        <h3>You would need </h3>
+        <h3><%= pluralize @tot_box, "box" %></h3>
+        <h3>to move all your content</h3>
+        <p>Considering that you would need 400 musics, 400 videos, 1600 quotes and 6400 photos to fill a box.</p>
       </div>
     </div>
   </span>
