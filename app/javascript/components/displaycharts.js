@@ -13,12 +13,12 @@ function displayChart1() {
               label: '% accepted suggestions',
               data: tab,
               backgroundColor: [
-                  'rgba(255, 146, 128, 0.2)',
-                  'rgba(69, 49, 93, 0.2)'
+                  'rgba(2, 120, 174, 0.25)',
+                  'rgba(2, 120, 174, 0.5)'
               ],
               borderColor: [
-                  'rgba(255, 146, 128, 0.5)',
-                  'rgba(69, 49, 93, 0.5)',
+                  'rgba(2, 120, 174, 0.75)',
+                  'rgba(2, 120, 174, 1)',
               ],
               borderWidth: 1
           }]
@@ -51,8 +51,8 @@ function displayChart2() {
         datasets: [{
           data: tab,
           label: "% repartion of self-added memories",
-          backgroundColor: ['rgba(255, 146, 128, 0.2)', 'rgba(69, 49, 93, 0.2)', 'rgba(255, 36, 0, 0.2)'],
-          borderColor: ['rgba(255, 146, 128, 0.5)', 'rgba(69, 49, 93, 0.5)', 'rgba(255, 36, 0, 0.5)'],
+          backgroundColor: ['rgba(2, 120, 174, 0.7)', 'rgba(2, 120, 174, 0.4)', 'rgba(2, 120, 174, 0.1)'],
+          borderColor: ['rgba(2, 120, 174, 1)', 'rgba(2, 120, 174, 0.7)', 'rgba(2, 120, 174, 0.4)'],
           borderWidth: 1,
         }]
       },
@@ -71,8 +71,8 @@ function displayChart3() {
         datasets: [{
           data: tab,
           label: "% repartion of self-added memories",
-          backgroundColor: ['rgba(255, 146, 128, 0.2)', 'rgba(69, 49, 93, 0.2)'],
-          borderColor: ['rgba(255, 146, 128, 0.5)', 'rgba(69, 49, 93, 0.5)'],
+          backgroundColor: ['rgba(2, 120, 174, 0.7)', 'rgba(2, 120, 174, 0.1)'],
+          borderColor: ['rgba(2, 120, 174, 1)', 'rgba(2, 120, 174, 0.4)'],
           borderWidth: 1,
         }]
       },
@@ -91,8 +91,8 @@ function displayChart4() {
         datasets: [{
           data: tab,
           label: "Suggestion VS Self-added",
-          backgroundColor: ['rgba(255, 146, 128, 0.2)', 'rgba(69, 49, 93, 0.2)'],
-          borderColor: ['rgba(255, 146, 128, 0.5)', '#45315D'],
+          backgroundColor: ['rgba(2, 120, 174, 0.7)', 'rgba(2, 120, 174, 0.1)'],
+          borderColor: ['rgba(2, 120, 174, 1)', 'rgba(2, 120, 174, 0.4)'],
           borderWidth: 1,
         }]
       },
@@ -112,7 +112,7 @@ function displayChart5() {
       datasets: [{
           data: tab,
           label: "Number of added memories",
-          borderColor: '#45315D',
+          borderColor: 'rgba(2, 120, 174, 1)',
           fill: false
         }
       ]

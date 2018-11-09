@@ -17,9 +17,9 @@ user = User.create!(
   email: "test@gmail.com",
   password: "123456",
   birth_date: "26/01/1993",
-  first_name: "Sébastien",
-  last_name: "Saunier",
-  profile_picture: "https://res.cloudinary.com/dt38p7qqh/image/upload/v1541615831/profile.jpg"
+  first_name: "Ruben",
+  last_name: "Gueunoun",
+  profile_picture: "https://res.cloudinary.com/dt38p7qqh/image/upload/v1541758484/Photo_d_identite%CC%81.jpg"
 )
 
 #  stamps
@@ -118,7 +118,7 @@ stamp13 = Stamp.new(
 stamp13.save!
 
 stamp1 = Stamp.new(
-  title: "La Baule",
+  title: "Summer",
   stamp_image: "stamp#{rand(2..13)}",
   user_id: user.id
   )
@@ -132,7 +132,7 @@ stamp2 = Stamp.new(
 stamp2.save!
 
 stamp3 = Stamp.new(
-  title: "Lunch",
+  title: "Holidays",
   stamp_image: "stamp#{rand(2..13)}",
   user_id: user.id
   )
@@ -140,6 +140,13 @@ stamp3.save!
 
 stamp5 = Stamp.new(
   title: "Croatie",
+  stamp_image: "stamp#{rand(2..13)}",
+  user_id: user.id
+  )
+stamp5.save!
+
+stamp4 = Stamp.new(
+  title: "Wedding",
   stamp_image: "stamp#{rand(2..13)}",
   user_id: user.id
   )
@@ -189,13 +196,13 @@ memory3.save!
 
 
 memory1 = Memory.new(
-  title: "Week-end at La Baule",
-  description: "We went on a trip with the girls at La Baule.",
+  title: "Tourists in Croatia ;)",
+  description: "We went on a trip with the girls at Novalja.",
   memory_type: "photo",
   user_id: user.id,
   remote_photo_url: "https://res.cloudinary.com/dt38p7qqh/image/upload/v1541407621/amis.jpeg.jpg",
   suggested: false,
-  stamps: [stamp1, stamp2]
+  stamps: [stamp1, stamp2, stamp3, stamp5]
   )
 memory1.save!
 
@@ -210,43 +217,43 @@ memory3 = Memory.new(
 memory3.save!
 
 memory9 = Memory.new(
-  title: "Bahamas",
+  title: "Sunrise at Sonus Festival",
   description: "Beautiful beach",
   memory_type: "photo",
   user_id: user.id,
-  remote_photo_url: "https://res.cloudinary.com/dt38p7qqh/image/upload/v1541407645/Bahamas.jpg",
+  remote_photo_url: "https://res.cloudinary.com/dt38p7qqh/image/upload/v1541759360/IMG_2538.jpg",
   suggested: false,
-  stamps: [stamp1, stamp2]
+  stamps: [stamp1, stamp2, stamp3, stamp5]
   )
 memory9.save!
 
 memory10 = Memory.new(
-  title: "Moto cross",
-  description: "Last day of competition",
+  title: "Oupsi the haircut...",
+  description: "What a beautiful haircut",
   memory_type: "photo",
   user_id: user.id ,
-  remote_photo_url: "https://res.cloudinary.com/dt38p7qqh/image/upload/v1541407602/Motocross_MX_green_1.jpg",
+  remote_photo_url: "https://res.cloudinary.com/dt38p7qqh/image/upload/v1541759354/IMG_2501.jpg",
   suggested: false,
-  stamps: [stamp1, stamp2, stamp3]
+  stamps: [stamp1, stamp2, stamp3, stamp5]
   )
 memory10.save!
 
 
 memory5 = Memory.new(
-  title: 'Go soccer!!',
-  description: 'Beautiful soccer poster that we will all remember',
+  title: 'Jerk!!',
+  description: 'Some kids in Crotia playing with a broken glass',
   memory_type: 'photo',
   user_id: user.id,
   suggested: false,
-  remote_photo_url: 'https://res.cloudinary.com/dt38p7qqh/image/upload/v1541407869/foot-style%CC%81.jpg',
-  stamps: [stamp1, stamp2]
+  remote_photo_url: 'https://res.cloudinary.com/dt38p7qqh/image/upload/v1541759346/IMG_2563.jpg',
+  stamps: [stamp1, stamp2, stamp3, stamp5]
   )
 memory5.save!
 
 
 memory6 = Memory.new(
   title: 'Q: When do you serve tofu turkey? A: Pranksgiving.',
-  description: 'Best joke MDRRRR',
+  description: 'Best joke LOOOOOL',
   memory_type: 'quote',
   user_id: user.id,
   suggested: false,
@@ -261,7 +268,7 @@ memory8 = Memory.new(
   user_id: user.id,
   suggested: false,
   remote_photo_url: 'https://res.cloudinary.com/dt38p7qqh/video/upload/v1541408735/IMG_2581.mp4',
-  stamps: [stamp3, stamp2, stamp5]
+  stamps: [stamp1, stamp3, stamp2, stamp5]
   )
 memory8.save!
 
@@ -272,9 +279,22 @@ memory13 = Memory.new(
   user_id: user.id,
   suggested: false,
   remote_photo_url: 'https://res.cloudinary.com/dt38p7qqh/image/upload/v1541408865/IMG_2512.jpg',
-  stamps: [stamp2, stamp5]
+  stamps: [stamp1, stamp2, stamp3, stamp5]
   )
 memory13.save!
+
+
+memory14 = Memory.new(
+  title: 'Bro\'s wedding',
+  description: 'The wedding team. All my friends reunited for my brother\'s wedding',
+  memory_type: 'photo',
+  user_id: user.id,
+  suggested: false,
+  remote_photo_url: 'https://res.cloudinary.com/dt38p7qqh/image/upload/v1541759681/mariage.jpg',
+  stamps: [stamp2, stamp4]
+  )
+memory13.save!
+
 
 
 puts 'Finished!'
