@@ -19,7 +19,7 @@ user = User.create!(
   birth_date: "26/01/1993",
   first_name: "Ruben",
   last_name: "Gueunoun",
-  profile_picture: "Photo_d_identité.jpg"
+  profile_picture: "photo.jpg"
 )
 
 #  stamps
