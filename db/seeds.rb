@@ -1,3 +1,8 @@
+ActiveRecord::Base.connection.tables.each do |table|
+  next if table.match(/\Aschema_migrations\Z/)
+  ActiveRecord::Base.connection.execute("TRUNCATE #{table} CASCADE")
+end
+
 puts 'delete all'
 
 Memory.destroy_all
