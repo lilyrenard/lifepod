@@ -1,4 +1,4 @@
-<h1 class="text-center font-weight-bold d-none d-md-block">Your dashboard</h1>
+<h2 class="text-center font-weight-bold d-none d-md-block" style="margin-top: 20px; margin-bottom: 10px;"><%= current_user.first_name %>'s dashboard</h1>
 
 
 
@@ -7,12 +7,15 @@
   <!--Piecharts-->
   <span class= "piechart-grid d-flex align-items-center">
     <div class="conteneur-graph-pie">
+      <p style="text-align: center; margin: 8px 0px; font-style: italic;">Self-added memories distribution</p>
       <canvas id="ManuPieChart" data-tab="<%= Memory.where(memory_type: 'photo').count %>-<%= Memory.where(memory_type: 'video').count %>-<%= Memory.where(memory_type: 'quote').count %>"></canvas>
     </div>
     <div class="conteneur-graph-pie">
+      <p style="text-align: center; margin: 8px 0px; font-style: italic;">Added through suggestion memories distribution</p>
       <canvas id="SuggePieChart" data-tab="<%= Memory.where(memory_type: 'spotify').count %>-<%= Memory.where(memory_type: 'instagram').count %>"></canvas>
     </div>
     <div class="conteneur-graph-pie">
+      <p style="text-align: center; margin: 8px 0px; font-style: italic;">Self-added VS Suggested distribution</p>
       <canvas id="ManuSuggePieChart" data-tab="<%= Memory.where(memory_type: 'spotify').count + Memory.where(memory_type: 'instagram').count %>-<%= Memory.where(memory_type: 'photo').count + Memory.where(memory_type: 'video').count + Memory.where(memory_type: 'quote').count %>"></canvas>
     </div>
   </span>
@@ -20,6 +23,7 @@
   <!--Date d'ajout-->
   <span class="line-chart-grid">
     <div class="conteneur-graph">
+      <p style="text-align: center; margin: 4px 0px; font-style: italic;">Number of addings per period of time</p>
       <canvas id="line-chart" data-tab="12-21-3-21-32-33-22-12-40"></canvas>
     </div>
   </span>
@@ -30,6 +34,7 @@
 
   <span class="bar-chart-grid">
     <div class="conteneur-graph">
+      <p style="text-align: center; margin: 4px 0px; font-style: italic;">Suggestion efficiency</p>
       <canvas id="SpotInstaBarChart" data-tab="<%= @sukg_instagram %>-<%= @sukg_spotify %>"></canvas>
     </div>
   </span>
@@ -38,53 +43,60 @@
   <!--Podium-->
 
   <span class="podium-grid">
-    <div class="row">
-      <div class="col-lg">
-        <h2 class="text-center espace">Your most used stamps</h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-md-6 col-lg-2 offset-lg-3">
-        <div class="box-viz">
-          <div class="icon">
-            <div class=<%=@stamp_1.stamp_image%> >
-              <p><%= @stamp_1.title.upcase %></p>
-            </div>
-          </div>
-          <div class="count">
-            <p><strong><%=@stamp_1_mem%></strong></p>
-            <p><%=  "Memory".pluralize(@stamp_1_mem) %></p>
+    <div class="conteneur-podium-grid">
+
+      <span class="title-podium-grid align-items-center">
+        <h4 class="text-center espace" style="margin-bottom: 20px; margin-top: 10px;">Your most used stamps</h4>
+      </span>
+
+      <span class="stamp-1-grid d-flex align-items-center justify-content-center">
+        <div class="icon">
+          <div class=<%=@stamp_1.stamp_image%> >
+            <p><%= @stamp_1.title.upcase %></p>
           </div>
         </div>
-      </div>
-      <div class="col-xs-12 col-md-6 col-lg-2">
-        <div class="box-viz">
-          <div class="icon">
-            <div class=<%=@stamp_2.stamp_image%> >
-              <p><%= @stamp_2.title.upcase %></p>
-            </div>
-          </div>
-          <div class="count">
-            <p><strong><%=@stamp_2_mem%></strong></p>
-            <p><%=  "Memory".pluralize(@stamp_2_mem) %></p>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-12 col-md-6 col-lg-2 ">
-        <div class="box-viz">
-          <div class="icon">
-            <div class=<%=@stamp_3.stamp_image%> >
-              <p><%= @stamp_3.title.upcase %></p>
-            </div>
-          </div>
-          <div class="count">
-            <p><strong><%=@stamp_3_mem%></strong></p>
-            <p><%=  "Memory".pluralize(@stamp_2_mem) %></p>
+      </span>
+      <span class="count-1-grid d-flex align-items-center justify-content-center">
+        <p style="font-size: 36px; font-weight: bold; margin-bottom: 0px;"><%=@stamp_1_mem%></p>
+        <p><%=  "Memory".pluralize(@stamp_1_mem) %></p>
+      </span>
+      <span class="medal-1-grid d-flex align-items-end justify-content-center">
+        <%= image_tag 'gold-medal.png' %>
+      </span>
+
+      <span class="stamp-2-grid d-flex align-items-center justify-content-center">
+        <div class="icon">
+          <div class=<%=@stamp_2.stamp_image%> >
+            <p><%= @stamp_2.title.upcase %></p>
           </div>
         </div>
-      </div>
+      </span>
+      <span class="count-2-grid d-flex align-items-center justify-content-center">
+        <p style="font-size: 36px; font-weight: bold; margin-bottom: 0px;"><%=@stamp_2_mem%></p>
+        <p><%=  "Memory".pluralize(@stamp_2_mem) %></p>
+      </span>
+      <span class="medal-2-grid d-flex align-items-end justify-content-center">
+        <%= image_tag 'silver-medal.png' %>
+      </span>
+
+      <span class="stamp-3-grid d-flex align-items-center justify-content-center">
+        <div class="icon">
+          <div class=<%=@stamp_3.stamp_image%> >
+            <p><%= @stamp_3.title.upcase %></p>
+          </div>
+        </div>
+      </span>
+      <span class="count-3-grid d-flex align-items-center justify-content-center">
+        <p style="font-size: 36px; font-weight: bold; margin-bottom: 0px;"><%=@stamp_3_mem%></p>
+        <p><%=  "Memory".pluralize(@stamp_2_mem) %></p>
+      </span>
+      <span class="medal-3-grid d-flex align-items-end justify-content-center">
+        <%= image_tag 'bronze-medal.png' %>
+      </span>
+
     </div>
   </span>
+
 
 
 

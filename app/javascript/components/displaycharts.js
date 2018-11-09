@@ -17,8 +17,8 @@ function displayChart1() {
                   'rgba(69, 49, 93, 0.2)'
               ],
               borderColor: [
-                  '#FF9280',
-                  '#45315D',
+                  'rgba(255, 146, 128, 0.5)',
+                  'rgba(69, 49, 93, 0.5)',
               ],
               borderWidth: 1
           }]
@@ -52,16 +52,11 @@ function displayChart2() {
           data: tab,
           label: "% repartion of self-added memories",
           backgroundColor: ['rgba(255, 146, 128, 0.2)', 'rgba(69, 49, 93, 0.2)', 'rgba(255, 36, 0, 0.2)'],
-          borderColor: ['#FF9280', '#45315D', 'rgba(255, 36, 0)'],
+          borderColor: ['rgba(255, 146, 128, 0.5)', 'rgba(69, 49, 93, 0.5)', 'rgba(255, 36, 0, 0.5)'],
           borderWidth: 1,
         }]
       },
-      options: {
-        title: {
-          display: true,
-          text: '% repartion of self-added memories'
-        }
-      }
+      options: {}
   });
 }
 
@@ -77,16 +72,11 @@ function displayChart3() {
           data: tab,
           label: "% repartion of self-added memories",
           backgroundColor: ['rgba(255, 146, 128, 0.2)', 'rgba(69, 49, 93, 0.2)'],
-          borderColor: ['#FF9280', '#45315D'],
+          borderColor: ['rgba(255, 146, 128, 0.5)', 'rgba(69, 49, 93, 0.5)'],
           borderWidth: 1,
         }]
       },
-      options: {
-        title: {
-          display: true,
-          text: '% repartion of self-added memories'
-        }
-      }
+      options: {}
   });
 }
 
@@ -102,16 +92,11 @@ function displayChart4() {
           data: tab,
           label: "Suggestion VS Self-added",
           backgroundColor: ['rgba(255, 146, 128, 0.2)', 'rgba(69, 49, 93, 0.2)'],
-          borderColor: ['#FF9280', '#45315D'],
+          borderColor: ['rgba(255, 146, 128, 0.5)', '#45315D'],
           borderWidth: 1,
         }]
       },
-      options: {
-        title: {
-          display: true,
-          text: 'Suggestion VS Self-added'
-        }
-      }
+      options: {}
   });
 }
 
@@ -132,12 +117,7 @@ function displayChart5() {
         }
       ]
     },
-    options: {
-      title: {
-        display: true,
-        text: 'Evolution of your Life Pod addings'
-      }
-    }
+    options: {}
   });
 }
 
