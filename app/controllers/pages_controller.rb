@@ -177,7 +177,7 @@ class PagesController < ApplicationController
     top_3 = []
     @stamps.each {|stamp| top_3 << Stamp.find(stamp).memories.length}
     arr_s = top_3.sort.reverse
-    arr_i = top_3.map{|e| arr_s.index(e)}
+    arr_i = arr_s.map{|e| top_3.index(e)}
 
     @stamp_1 = Stamp.find(@stamps[arr_i[0]])
     @stamp_2 = Stamp.find(@stamps[arr_i[1]])
