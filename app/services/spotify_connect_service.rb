@@ -9,7 +9,7 @@ class SpotifyConnectService
     if Rails.env == "development"
       @redirect = "http://localhost:3000#{redirect}"
     else
-      @redirect = "https://lifepod.herokuapp.com#{redirect}"
+      @redirect = "http://www.mylifepod.fr#{redirect}"
     end
   end
 

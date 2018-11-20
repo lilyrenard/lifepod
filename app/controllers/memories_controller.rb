@@ -10,9 +10,9 @@ class MemoriesController < ApplicationController
       # on récupère tous les paramètres de ?stamp =
       stamps_ids = []
       params["stamp"].each do |stamp_title|
-        if Stamp.find_by_title(stamp_title) == nil
+        if Stamp.where(user_id: current_user.id).find_by_title(stamp_title) == nil
         else
-          @stamps << Stamp.find_by_title(stamp_title)
+          @stamps << Stamp.where(user_id: current_user.id).find_by_title(stamp_title)
           stamps_ids = @stamps.pluck(:id)
         end
       end
